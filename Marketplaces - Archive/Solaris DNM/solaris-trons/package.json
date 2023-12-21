@@ -1,0 +1,19 @@
+{
+  "name": "solaris-trons",
+  "version": "0.1.0",
+  "description": "Solaris DevOps glosses",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://lain-the-wired.com/morph/solaris-trons"
+  },
+  "author": "Morph",
+  "license": "MIT",
+  "dependencies": {
+    "isomorphic-git": "^1.21.0"
+  }
+}

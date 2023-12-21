@@ -1,0 +1,43 @@
+{
+    "name": "graham-campbell/manager",
+    "description": "Manager Provides Some Manager Functionality For Laravel 5",
+    "keywords": ["laravel", "framework", "manager", "connector", "interface", "Manager", "Laravel Manager", "Laravel-Manager", "Graham Campbell", "GrahamCampbell"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Graham Campbell",
+            "email": "graham@alt-three.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "illuminate/contracts": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*",
+        "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*"
+    },
+    "require-dev": {
+        "graham-campbell/analyzer": "^1.1",
+        "graham-campbell/testbench-core": "^2.0",
+        "mockery/mockery": "dev-master#c90a17247147543081e4d00f46911e422b49e583",
+        "phpunit/phpunit": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "GrahamCampbell\\Manager\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "GrahamCampbell\\Tests\\Manager\\": "tests/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.0-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

@@ -1,0 +1,306 @@
+@import "../partials/colours";
+
+#transaction-table {
+	//border-width: 2px;
+	//border-color: $color_red;
+	height: 100%;
+	
+	.expand-toggle {
+		position: absolute;
+		top: calc(50% - 17px);
+		right: 7px;
+		font-size: 30px;
+		padding: 6px;
+		background-color: $washedYellow_shade1;
+		border: solid 1px rgba(0,0,0,.11);
+		
+		&::before {
+			content: '+';
+		}
+	}
+	
+	.order-selections {
+		padding-bottom: 60px;
+		position: relative;
+	}
+	
+	.textarea {
+		height: 100%;
+		
+		textarea {
+			text-align: left;
+			white-space: pre-line;
+			word-break: break-all;
+			min-height: 100%;
+			overflow: hidden;
+			font-size: .7em;
+			background: none !important;
+		}
+	}
+	
+	ul {
+		text-align: left;
+		
+		& > li {
+			position: static;
+			
+			& > input {
+				&:not([checked]):checked,
+				&[checked]:not(:checked)  {
+					& ~ b::before {
+						content: "Click 'Apply Changes' for your selections to take effect";
+						position: absolute;
+						top: calc(100% - 50px);
+						left: 0;
+						right: 0;
+						font-size: .9em;
+						text-align: center;
+						background: $color_white;
+					}
+				}
+			}
+		}
+	}
+	.btn {
+		&:not(.xs){
+			flex-grow: 1;
+		}
+		
+		&:not(:last-child) {
+			margin-right: 3px;
+		}
+	}
+	th {
+		//background-color: $color_red;
+		
+		&:nth-child(2){
+			width: 400px;
+		}
+		&:last-child {
+			width: 0; //200px;
+		}
+	}
+	td {
+		&:first-child {
+			font-weight: bold;
+			text-align: left;
+			padding-left: 20px;
+		}
+		&:nth-child(2){
+			border-right: solid 1px rgba(0,0,0,.1);
+			text-align: left;
+		}
+		&:nth-child(3){
+			padding: 5px;
+			height: 100%
+		}
+		&:nth-child(4){
+			height: 100%;
+			& > div {
+				display: flex;
+			}
+		}
+	}
+	tr {
+		&.narrow {
+			& > td {
+				height: 30px;
+				background-color: rgba(0,0,0,.03);
+			}
+		}
+		
+		&.simple {
+			& + tr,
+			& + tr + tr,
+			& + tr + tr + tr,
+			& + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr + tr + tr + tr + tr {
+				display: none;
+			}
+		}
+		
+		&.color {
+			&,
+			& + tr,
+			& + tr + tr,
+			& + tr + tr + tr,
+			& + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr + tr + tr + tr + tr {
+				td:first-child {
+					&::before {
+						content: '';
+						position: absolute;
+						left: 0;
+						top: -1px;
+						bottom: 0;
+						border-right: solid 4px;
+						background-color: #FFF;
+						z-index: 1;
+						width: 4px;
+					}
+				}
+			}
+		}
+		&.red {
+			&,
+			& + tr,
+			& + tr + tr,
+			& + tr + tr + tr,
+			& + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr + tr + tr + tr + tr {
+				td:first-child::before {
+					border-right-color: $color_red;
+				}
+			}
+		}
+		&.orange {
+			&,
+			& + tr,
+			& + tr + tr,
+			& + tr + tr + tr,
+			& + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr + tr + tr + tr + tr {
+				td:first-child::before {
+					border-right-color: $color_orange;
+				}
+			}
+		}
+		&.blue {
+			&,
+			& + tr,
+			& + tr + tr,
+			& + tr + tr + tr,
+			& + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr + tr + tr + tr + tr {
+				td:first-child::before {
+					border-right-color: $color_blue_brighter;
+				}
+			}
+		}
+		&.green {
+			&,
+			& + tr,
+			& + tr + tr,
+			& + tr + tr + tr,
+			& + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr + tr + tr + tr + tr {
+				td:first-child::before {
+					border-right-color: $color_green;
+				}
+			}
+		}
+		&.purple {
+			&,
+			& + tr,
+			& + tr + tr,
+			& + tr + tr + tr,
+			& + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr + tr + tr + tr,
+			& + tr + tr + tr + tr + tr + tr + tr + tr + tr + tr {
+				td:first-child::before {
+					border-right-color: $color_purple;
+				}
+			}
+		}
+		
+		
+		&:nth-child(2n){
+			background-color: inherit;
+		}
+		
+		&:nth-child(11n),
+		&.simple {
+			td:first-child::before {
+				bottom: 5px !important;
+			}
+		}
+		
+		&:not(:first-child){
+			td {
+				border-top: solid 1px rgba(0,0,0,.1)
+			}
+		}
+		&:nth-child(11n - 10) {
+			td:first-child::before {
+				top: 5px !important;
+			}
+		}	
+		
+		&:nth-child(11n - 10),
+		&:nth-child(11n - 9){
+			td:last-child {
+				border-left: solid 1px rgba(0,0,0,.1);
+				vertical-align: top;
+				padding: 10px;
+			}
+		}
+		
+		&:nth-child(22n),
+		&:nth-child(22n - 1),
+		&:nth-child(22n - 2),
+		&:nth-child(22n - 3),
+		&:nth-child(22n - 4),
+		&:nth-child(22n - 5),
+		&:nth-child(22n - 6),
+		&:nth-child(22n - 7),
+		&:nth-child(22n - 8),
+		&:nth-child(22n - 9),
+		&:nth-child(22n - 10){
+			&,
+			& b::before,
+			& td:first-child::before {
+				background-color: HSL(60, 27.8%, 95.9%) !important; //$washedYellow_shade1 !important;
+			}
+			.expand-toggle {
+				background-color: $color_white;
+			}
+		}
+		
+		&:nth-child(11n + 1) {
+			td:nth-child(2) {
+				white-space: nowrap;
+				font-family: monospace;
+				font-size: 12px;
+			}
+			&:not(:first-child) {
+				td {
+					//border-top: solid 2px $color_green;
+				}
+			}
+		}
+	}
+}

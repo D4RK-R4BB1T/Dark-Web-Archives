@@ -1,0 +1,52 @@
+.modal-scrollable {
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  .modal-dialog {
+    top: 0 !important
+  }
+}
+
+ol.numeric {
+  list-style-type: none;
+  counter-reset: item;
+  margin: 0;
+  padding: 0;
+
+  >li {
+    display: table;
+    counter-increment: item;
+    margin-bottom: .6em;
+
+    &:before {
+      content: counters(item, ".") ". ";
+      display: table-cell;
+      padding-right: .6em
+    }
+  }
+}
+
+li ol.numeric>li {
+  margin: 0;
+
+  &:before {
+	content: counters(item, ".") " "
+  }
+}
+
+.cursor {
+  &-pointer {
+    cursor: pointer;
+  }
+}
+
+/* modal at top scrollable */
+.modal-body {
+    max-height: calc(100vh - 212px);
+    overflow-y: auto;
+}
+
+.mm-modal-toggle:checked ~ .modal .modal-dialog {
+  top: 0 !important;
+}
+

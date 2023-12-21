@@ -1,0 +1,93 @@
+services:
+  web:
+    image: nginx
+    ports:
+      - target: 80
+        published: ${APP_PORT:-81}
+        protocol: tcp
+        mode: host
+    volumes:
+      - ./docker/web/app.conf:/etc/nginx/nginx.conf:ro
+      - type: bind
+        source: .
+        target: /app
+    networks:
+      - main
+    depends_on:
+      - app
+  app:
+    user: ${APP_USER:-catalog}
+    build:
+      dockerfile: ./docker/app/Dockerfile
+      args:
+        WWWUSER: '${WWWUSER}'
+        WWWGROUP: '${WWWGROUP}'
+        APPUSER: '${APPUSER}'
+    volumes:
+      - type: bind
+        source: .
+        target: /app
+    networks:
+      - main
+    depends_on:
+      - mysql
+      - redis
+  redis:
+    image: redis:alpine
+    volumes:
+      - 'redis-store:/data'
+    networks:
+      - main
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      retries: 3
+      timeout: 5s
+  mysql:
+    image: percona:5.7-centos
+    environment:
+      MYSQL_DATABASE: '${DB_DATABASE}'
+      MYSQL_USER: '${DB_USERNAME}'
+      MYSQL_PASSWORD: '${DB_PASSWORD}'
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_ROOT_PASSWORD: '${DB_ROOT_PASSWORD}'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    volumes:
+      - 'mysql-store:/var/lib/mysql'
+      - './import.sql:/docker-entrypoint-initdb.d/import.sql'
+    networks:
+      - main
+  tor:
+    image: goldy/tor-hidden-service
+    environment:
+      CATALOG_TOR_SERVICE_HOSTS: 80:web:80
+      CATALOG_TOR_SERVICE_VERSION: '3'
+      # catalog: eevzcurum6qaoxybh5uxoa35nq67je5nnzcnxxk64lg5dwpwpy7k7iqd.onion
+      CATALOG_TOR_SERVICE_KEY: |
+        PT0gZWQyNTUxOXYxLXNlY3JldDogdHlwZTAgPT0AAABQnDgxbcoQ09bEf3WKEt2qt2US8vngGtEO
+        eWAJF92MYsugJjWHWKFAbjS9RxMbuVzaWKx8amdtTgjfpKhNK2En
+      TOR_SOCKS_PORT: 9050
+    networks:
+      - main
+    depends_on:
+      - web
+    links:
+      - web
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - target: 80
+        published: ${PMA_PORT:-82}
+        protocol: tcp
+        mode: host
+    environment:
+      - PMA_ARBITRARY=1
+    networks:
+      - main
+volumes:
+  mysql-store:
+    driver: local
+  redis-store:
+    driver: local
+networks:
+  main:
+    driver: bridge

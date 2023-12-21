@@ -1,0 +1,24 @@
+{
+    "name":          "lastguest/murmurhash",
+    "description":   "MurmurHash3 Hash",
+    "homepage":      "https://github.com/lastguest/murmurhash-php",
+    "keywords":      [ "hash","hashing", "murmur" ],
+    "type":          "library",
+    "license":       "MIT",
+    "require": {
+        "php": ">=4.3"
+    },
+    "authors": [
+        {
+            "name":     "Stefano Azzolini",
+            "email":    "lastguest@gmail.com",
+            "homepage": "https://github.com/lastguest/murmurhash-php"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "files": [
+        	"murmurhash3.php"
+        ]
+    }
+}

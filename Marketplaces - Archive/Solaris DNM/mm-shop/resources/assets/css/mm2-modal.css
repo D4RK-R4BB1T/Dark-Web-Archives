@@ -1,0 +1,86 @@
+.mm-modal {
+    position: absolute; /* Don't take any space. */
+}
+
+.mm-modal-label {
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.mm-modal label.close {
+    /* Reset */
+    padding: 0;
+    margin: 0;
+}
+
+.mm-modal-toggle {
+    display: none;
+}
+
+/* MODAL */
+.modal {
+    display: block;
+    max-width: 0;
+}
+
+.mm-modal-toggle:checked ~ .modal {
+    max-width: 100%;
+}
+
+/*.mm-modal-toggle:not(:checked) ~ .modal {*/
+    /*!**/
+    /*In Bootstrap Model is hidden by `display: none`.*/
+    /*Unfortunately I couldn't get this option to work with css transitions*/
+    /*(they are disabled when `display: none` is present).*/
+    /*We need other way to hide the modal, e.g. with `max-width`.*/
+    /**!*/
+/*}*/
+
+.mm-modal-toggle:checked ~ .fade,
+.mm-modal-toggle:checked ~ .modal .fade {
+    opacity: 1;
+}
+
+/* BACKDROP */
+.modal-backdrop {
+    margin: 0;
+    opacity: 0;
+}
+
+.mm-modal-toggle:not(:checked) ~ .modal .modal-backdrop {
+    display: none;
+}
+
+.mm-modal-toggle:checked ~ .modal .modal-backdrop {
+    display: block;
+}
+
+.mm-modal-toggle:checked ~ .modal .modal-backdrop {
+    backface-visibility: visible;
+    animation-name: fadeInOpacity;
+    animation-duration: 0.6s;
+    animation-fill-mode:both;
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* DIALOG */
+.mm-modal-toggle ~ .modal .modal-dialog {
+}
+
+
+.mm-modal-toggle:checked ~ .modal .modal-dialog {
+    top: 20%;
+    z-index: 1050;
+    backface-visibility: visible;
+    animation-name: fadeIn;
+    animation-duration: 0.6s;
+    animation-fill-mode:both;
+}

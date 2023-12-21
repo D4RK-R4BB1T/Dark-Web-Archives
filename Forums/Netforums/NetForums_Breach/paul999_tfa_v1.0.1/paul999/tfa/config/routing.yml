@@ -1,0 +1,8 @@
+paul999_tfa_read_controller_submit:
+    path: /paul999/tfa/save/{user_id}/{admin}/{auto_login}/{viewonline}/{class}/
+    defaults: { _controller: paul999.tfa.controller:submit }
+    requirements:
+        user_id: \d+
+        admin: \d+
+        auto_login: \d+
+        viewonline: \d+

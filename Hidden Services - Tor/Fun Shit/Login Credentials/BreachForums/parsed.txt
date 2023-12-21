@@ -1,0 +1,532 @@
+Username: pine
+Email: shrub@cock.li,Hash: 
+$argon2i$v=19$m=65536,t=4,p=1$Q2MwYnViWFJ3VEJMQkQxdQ$obgjuTjtBxSmAzwYhhCc7oYuCvZmUX1nYjoyUo1+EH8
+
+Username: ShinyHunters
+Email: null@null.null
+Hash: $argon2i$v=19$m=65536,t=4,p=1$VEUxbDEvMFVvRUJZQ25YQQ$ioLGikaXMY2NE6eykJyCWBFBQ2pR/2HxK+Ff1jbsJ40
+
+Username: Baphomet
+Email: baphomet@invalid.lol
+Hash: $argon2i$v=19$m=65536,t=4,p=1$S0hQeEs0WmtveThxVm1XeA$AejdD5UzEJggwX5nV/K5tfsJCEVh/qvRmxZYXirVNws
+
+Username: Manitora
+Email: f@f.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$TUU3RFJaTW5NaTExanhscA$Xa0AizHcJHLOf3VFHXHj9FiYm9bjsoqwF49ATwEu81s
+
+Username: dedale
+Email: fuckthe@fbi.govArgon2
+Hash:$argon2i$v=19$m=65536,t=4,p=1$aUJiSG4wR1lvSXVZU0xuWQ$AGIuouwpI1Q1iO8YDOOakSsfNrPtBw35EMUBtMj46zs
+
+Username: depressed
+Email: null@null.null,Hash: 
+$argon2i$v=19$m=65536,t=4,p=1$YUFRRkh5czIvdUljRFVxZg$F9V/EJNCsMOG7m2xLi8vBuUQD4zVK91hwkeoqPuL34E
+
+Username: dead
+Email: deaddd@dnmx.org
+Hash: $argon2i$v=19$m=65536,t=4,p=1$SFF6VC9vR0pjUlpYYjRrZw$5ZUft/+7D7lIA5lLCO7S1j9Tc1T73Drch6eAsb30DPk
+
+Username: Moderator
+Email: bfweep@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$M2pEeXhjY1hjWDRaZHNRSQ$s2RvuyGjTwncDth1qku92eztWY3ABiZHPj55aUe7h/0
+
+Username: god
+Email: elforumadept@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$T2xGTlRlc2o1Q0YwaWp3bw$lRytAxPT6Kz/C5WHeqiVEJVYPddmCu8Yj288v4DaSFY
+
+Username: NOCT
+Email: noctazy@gmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$Q0ZzeWhBLllyS2JKZjdMVA$JorNqyV+TGOhZWfSMsFlnZCsmjPGZAtlPtXwLHkckOk
+
+Username: pompompurin
+Email: null@null.null
+Hash: $argon2i$v=19$m=65536,t=4,p=1$VHpoQThYNjBzYjBqbzRXMA$Zb7uJAzm3479dkmRCwCCCcOAZmmh4c5lD6Ou+/7aW4M
+
+Username: Omnipotent
+Email: null@null.null
+Hash: $argon2i$v=19$m=65536,t=4,p=1$Z2tDSEExdVlCOXJLYmQuVw$xhjPboJ5Wjla0HiR+vKX9BKa0rmBOea3wD74BBKcSmQ
+
+Username: Umbreon
+Email: null@null.null
+Hash: $argon2i$v=19$m=65536,t=4,p=1$ZnAxajFKbkU0UUNRd3hEbA$Q/gnPrUekbWJGmGQ8riHGJAU/u3ZoNMUqu1JmlgjSMQ
+
+Username: siscoi
+Email: mybbjunkxd@protonmail.com
+Argon22Hash:$argon2i$v=19$m=65536,t=4,p=1$S2NhNXlEYnMvZHVmZUtoTg$JLgTAI9UeU6gzLjoCXVL2WLpPLHW8Yct+2Q8DpHiuT0
+
+Username: emo
+Email: cry4mebb@proton.me
+Argon22Hash:$argon2i$v=19$m=65536,t=4,p=1$WXlqWUlVU0FkWXNCaUlKLg$LnWfsYY2lvfeN2eub8Uvh8CHmuuYBC4vaAjNnQiZvt0
+
+Username: weej
+Email: weej@tuta.io
+Argon22Hash:$argon2i$v=19$m=65536,t=4,p=1$cXBnN3lhb0tDV21DaXcxaA$Sc7k8LhNPucNMwzP2TWxjtjYhFuBgVLX+9MP3X2sfHg
+
+Username: nvcman
+Email: nathavm@proton.me
+Argon22Hash:$argon2i$v=19$m=65536,t=4,p=1$TVlJajhNa244V09XcVNFQg$jDx8AszjsJwdBPrEHTMkrqbuOfveeFO/S93YnKQRf4M
+
+Username: vuax
+Email: no@No.com
+Argon22Hash:$argon2i$v=19$m=65536,t=4,p=1$LlN2cnpnZEQ1NUg1MG9xNQ$AVGlDC9xMZ1nKRJzwQbZrlCxOCOmnXnsOGUfTIgNv6w
+
+Username: ThisGuysAreLegion
+Email: opsopsops123@proton.me
+Argon22Hash:$argon2i$v=19$m=65536,t=4,p=1$cWJhUkdUNTRyYTRXNC5CMw$ZxZZnVinjm1vgRqOgFkSKUHQz+ywEHveHSq/e2OS2KQ
+
+Username: tilly
+Email: nomorefaking@riseup.net
+Argon22Hash:$argon2i$v=19$m=65536,t=4,p=1$aks0d0c2eGRlR0ZNcUdaQw$8kG6e+6qhLu1WrRGAxI6w2wrT5MniinGO9Bv4mjqiac
+
+Username: drama
+Email: retirefps@gmail.com
+Argon22Hash:$argon2i$v=19$m=65536,t=4,p=1$TWtWcG52cjJhd1pmOFEuNA$fjXL4rExXIDI2oa9atk1O4uJj9v9XCXTly4tMt+ZFA8
+
+Username: kokotheclown
+Email: kokotc@proton.me
+Argon22Hash:$argon2i$v=19$m=65536,t=4,p=1$UkFxT2lXQnIwazRZN0VBUg$k+MVcn9w+uFsYmudYettDDVl+yrH4a5+89KvLiOQIRk
+
+Username: cuddly
+Email: meowza.mlplove@proton.me
+Argon22Hash:$argon2i$v=19$m=65536,t=4,p=1$STRwMFBBVm5GNU1PVE1sUA$qU6f4arzEloBAo4x6GJrEKx/G/DKqEIB3bkDn+GGErw
+
+Username: megadabbz
+Email: megadabbz@protonmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$Znp1MC9sdXJVbS9ubmdyOQ$PUzSwSdfXg9C7wNmbRgIy2mgKYFVvFInO7aYRsT92Zk
+
+Username: anti
+Email: 99999999999@msgsafe.io
+Hash: $argon2i$v=19$m=65536,t=4,p=1$SzNCVUNOQU11RU9wUnR4Ng$GXQ9/ejNKwQNyiIQheF6d64EBSvQ83zro75hUYoEOz0
+
+Username: An0nPr1v
+Email: an0n.pr1v@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$L0V3b2hzWEVRNWV2cXlhNQ$CUvV2FpUVAcDEJlw7kGvcr4gWhzLSkr2+eS9yNT97Fg
+
+Username: Boonduckbaby
+Email: superstardizzy@gmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$QTlpZldUZXJudzg3U0NEMQ$aMth/xFYPFi+JFASXtUYGJdo2Drm3/Nnyuss0O7L38Q
+
+Username: C0rpix
+Email: C0rpix@protonmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$cjljYWdwZ2U0ZjFnSjc0Tg$cJQ8onYvAGLxmsgjRfsXkmjalga0Cs3ZQVsKQTvuhug
+
+Username: Tanaka
+Email: squir@dnmx.org
+Hash: $argon2i$v=19$m=65536,t=4,p=1$N1JpUnF6UGhEcHlHSnFrMQ$M00aflo4mrPMAkXbvbYNqawzQeme8+EGXkgvZ01vwjs
+
+Username: neobip
+Email: johnnygiantstone@gmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$Uy5meU1JN3hQLzh2NXZhNg$JAxrWooB8bzd/2DT4u/br247OV8U0OVG423N+Myk0ws
+
+Username: MoistMaker
+Email: spumoni529@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$WUI5WWI2YlBHdkFrZHRMMg$3RI7IctO6Qlwnza/HgsEnZlxgTTJ1diF/kUKdvoBW5s
+
+Username: xor
+Email: breachedforum@riseup.net
+Hash: $argon2i$v=19$m=65536,t=4,p=1$V2o0VHE2bE5KSG5RRjBYNg$Trg4mQu0UKqqVzX+Y8pyMx0DP9V5+QtU4seW1yrAoHM
+
+Username: JARV15
+Email: ImNotHere97@protonmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$NmxVRk02Lm1jYk9ubXJtRQ$U4hvxwe9tZQM1k1CUI1eLWDUodSXP+pK4YM/CIyunVc
+
+Username: Mishka
+Email: yasinstinkt@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$QlMwLm00emtLUmZXNERNNA$yhZyG/PtTZ8mzHhcwIZOhzZDdNgOqmLHPn3oyirGxZg
+
+Username: whitenigger
+Email: bestlonely@protonmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$dTNwbzlJb29JanNJUk1VNQ$yOsuGGXxbgqZb2EUk+7Z1FAQq00pw6rIf2J5fkYr4b8
+
+Username: psycrow
+Email: narrmr2015@gmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$aWl0cmxUOW1jTWtCWnRzNQ$TvVWcGzrfyriAzf4YjUIl8slPxBo5QxQY11fcs4XSDo
+
+Username: Nox
+Email: nox-nicht@protonmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$VUZDUEhxWmdHVFNNQU5nZw$nagiQM7KI7o8L3Q0KdMBf2hgd2BgAgNcpOU9dfkRY8c
+
+Username: 0BITS
+Email: al3emi_12@hotmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$U01nT1VUUmJPZ3QxZnBhUg$gd0AOqHGLSgKkxRVk5ud/h85xYArIcLiyKCMY12QLK4
+
+User:RunTimeTerror
+Email: XyloComputer@msgsafe.io
+Hash: $argon2i$v=19$m=65536,t=4,p=1$eEk4LmRuLkdVLnRLRU5GZQ$NI24OC5ABc/u9DzBxXd4+ahKfE1kdIGtSwRUI2NgCQ0
+
+User:vtornik
+Email: vtornik@riseup.net
+Hash: $argon2i$v=19$m=65536,t=4,p=1$eHdBY3JYRUczOGxWMTVINA$fj37SGriLktOoBuBKPcWsHwRicTbdPqORERYD5ZBleo
+
+User:OxygenJunkie
+Email: mamamia.omega@protonmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$ai4xL1dRZVB5WkZ1RHdncA$3j5zQTWoIZweX74IThTOscrIHuyqwADQatAAV3q/uos
+
+User:ileakforyou
+Email: ozer1911@gmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$dmg1QXVtZ2FqYmVJbDJjUw$uCxJRxl1BcDrHLW1VTR6BhFQtfXNFXOw7J/WL8bOHQc
+
+User:Cat
+Email: newlovenanzaza2@gmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$TWlXYkMyZDBCRWxuQ09Qag$J70Fuzy0drqRN4tdRyRq8BPn/tKYxI5X3rXoCtPhGyI
+
+User:Hidden
+Email: fbiareus@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$dzNCa0lDTTFtT3dKZWRRZQ$y9P/QHv4DyT4R1UnUCsZ9iYRu1rzKjXRczbQxtO2oTk
+
+User:raid
+Email: raidblocker@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$Qk4uSnhEM2FBeEo4eUVxQw$E1asRTHa1DZKjszpjl7lECxp6svzDIW6tfmDsvB3Bis
+
+User:Beerus
+Email: wWD2LpuBHPCZYmyMT1@courvix.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$R1lBOVREYTFEUVJmZ2I1Lw$irkbhoeJHzJd2LZs12yUrd9PytRWHxt649Ghoz7jE9g
+
+User:unknown
+Email: unknownlikes@cock.li
+Hash: $argon2i$v=19$m=65536,t=4,p=1$bVBta2VFRHhPYTJrMVdxaw$0KXhseBiA10RgPi68X0AMDFUTs0nwh4oET8sgyYh0R8
+
+User:Eye
+Email: mrterminal07@gmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$SUJGakMucy5Bd2NnRWpNWA$CERAQX5WHzKjF7p3eTOkp7zUx2Xmiz2d9APYyJemXA8
+
+User:MRXx7
+Email: K.MRXx7@protonmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$dEIwaDZzWVpxWGZKNXczbQ$wBrBEen6tXCykCo88ldauqQoZmK8862Bc29vSZQe6hk
+
+User:toxcorrect
+Email: xxxtenlive9@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$R0pkRTdiSkptYndKNzZVeA$kVvpMN0MnJ//MCmGFkHHAtWF3t5xrZQoCa9mArB0Vn4
+
+User:lol
+Email: kuromi172@cock.li
+Hash: $argon2i$v=19$m=65536,t=4,p=1$UGtTY2U3VmNubmZpVk9EZA$ZUAc4rIpJi0BhEotpJc0vkFHcr/qbIeSpKc5/vUSB+A
+
+User:FBI
+Email: wdwamfrpaws@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$T0lHYnBqOWdoalIxSUNwTQ$NSNAHZRAsrDDFZCvpER9UHz9PND838CSCjTGjb1WXZU
+
+User:Geko79
+Email: Gerardkorda@gmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$VktnUlNUc0w3RmFHQjdCdg$A6Jq5vJsb0L+kRUAJJvENzTO3Vtax4ggf/xq7SEyadE
+
+User:ByteNinja998
+Email: ByteNinja956@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$aGtrRHdyQ2dUOUNaZDBMdA$h7PRKcT6q15FOoykKsBrTA4pYWQNVpAUEMGrOtHaiNs
+
+User:cyberia
+Email: verykindgentleman@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$Lk5kaDlMaHhxdTF6R042Rg$KqP1zBuoRCFYresa6acEBuLrkeh/Vmskp/pZZq7kzzQ
+Username: lain
+Email: igna44440@gmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$TDZXYzZiZmc1Z0pjS2xSUw$+RtkZ4DO/RMXPv3ekK4M+YS3pK9jX2BKwsCiBpWa4is
+
+Username: uwu
+Email: 4.lsis@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$VEluLkNXRUNEZGlaL0ZXaw$l3uRtBbe4PTKFXPW0hEEINcEuUpJPVHd3J1rQFBUPCIEmail: 4.lsis@proton.me
+
+Username: 0day
+Email: tihospa@gmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$eHltbFdsVDRnRW1lQmYwMw$X58M3aWYPx/MdIM5B9obs/7E/yRf3XAC+eOxXytoK+Q
+
+Username: jamesedward
+Email: jamielbert@gmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$eHNUZDJOam9adDQ0aGlKRg$TiolsI0itxM0Oua1feF78mKo13vIvvPRH8bDWvneeC4
+Username: mufy
+Email: mufy@tuta.io
+Hash: $argon2i$v=19$m=65536,t=4,p=1$Z3ZMbTBRYjVEaFJjZzhkVA$WgDPHb9TqqwkmNisTuXHcsSpQvWY3bQwrQkVLbybfyc
+
+Username: user
+Email: user_breach@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$bGt1d3RIOTBtaE1IMHRRcQ$PDtdyyvRxs4etNvdjJRJfR12r3owRcuMZtuizfy3FZg
+
+Username: blackboar
+Email: petermacdonald13@protonmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$bGptbEZqbVpERjJlMXFkVA$Xz2bjDeLa/96lGH3kFcQkFN3i21vc5sg96dokoJapwgEmail: 
+
+Username: xxx
+Email: iszxqaa@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$VTdkcHEyMWVvYy5BVU1EMg$+GEare/Gfq4XeomJOzeemq+FunT1WkQYQc3XXLkq3Gg
+
+Username: testing
+Email: tesnot71@gmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$OEcuOVNLdFp2Skd6aXMwQw$inlnJ1vg44qJIjo6tLyiQPePiRhjRK/c+IRopgsFkzsEmail: 
+
+Username: 0xproplayer
+Email: 0xproplayer@protonmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$UjgxNTJTamIvQ2NWenBDTw$AdmhtXu+tZltrSk5iq52vFlbCCy9DhGRfG+6cldQ6bc
+
+Username: cutty
+Email: cutty@test.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$MWtaT0tLQ2h6VTBETmdHaA$L0hK5/EKEvwXRRNhDJ75ED20LpDGYHzAtFXGLwC0YLUEmail: cutty@test.com
+
+User:surf
+Email: larrayjin@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$aWVKUDhHNGtIYXlwc0xSNA$aapf7N3tpLWLRN4MHbEQeImPu7FuJspTGcc1vM80fpM
+
+User:Milad
+Email: irdarkwebir@gmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$UXBxanguaFd3TThmTi5aSQ$sGZHRLQLux+Fn7T5L/hOOqdyU7McecLQZKhJ9JuOvB0
+
+User:Qwefhd
+Email: itryhardcom@gmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$NUpNTFZweVk2aDgudDlTeQ$RqdRwkubq3TlCtcp/EN0ZGYFuZNbRR3bDBSJ+V1syEg
+
+User:moonman
+Email: moonman.rape.cloudflare@protonmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$eTlRWlpBL0lqYWZVS1ZoNg$70emsImzrRSm8YbPT3cWJ8m+lKfkrNsM9lEaBL4UvBU
+
+User:Firstbornunicorn
+Email: debtaccount@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$SHRqTnU4bC9BMEE4czhyYQ$blMhfjWDmThRpT/ZJBOa8sosjjFDld2k1ymYqKxNFdE
+
+User:batchfreak
+Email: joannehoward503@gmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$ZE1QWEovTzNYc2hTSzRJcA$gBXL1mUAcV0oxTt/06h/RIXYJx7qMsn+3NDamlh/Tm4
+
+User:Highway
+Email: synpastehacked@protonmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$aWUvOGN5elhnc1BDLnhCNg$laKolbEBh+XMAmgn+VOopDoXyCnnxEQQ06GfxG7adTk
+
+User:jakuzi
+Email: palleskov@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$aHFsRld5ZlZmUlJkczg1Wg$2MyPJuxrGKHr1JxqSdcwHk7FIX8eAVOSWcN3Q79Ntg8
+
+Username: Konata
+Email: hudbbb8@gmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$NThDa1laMUQxRTVLYWQ4Zw$s21pcdUqcv7JDN1C+itA83uJQzeJUpAZtElexqIF6ZU
+
+Username: 007
+Email: manuel.frick@outlook.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$QkFvbG5aVVh4eVN0QjV3Ng$Vw3kRQH71yfK+uqzoAC3x4aHy06oO7HAfKEgvw43TYc
+
+Username: ABC
+Email: Stratotiho@gmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$V0lpc0VibW1IdXlUd1d4SQ$cy9kSMsaPa9vMnHuwxTBZcPpZb7Bwao93pAS5nqL7/4
+
+Username: walterbrian
+Email: walter_brian@tutanota.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$SXBqMkVzazhGZ050OVN0QQ$twj2M+UfZnK+hHyWklzgu8Hw07cf4VsySLRzcAZpKEg
+
+Username: PK268
+Email: Pk268@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$SlJRNlZpaFppMHcweXFlcA$s/hkNc1kARZRi9X3yccHOL8MJr+V4eT5p12AFg7ZJEk
+
+Username: sshm3
+Email: merjones257@gmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$T25vMWRiZ3RGWUtmelJELw$1YO6ov26CpT8GocZctzpDLoMf9bKTI3udfcYvvZlF+k
+
+Username: wangzhewudi
+Email: manhattanchinadoll@protonmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$cGtKSm5TWUNtSUk3Y3NZUQ$XI4ytu5RXMTRDyS+AsQibn37FFgZ93n22U/3JBQhKJU
+
+Username: flashpointio
+Email: belledelphinesbathwater@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$VjlCczd6OWIuYUdqd3g1UA$YW/J6YJfym2tlJhWMANnGImXHeD4/xWBWUBGOqUHsPc
+
+Username: ATM
+Email: sumikko@riseup.net
+Hash: $argon2i$v=19$m=65536,t=4,p=1$WjdlU1hYLzNod0wwckNudg$VwGFV/0zchjlriHtIKV89QBKtqrHqHq5VpVagtw/RzU
+
+Username: Starlight
+Email: starlightbylb@gmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$bGpMRFN4YW1YSUg2eHpuTw$eYh4Plyba3l8rbc4T6yjQXjXiHlFLr1K7vT6eZO9PHY
+
+Username: urascu84
+Email: X5HkA9T0G9V@courvix.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$VWswMUxRVGVIb1J5SWh4RA$extpG+GA9FXg1MtXoeuNVQ/hVxYDv8CE+Gq1YIjRa+U
+
+Username: hoodboy007
+Email: davepurvis01@gmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$VG1sQVBRNURyRkVSenZSVg$N98rAhh376V45UnEaAUY9nR31WaIOn8Kzhkm3Qj4Uzg
+
+Username: Façade
+Email: walltuhwhite@gmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$SUlwa0JUYUJ1RU4xMXNEZA$VnPDfpWoYU9lFw9Boi068lXdmNm5yDu7sEFQj8vNBCk
+
+Username: Actor
+Email: actordf043k@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$L2hRQWo4ZWF2b0hMaVpISg$5qWebTlKS/BwmrX6tIKzlCZ2pg5lTfNN3TBVsAwVbPA
+
+Username: Excellent
+Email: exljeqhkmfzhwcxwdp@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$REhhL0d6ZVAxZFJtTGs2Wg$Eg4ErLrZOhMH/C2ZQfhG1hYnqUhSptT7zNZBo5yLPQ8
+
+Username: anything
+Email: no@no.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$UU9sUEQyMGFKLnIvUm1mYg$10kMFXsygdp3u4+62Lv4kNnZ61fGLQvEjze9SUE/ds4
+
+Username: cod
+Email: codmus@protonmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$a0RtNzZQT0xmSnpoRml0bw$UI27rV31TPWTg9wGI0sYOBzz72K6dyfJ3NF6UM1GZsc
+
+Username: byte
+Email: bytecorporation@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$UWFSWDdYVXU0RU0vTWUvbA$J+BjRTzMS8AOQSMc56B5xP/HGnwTKDbzY98qh3qIyEU
+
+Username:  opop
+Email: ibrahimhamid054@gmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$WU9USnBJamFHZDB3VTNiNg$JaMrbjgqFDF0Xw3LGKR6Qp6TUTP1CbsCn+QzgIjXYLQ
+
+Username:  Mastermind
+Email: 0xmastermind@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$SmZPWm5xLlJGWVI2a21UWA$ISzptCIYZfZ9B2APONOJNDrSp2ct7oywlY9JuGrd0uk
+
+Email: s3cgr0n@proton.me
+Username: Enemy
+Hash:  $argon2i$v=19$m=65536,t=4,p=1$ZHR5dFl6YWpIVUpqWmV0OQ$ANKA8mNrK9nECA+3nZ2quh64fX4t0x7lX0FoUQaajzU
+
+Hash:  $argon2i$v=19$m=65536,t=4,p=1$bEVtUHkwOU9LaUFZdWV2SA$plAtU2tdyhRZ+rKNCswr8hRiYxLqQ3DRCzCxJkpE7QQ
+Email: lukomorforums@gmail.com
+Username: Lukomor
+
+Username: black
+Email: bonobe4826p@proton.me
+hHash:  $argon2i$v=19$m=65536,t=4,p=1$aXNQWjdoQWV6YTBYQmFQcw$UVsfVna9/jcPVLJgVrpSXqVhv7/bYen4BwuWswXUzto
+
+Username: osaka
+Email: jasafy842@dnmx.org
+Hash:  $argon2i$v=19$m=65536,t=4,p=1$QzRQSTRwblp0LmpWaFJyVQ$pPPoZOe/05EGvg7D43avdCrLePj8hqRgqgznKjNASKc
+
+Username: moxo55
+Email: moxybbs@protonmail.com
+Hash:  $argon2i$v=19$m=65536,t=4,p=1$UGUwUXBHMWVZS1NKeUl6Uw$SUymb3gmvcObZ4C+ODNQVTsdKqwUbpvMnfsRN6hgbPM
+
+
+Username: CIA
+Email: throwaaaa@proton.me
+Hash:  $argon2i$v=19$m=65536,t=4,p=1$TExRRHRmNGVGOWVwSE9QaQ$eq3erm1g4ZO0zRlMnAr+3XqiI7R1qy9hZgzEBtO4nbs
+
+
+Username: DREAD
+Email: computermanisgod@gmail.com
+Hash:  $argon2i$v=19$m=65536,t=4,p=1$NExQUnI2UFhVNk1JSGJVQg$GihjuVVmlPU+d6aWf6ZWbAvsp8fEH13tAJ2zw93wV/A
+
+
+Username: Hitler
+Email: tht_me@proton.me
+Hash:  $argon2i$v=19$m=65536,t=4,p=1$YmgvcWFCM21JTmpFbGo5Tg$SHBbk8Ie6YcvZXSdR7azVmBw6dzFMLhNOp8w+Zipocw
+
+
+Username: kys
+Email: xr1x@proton.me
+Hash:  $argon2i$v=19$m=65536,t=4,p=1$a0tzVzQ5R3ZJeVozLmF3dw$Fb6wb6wx+4oNZAqE0kxjr4f9URMnpyqVFBkp5r5JdqQ
+
+
+Username: spoonfork
+Email: sayameowhitam@gmail.com
+Hash:  $argon2i$v=19$m=65536,t=4,p=1$cGs2YnFvTWlBLkJiWldpTw$rgVo+SMuZJIodDNkavP5zPVsUlrk+OOZ6ZEpsFr4yhMEmail:
+
+Username: Ishatstudio
+Email: borutokunaruto3@gmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$bU11VU9OZ2NBRTdVLlFlcg$dTNFWgQ+vmdlOUIWcWd1BAa5zN+rGXyXRuwEQW/XhH0
+
+Username: mssssom
+Email: mssssom@protonmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$R1Jqc0VPL2xQMXRBYThoeA$7VYoEdC2y9y+T5lM8Lu4d8YXpZBDj783FJGd4ggrtFc
+
+Username: gaben
+Email: gaberenewal@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$clF0YzhFRERYaHBJR3Z5QQ$8C2h1btGB3/TVi6ltMTYViFVv5TAXEDS599en/DEzPs
+
+Username: PanTadeusz
+Email: Plisskien@gmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$TmlRWUpIQ1A5VVcyVUdWNQ$mxgOEHi0QqpbubR1pxyDz5h24xsk5k6XvM76LBfVfow
+
+Username: imogen
+Email: yyyyyyyy2@riseup.net
+Hash: $argon2i$v=19$m=65536,t=4,p=1$S04uMUlMQzQ1RUNXWUxZMQ$ERCYsQgIjq7YPMvL+7L2dNk6tqXgMVnzSDM+oqU/xrs
+
+Username: nulettoo
+Email: nulettoo@dnmx.org
+Hash: $argon2i$v=19$m=65536,t=4,p=1$THBZMkFHWlUxZmIxOElscw$LYUx6SzsZnHu52f5a9ztX3p+4pqq6jr+oJa2FcCpjyw
+
+Username: Terminal
+Email: loserssquad@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$R09NUkNTQTFpUm5wWm1kdA$mmMc8hYbfgJYmNK8i+d/RWOv8xb3czr60dXg1uk58f8
+
+Username: breachedbruh
+Email: breachedbruh@riseup.net
+Hash: $argon2i$v=19$m=65536,t=4,p=1$RUg3MWp2bkFwQTBBT09XYg$vbCOmgsPrvN+dpC+jNcO0G02Nd+cWLhqk6OYF/yUc+k
+
+Username: why
+Email: why99999@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$cGtRb3Q0Qlo5MVpubElLag$zz8A+EWPQ3rB4TWGx+kW1JiZSbStjs9/2owhLpFRUNM
+
+Username: talecyte
+Email: talecyte@dnmx.org
+Hash: $argon2i$v=19$m=65536,t=4,p=1$ZjJNdjhBcElIWDl2VDhiNw$pWYtBhJjMDFYhBZJsDv7xlzCP1pwrNuzdBdypLOrdYg
+
+Username: 1337
+Email: mfaketestid@gmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$RnBEaTh5em0zQnRwc2tvNA$KM28e8TB0vcsY/PiVPki2A5F8wHTQ7DojFy+4aTaFpA
+
+Username: Yukki0nn4
+Email: lololtrolol@protonmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$SU5mVEdyclFsNlpKLng5Mg$Hdo3qWK1Gxe9PLYGoU
+
+Sure, here are the usernames, hashes, and emails in the format you requested:
+
+Username: Ishatstudio
+Email: borutokunaruto3@gmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$bU11VU9OZ2NBRTdVLlFlcg$dTNFWgQ+vmdlOUIWcWd1BAa5zN+rGXyXRuwEQW/XhH0
+
+Username: mssssom
+Email: mssssom@protonmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$R1Jqc0VPL2xQMXRBYThoeA$7VYoEdC2y9y+T5lM8Lu4d8YXpZBDj783FJGd4ggrtFc
+
+Username: gaben
+Email: gaberenewal@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$clF0YzhFRERYaHBJR3Z5QQ$8C2h1btGB3/TVi6ltMTYViFVv5TAXEDS599en/DEzPs
+
+Username: PanTadeusz
+Email: Plisskien@gmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$TmlRWUpIQ1A5VVcyVUdWNQ$mxgOEHi0QqpbubR1pxyDz5h24xsk5k6XvM76LBfVfow
+
+Username: imogen
+Email: yyyyyyyy2@riseup.net
+Hash: $argon2i$v=19$m=65536,t=4,p=1$S04uMUlMQzQ1RUNXWUxZMQ$ERCYsQgIjq7YPMvL+7L2dNk6tqXgMVnzSDM+oqU/xrs
+
+Username: nulettoo
+Email: nulettoo@dnmx.org
+Hash: $argon2i$v=19$m=65536,t=4,p=1$THBZMkFHWlUxZmIxOElscw$LYUx6SzsZnHu52f5a9ztX3p+4pqq6jr+oJa2FcCpjyw
+
+Username: Terminal
+Email: loserssquad@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$R09NUkNTQTFpUm5wWm1kdA$mmMc8hYbfgJYmNK8i+d/RWOv8xb3czr60dXg1uk58f8
+
+Username: breachedbruh
+Email: breachedbruh@riseup.net
+Hash: $argon2i$v=19$m=65536,t=4,p=1$RUg3MWp2bkFwQTBBT09XYg$vbCOmgsPrvN+dpC+jNcO0G02Nd+cWLhqk6OYF/yUc+k
+
+Username: why
+Email: why99999@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$cGtRb3Q0Qlo5MVpubElLag$zz8A+EWPQ3rB4TWGx+kW1JiZSbStjs9/2owhLpFRUNM
+
+Username: talecyte
+Email: talecyte@dnmx.org
+Hash: $argon2i$v=19$m=65536,t=4,p=1$ZjJNdjhBcElIWDl2VDhiNw$pWYtBhJjMDFYhBZJsDv7xlzCP1pwrNuzdBdypLOrdYg
+
+Username: 1337
+Email: mfaketestid@gmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$RnBEaTh5em0zQnRwc2tvNA$KM28e8TB0vcsY/PiVPki2A5F8wHTQ7DojFy+4aTaFpA
+
+Username: Yukki0nn4
+Email: lololtrolol@protonmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$SU5mVEdyclFsNlpKLng5Mg$Hdo3qWK1Gxe9PLYGoU/8qT8IwIfpc1VEwQF+K/HDktQ
+
+Username: FreedomTaco
+Email: freetaco@dnmx.org
+Hash: $argon2i$v=19$m=65536,t=4,p=1$WGpoTUh4aW9mbmJCR3d2dg$kCkjD6z05hPvZESj1A3mtmMAYciG5U/KlvBtW99WtmE
+
+Username: CryptoDude
+Email: cryptodude@riseup.net
+Hash: $argon2i$v=19$m=65536,t=4,p=1$M1JnUk5LS2dWTXN5VGZpZA$FEi1Q69/+ag90eaRiCO7r2wrh7+aaDEWrfR6hbwve/E
+
+Username: RedPanda
+Email: redpanda@proton.me
+Hash: $argon2i$v=19$m=65536,t=4,p=1$M1YyMVBKNXhYYzE2N0FXaQ$EADZwbgzOrx1HZZ83Gk0QcEXwCBzCgL7p/Q6mL4tM9Y
+
+Username: notahacker
+Email: notahacker@protonmail.com
+Hash: $argon2i$v=19$m=65536,t=4,p=1$TzNTVGZJMmJZU01lZUNjMw$JLBE5vAf26hLrMzdbHqR6p2nvF9P/ikvzLfxi+0pa20

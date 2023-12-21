@@ -1,0 +1,17 @@
+{
+  "name": "bitwasp/trait",
+  "description": "A collection of traits",
+  "minimum-stability": "stable",
+  "license": "Unlicence",
+  "authors": [
+    {
+      "name": "Thomas Kerin",
+      "email": "test@test.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "BitWasp\\CommonTrait\\": "src/"
+    }
+  }
+}

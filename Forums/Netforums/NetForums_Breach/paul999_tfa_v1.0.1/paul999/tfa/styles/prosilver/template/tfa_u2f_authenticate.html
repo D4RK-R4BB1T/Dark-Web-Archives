@@ -1,0 +1,12 @@
+{% INCLUDEJS '@paul999_tfa/js/u2f-api.js' %}
+{% INCLUDEJS '@paul999_tfa/js/bowser.js' %}
+
+<div class="panel">
+    <div class="inner">
+        <h2>{{ lang('TFA_INSERT_KEY') }}</h2>
+        {% include '@paul999_tfa/tfa_browser_support.html' %}
+        <p>{{ lang('TFA_INSERT_KEY_EXPLAIN') }}</p>
+        <input type="button" name="start_auth" id="start_auth" value="{{ lang('TFA_START_AUTH') }}"  style="display: none;">
+        <input type="hidden" name="authenticate" id="authenticate" />
+    </div>
+</div>

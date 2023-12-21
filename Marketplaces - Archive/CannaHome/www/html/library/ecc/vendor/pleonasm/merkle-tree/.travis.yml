@@ -1,0 +1,7 @@
+language: php
+php:
+  - 5.5
+  - 5.4
+before_script: composer -n --prefer-source install --dev
+script: vendor/bin/phpunit
+after_script: php vendor/bin/coveralls

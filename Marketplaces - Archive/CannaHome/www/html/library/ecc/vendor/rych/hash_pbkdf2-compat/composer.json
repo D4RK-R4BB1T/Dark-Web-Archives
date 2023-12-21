@@ -1,0 +1,26 @@
+{
+    "name": "rych/hash_pbkdf2-compat",
+    "description": "Provides hash_pbkdf2() to PHP versions >=5.3,<5.5.",
+    "keywords": ["pbkdf2", "hash_pbkdf2", "compatibility"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ryan Chouinard",
+            "email": "rchouinard@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.3.3",
+        "ext-hash": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8"
+    },
+    "autoload": {
+        "files": ["src/hash_pbkdf2_compat.php"]
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}

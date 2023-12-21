@@ -1,0 +1,96 @@
+<?php
+	$login_feedback = Session::get('feedback_negative');
+	$login_username = isset($_POST['username']) ? $_POST['username'] : Session::get('login_username');
+	$login_password = isset($_POST['password']) ? $_POST['password'] : FALSE;
+	$login_prehashed = Session::get('login_prehashed');
+	$login_return = isset($_GET['return']) ? $_GET['return'] : Session::get('login_return');
+	
+	$time = time();
+	
+	if( isset($_GET['other_alias']) )
+	      unset($_SESSION['reserved_username']); 
+if( $this->inviteOnly ) { ?>
+<div class="notification blue"><div><i class="fa-exclamation-triangle"></i><div><div><span><strong>Private:</strong> This site is only for invi$
+<?php } ?>
+<section id="main">
+	<?php $this->renderFeedbackMessages(); ?>
+	<form class="rows-10 login-form" action="<?php echo URL; ?>login/login/" method="post">
+		<?php if ( isset( $_SESSION['reserved_username']) && $reservation = $_SESSION['reserved_username'] ) { ?>
+		<div class="modal undismissable">
+			<div>
+				<a class='close' href="/login/?other_alias">&times;</a>
+				<div class="rows-10">
+					<div class="row">
+						<p class="color-blue">This username has been reserved for an existing member of our community.</p>
+					</div>
+					<div class="row">
+						<label class="label">Decrypt this message to verify PGP public key:</span></label>
+						<label class="textarea">
+							<textarea readonly rows="15"><?php echo $reservation['message'] ?></textarea>
+						</label>
+					</div>
+					<label class="row text<?php echo isset($feedback_negative['reserved_pgp_code']) ? ' invalid' : false ?>">
+						<input class="prepend" type="text" placeholder="Authentication Code" name="reserved_pgp_code">
+						<i class="fa-shield"></i>
+						<?php if ( isset($feedback_negative['reserved_pgp_code']) ) { ?>
+						<p class="note"><?php echo $feedback_negative['reserved_pgp_code']; ?></p>
+						<?php } ?>
+					</label>
+					<button name="action" type="submit" value='Register' class="row btn wide color">Verify</button>
+				</div>
+			</div>
+		</div>
+		<?php } ?>
+		<input type="hidden" name="return" value="<?php echo $this->currentPath ?>">
+		<?php echo $this->AccessPrefix ? '<input type="hidden" name="prefix" value="' . $this->AccessPrefix . '">' : false ?>
+		<label class="row text<?php echo isset($login_feedback['username']) ? ' invalid' : false ?>">
+			<input class="big prepend" type="text" placeholder="Username" required name="username"<?php echo $login_username ? ' value="'.$login_username.'"' : ' autofocus' ?> tabindex="1">
+			<i class="fa-user"></i>
+			<?php if( isset($login_feedback['username']) ) { ?>
+			<div class="note"><strong>Error:</strong> <?php echo $login_feedback['username'] ?></div>
+			<?php } ?>
+		</label>
+		<label class="row text<?php echo isset($login_feedback['password']) ? ' invalid' : false ?>">
+			<input class="big prepend" type="password" placeholder="Password" required name="password"<?php echo $login_username ? ' autofocus' : false ?> <?php echo isset($_SESSION['reserved_username']) ? ' value="'.$_SESSION['reserved_username']['stored_password'].'"' : false ?> tabindex="2">
+			<i class="fa-lock"></i>
+			<?php if( isset($login_feedback['password']) ) { ?>
+			<div class="note"><strong>Error:</strong> <?php echo $login_feedback['password'] ?></div>
+			<?php } ?>
+		</label>
+		<?php if ( !isset($_SESSION['reserved_username']) ) { ?>
+		<div class="row captcha" style="background-image: url(<?php echo URL; ?>login/showCaptcha?<?php echo time(); ?>);">
+			<a href="?login"><i class="fa-refresh"></i></a>
+		</div>
+		<label class="row text<?php echo isset($login_feedback['captcha']) ? ' invalid' : false ?>">
+			<input class="big prepend" type="text" name="captcha" placeholder="What's the word?" required tabindex="3">
+			<i class="fa-shield"></i>
+			<?php if (isset($login_feedback['captcha'])){ ?>
+			<p class="note"><?php echo $login_feedback['captcha'] ?></p>
+			<?php } ?>
+		</label>
+		<?php } ?>
+		<?php if( $this->inviteOnly ) { ?>
+		<label class="row text<?php echo isset($login_feedback['invite_code']) ? ' invalid' : false ?>">
+			<input type="text" pattern="[a-zA-Z0-9]{10}" placeholder="Invite Code (for registrations only)" tabindex="7" name="invite_code">
+			<?php if( isset($login_feedback['invite_code']) ) { ?>
+			<div class="note"><strong>Error:</strong> <?php echo $login_feedback['invite_code'] ?></div>
+			<?php } ?>
+		</label>
+		<?php } ?>
+		<div class="row cols-5">
+			<div class="col-8"> 
+				<label>
+					<input name="action" class="btn wide big" value="Log In" type="submit">
+				</label>
+			</div>
+			<div class="col-4"> 
+				<div class="magic-button">
+					<input type="password" name="password_confirm" id="password_confirm" placeholder="confirm password">
+					<button type="submit" name="action" class="btn wide big green">Register</button>
+					<label for="password_confirm" class="btn wide big blue">Register</label>
+				</div>
+			</div>
+		</div>
+	</form>
+</section>
+<?php unset($_SESSION['feedback_negative'], $_SESSION['login_username'], $_SESSION['login_prehashed']); ?>

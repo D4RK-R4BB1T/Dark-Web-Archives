@@ -1,0 +1,44 @@
+{
+    "name": "fgrosse/phpasn1",
+    "description": "A PHP Framework that allows you to encode and decode arbitrary ASN.1 structures using the ITU-T X.690 Encoding Rules.",
+    "type": "library",
+    "homepage": "https://github.com/FGrosse/PHPASN1",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Friedrich Große",
+            "email": "friedrich.grosse@gmail.com",
+            "homepage": "https://github.com/FGrosse",
+            "role": "Author"
+        },
+        {
+            "name": "All contributors",
+            "homepage": "https://github.com/FGrosse/PHPASN1/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "ext-gmp": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.5"
+    },
+    "suggests": {
+        "php-curl": "For loading OID information from the web if they have not bee defined statically"
+    },
+    "autoload": {
+        "psr-4": {
+            "FG\\": "lib/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FG\\Test\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.3.x-dev"
+        }
+    }
+}

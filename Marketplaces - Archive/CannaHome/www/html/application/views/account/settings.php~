@@ -1,0 +1,355 @@
+<?php 
+	if ( NULL !== Session::get('settings_feedback') )
+		$feedback = Session::get('settings_feedback');
+	if ( NULL !== Session::get('settings_post') )
+		$post = Session::get('settings_post');
+	
+	Session::set('settings_feedback', null);
+	Session::set('settings_post', null);
+
+$this->renderNotifications(array('Settings'));
+
+?>
+<form action="<?php echo URL; ?>account/update_settings/" class="rows-30" method="post" enctype="multipart/form-data">
+	<?php if( isset($_SESSION['authorize_settings']) && $authorize = $_SESSION['authorize_settings'] ){ unset($_SESSION['authorize_settings']['authorize_username'], $_SESSION['authorize_settings']['authorize_password'], $_SESSION['authorize_settings']['authorize_code']); ?>
+	<div class="modal" id="authorize">
+		<div>
+			<a class="close" href="#close">&times;</a>
+			<div class="rows-10">
+				<label class="label"><?php echo $authorize['title'] ?></label>
+				<label class="row text<?php echo isset($authorize['authorize_username']) ? ' invalid' : false ?>">
+					<input class="prepend" name="authorize_username" placeholder="Your Username"<?php echo isset($post['authorize_username']) ? ' value="' . $post['authorize_username'] . '"' : false; ?>>
+					<i class="fa-user"></i>
+					<?php if ( isset($authorize['authorize_username']) ) { ?>
+					<p class="note"><?php echo $authorize['authorize_username']; ?></p>
+					<?php } ?>
+				</label>
+				<label class="row text<?php echo isset($authorize['authorize_password']) ? ' invalid' : false ?>">
+					<input type="password" class="prepend" name="authorize_password" placeholder="Your Password"<?php echo isset($post['authorize_password']) ? ' value="' . $post['authorize_password'] . '"' : false; ?>>
+					<i class="fa-lock"></i>
+					<?php if ( isset($authorize['authorize_password']) ) { ?>
+					<p class="note"><?php echo $authorize['authorize_password']; ?></p>
+					<?php } ?>
+				</label>
+				<?php if( $pgp = $authorize['pgp'] ){ ?>
+				<div class="row">
+					<label class="label">
+						<a class="tooltip left">Decrypt this message with PGP</a>
+						<div>
+							<p>Your account has PGP authentication enabled. To continue, decrypt the message below to find your one-time authentication code. Paste this code in the box below.
+						</div>
+						<span> to authenticate:</span>
+					</label>
+					<label class="textarea">
+						<textarea readonly rows="15"><?php echo $authorize['message'] ?></textarea>
+					</label>
+				</div>
+				<label class="row text<?php echo isset($authorize['authorize_code']) ? ' invalid' : false ?>">
+					<input class="prepend" type="text" placeholder="Authentication Code" name="authorize_code">
+					<i class="fa-shield"></i>
+					<?php if ( isset($authorize['authorize_code']) ) { ?>
+					<p class="note"><?php echo $authorize['authorize_code']; ?></p>
+					<?php } ?>
+				</label>
+				<?php } ?>
+				<input name="authorizing" type="submit" class="row btn wide color" value="Authorize">
+			</div>
+		</div>
+	</div>
+	<?php } ?>
+	<div class="row">
+		<fieldset class="rows-5">
+			<div class="row cols-30">
+				<div class="col-5">
+				#	<label class="label">Username</label>
+				#	<label class="text<?php echo isset($feedback['username']) ? ' invalid' : false ?>">
+				#		<input type="text" class="prepend" name="username"<?php echo isset($post['username']) ? ' value="'.$post['username'].'"' : false; ?> placeholder="(leave blank to keep old username)" />
+				#		<i class="fa-key"></i>
+				#		<?php if( isset($feedback['username']) ) { ?>
+						<div class="note"><strong>Error:</strong> <?php echo $feedback['username'] ?></div>
+				#		<?php } ?>
+				#	</label>
+				</div>
+				<div class="col-7">
+					<label class="label">Password (leave blank to keep old password)</label>
+					<div class="cols-15">
+						<div class="col-6">
+							<label class="text">
+								<input class="prepend" type="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" name="password" <?php echo isset($post['password']) ? ' value="'.$post['password'].'"' : false; ?> placeholder="New password"/>
+								<i class="fa-lock"></i>
+							</label>
+						</div>
+						<div class="col-6">
+							<label class="text<?php echo isset($feedback['password_repeat']) ? ' invalid' : false ?>">
+								<input class="prepend" type="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" name="password_repeat" <?php echo isset($post['password_repeat']) ? ' value="'.$post['password_repeat'].'"' : false; ?> placeholder="Confirm new password" />
+								<i class="fa-lock"></i>
+								<?php if( isset($feedback['password_repeat']) ) { ?>
+								<div class="note"><strong>Error:</strong> <?php echo $feedback['password_repeat'] ?></div>
+								<?php } ?>
+							</label>
+						</div>
+					</div>
+				</div>
+			 </div>
+		 </fieldset>
+	</div>
+	<hr>
+	<div class="row" id="profile">
+		<fieldset>
+			<div class="cols-30">
+				<div class="col-6">
+					<label class="label">PGP Public Key</label>
+					<label class="textarea pgp<?php echo isset($feedback['pgp']) ? ' invalid' : false; ?>">
+						<textarea name="pgp" rows="14" spellcheck="false"><?php echo isset($post['pgp']) ? $post['pgp'] : $this->preferences['pgp']['key']; ?></textarea>
+						<?php if ( isset($feedback['pgp']) ) { ?>
+						<p class="note"><?php echo $feedback['pgp']; ?></p>
+						<?php } else { 
+						echo empty($this->preferences['pgp']['key']) ? '<p class="note">You will be asked to verify ownership of the pgp public key.</p>' : false; } ?>
+					</label>
+					<?php if( isset($_SESSION['new_pgp']) && $new_pgp = $_SESSION['new_pgp'] ){ ?>
+					<div class="modal" id="verify-pgp">
+						<div>
+							<a class="close" href="#close">×</a>
+							<div class="rows-10">
+								<div class="row">
+									<label class="label">Decrypt this message to verify PGP public key:</span></label>
+									<label class="textarea">
+										<textarea readonly rows="15"><?php echo $new_pgp['message'] ?></textarea>
+									</label>
+								</div>
+								<label class="row text<?php echo isset($feedback['new_pgp_code']) ? ' invalid' : false ?>">
+									<input class="prepend" type="text" placeholder="Authentication Code" name="new_pgp_code">
+									<i class="fa-shield"></i>
+									<?php if ( isset($feedback['new_pgp_code']) ) { ?>
+									<p class="note"><?php echo $feedback['new_pgp_code']; ?></p>
+									<?php } ?>
+								</label>
+								<input type="submit" class="row btn wide color" value="Verify">
+							</div>
+						</div>
+					</div>
+					<?php } ?>
+				</div>
+				<div class="col-6 rows-15">
+					<div class="row">
+						<label class="label">Alias</label>
+						<?php if( $this->UserVendor ) { ?>
+						<label class="text">
+							<input class="prepend" type="text" disabled value="<?php echo $this->UserAlias; ?>">
+							<i class="fa-user"></i>
+							<p class="note">Please contact a member of staff if you wish to change this.</p>
+						</label>
+						<?php } else { ?>
+						<label class="text<?php echo isset($feedback['alias']) ? ' invalid' : false ?>">
+							<input type="text" class="prepend" name="alias" placeholder="(leave blank for randomly generated alias)" <?php echo isset($post['alias']) ? 'value="'.$post['alias'].'"' : 'value="'.$this->preferences['alias'].'"'; ?>  pattern="[A-Za-z0-9_-]{3,16}"/>
+							<i class="fa-user"></i>
+							<?php if( isset($feedback['alias']) ) { ?>
+							<div class="note"><strong>Error:</strong> <?php echo $feedback['alias'] ?></div>
+							<?php } else { ?>
+							<p class="note">This will be visible <?php echo $this->isForum ? 'on posts and comments' : 'to vendors you order from' ?>. <strong>This is NOT your username</strong>.</p>
+							<?php } ?>
+						</label>
+						<?php } ?>
+					</div>
+					<div class="row">
+						<label class="row checkbox label">
+							<input type="checkbox" <?php echo $this->preferences['pgp']['invalid'] ? 'disabled' : 'name="double_encryption" ' . (isset($post['double_encryption']) || (!isset($post) && $this->preferences['pgp']['encrypt']) ? ' checked' : false); ?>><i></i>Enable PGP Encryption
+							<?php echo $this->preferences['pgp']['invalid'] ? '<a class="tooltip inline top color-red">UNSUPPORTED KEY TYPE</a><div><p>Encryption is only supported for RSA key types.</p></div>"' : '<a class="tooltip inline top">WHAT IS THIS?</a><div><p>With PGP encryption, all unencrypted, incoming messages' . ($this->UserVendor && !$this->isForum ? ' and order details' : FALSE) . ' are automatically encrypted with your PGP public key.</p><p>Note that this <strong>does not</strong> apply to outgoing messages unless the recipient has enabled PGP encryption.</p><p>This feature is inteded as a &#8216;fail-safe feature&#8217;, and cannot be relied on for strong privacy &mdash; all users are advised to encrypt all outgoing messages manually.</p></div>'; ?>
+						</label>
+					</div>
+					<?php /*?><?php if (!$this->UserVendor) { ?>
+					<div class="row">
+						<label class="checkbox label">
+							<input <?php echo !$this->preferences['log_stats'] ? 'disabled' : false ?> type="checkbox" name="public_stats" id="subscription" <?php echo isset($post['public_stats']) || (!isset($post) && $this->preferences['public_stats']) ? 'checked' : false; ?>><i></i>Display number of purchases on profile
+						</label>
+					</div>
+					<?php } ?><?php */?>
+				</div>
+			</div>
+		</fieldset>
+		<?php if( $this->UserVendor ) { ?>
+		<fieldset>
+			<div class="cols-15">
+				<div class="col-7">
+					<div class="picture-uploader">
+						<?php if( $this->preferences['image'] ){ ?>
+						<div class="pic" style="background-image:url(<?php echo $this->preferences['image'] ?>)">
+							<label for="delete-picture">Delete</label>
+							<input type="checkbox" id="delete-picture" hidden>
+							<div class="modal" id="delete-picture">
+								<label for="delete-picture"></label>
+								<div class="rows-10">
+									<label class="close" for="delete-picture">&times;</label>
+									<p class="row">Are you sure you wish to delete this picture?</p>
+									<div class="row cols-10">
+										<div class="col-6"><button type="submit" class="btn wide" name="delete_pic">Delete</button></div>
+										<div class="col-6"><label for="delete-picture" class="btn wide red color">Nevermind</label></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<?php }
+						if( !$this->preferences['image'] ) { ?>
+						<label class="input-file">
+							<span>Upload a picture</span>
+							<input name="MAX_FILE_SIZE" value="<?php echo MAX_FILE_SIZE ?>" type="hidden">
+							<input name="file" type="file">
+						</label>
+						<?php } ?>
+					</div>
+				</div>
+				<div class="col-5 align-right rows-10">
+					<label class="row"><p class="note align-right"><?php echo AVATAR_IMAGE_WIDTH . '&times;' . AVATAR_IMAGE_HEIGHT ?></p></label>
+					<button <?php echo !$this->preferences['image'] ? 'type="submit" name="submit" value="return"' : 'disabled' ?> class="row btn blue"><i class="fa-plus"></i>Add Picture</button>
+				</div>
+			</div>
+		</fieldset>
+		<?php } ?>
+	</div>
+	<hr>
+	<?php if($this->isForum){ ?>
+	<div class="row" id="forum">
+		<fieldset>
+			<label class="label">Signature</label>
+			<div class="cols-15">
+				<div class="col-6">
+					<label class="textarea">
+						<textarea name="signature" rows="10"><?php echo isset($post['signature']) ? $post['signature'] : ( !empty($this->preferences['signature']) ? $this->preferences['signature'] : false ); ?></textarea>
+					</label>
+				</div>
+				<div class="col-6">
+					<div class="meta-table">
+						<table>
+							<tbody>
+								<tr>
+									<td>[b] bold [/b]</td>
+									<td><strong>bold</strong></td>
+								</tr>
+								<tr>
+									<td>[i] italicized [/i]</td>
+									<td><em>italicized</em></td>
+								</tr>
+								<tr>
+									<td>[a=http://...] link [/i]</td>
+									<td><a>link</a></td>
+								</tr>
+								<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+								<tr>
+									<td>[pgp] block [/pgp]</td>
+									<td class="formatted"><pre>block</pre></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+	</div>
+	<?php } else { ?>
+	<div class="row" id="bitcoin">
+		<fieldset class="cols-30">
+			<div class="col-6">
+				<label class="label">Multisig Public Key</label>
+				<input type="hidden" name="public_key_type" value="traditional">
+				<label class="text<?php echo isset($feedback['btc_public_key']) ? ' invalid' : false ?>">
+					<input class="prepend" type="text" name="btc_public_key" placeholder="04" <?php echo isset($post['btc_public_key']) ? 'value="'.$post['btc_public_key'].'"' : 'value="' . $this->preferences['btc_public_key'] . '"'; ?>>
+					<i class="fa-bitcoin"></i>
+					<?php if( isset($feedback['btc_public_key']) ) { ?>
+					<div class="note"><strong>Error:</strong> <?php echo $feedback['btc_public_key'] ?></div>
+					<?php } ?>
+				</label>
+				<?php /*?><div class="switch">
+					<input id="traditional" name="public_key_type" value="traditional" type="radio" <?php echo isset($post['public_key_type']) || isset($feedback['btc_public_key']) ? ($feedback['btc_public_key'] || $post['public_key_type'] == 'traditional' ? 'checked' : false) : ($this->preferences['btc_public_key'] ? 'checked' : false) ?> />
+					<label for="traditional">Traditional</label>
+					<input id="bip32" name="public_key_type" value="bip32" type="radio" <?php echo isset($post['public_key_type']) || isset($feedback['btc_public_key']) ? (isset($feedback['btc_public_key']) || $post['public_key_type'] == 'bip32' ? 'checked' : false) : ($this->preferences['bip32_public_key'] ? 'checked' : false) ?> />
+					<label for="bip32">BIP32</label>
+					<div>
+						<label class="text<?php echo isset($feedback['btc_public_key']) ? ' invalid' : false ?>">
+							<input type="text" name="btc_public_key" placeholder="04" <?php echo isset($post['btc_public_key']) ? 'value="'.$post['btc_public_key'].'"' : 'value="' . $this->preferences['btc_public_key'] . '"'; ?>>
+							<?php if( isset($feedback['btc_public_key']) ) { ?>
+							<div class="note"><strong>Error:</strong> <?php echo $feedback['btc_public_key'] ?></div>
+							<?php } ?>
+						</label>
+					</div>
+					<div>
+						<label class="text<?php echo isset($feedback['bip32_public_key']) ? ' invalid' : false ?>">
+							<input type="text" name="bip32_public_key" placeholder="xpub" <?php echo isset($post['bip32_public_key']) ? 'value="'.$post['bip32_public_key'].'"' : 'value="' . $this->preferences['bip32_public_key'] . '"'; ?>>
+							<?php if( isset($feedback['bip32_public_key']) ) { ?>
+							<div class="note"><strong>Error:</strong> <?php echo $feedback['bip32_public_key'] ?></div>
+							<?php } ?>
+						</label>
+					</div>
+				</div><?php */?>
+				<?php if( isset($_SESSION['BTC_authentication_code']) && $_SESSION['BTC_authentication_code']) { ?>
+				<div class="modal" id="verify-public-key">
+					<div>
+						<a class="close" href="#close">×</a>
+						<fieldset>
+							<label class="label">Sign this message to verify public key<?php echo $_SESSION['BTC_authentication_code']['type'] == 'bip32' ? ' <a class="tooltip inline">m / ' . $_SESSION['BTC_authentication_code']['i'] . '</a><div><p>This is the derivation path, which you must use to derive the correct private key for signing.</p></div>' : false ?></label>
+							<label class="pre">
+								<pre><?php echo $_SESSION['BTC_authentication_code']['message'] ?></pre>
+							</label>
+						</fieldset>
+						<fieldset>
+							<div class="switch">
+								<input id="electrum" name="client" type="radio" checked>
+								<label for="electrum">Electrum</label>
+								<input id="btc-core" name="client" type="radio">
+								<label for="btc-core">Bitcoin Core</label>
+								<div>
+									<label class="text">
+										<input type="text" readonly value="signmessage('<?php echo $_SESSION['BTC_authentication_code']['address'] ?>', '<?php echo $_SESSION['BTC_authentication_code']['message'] ?>')">
+										<p class="note">Import the correct private key and copy-paste this into Electrum console. Use <strong>Ctrl-A or CMD-A</strong> to select everything.</p>
+									</label>
+								</div>
+								<div>
+									<label class="text">
+										<input type="text" readonly value="signmessage '<?php echo $_SESSION['BTC_authentication_code']['address'] ?>' '<?php echo $_SESSION['BTC_authentication_code']['message'] ?>'">
+										<p class="note">Import the correct private key and copy-paste this into Bitcoin-Qt console: <em>Help</em> &rarr; <em>Debug Window</em> &rarr; <em>Console</em>. Use <strong>Ctrl-A or CMD-A</strong> to select everything.</p>
+									</label>
+								</div>
+							</div>
+						</fieldset>
+						<fieldset class="rows-10">
+							<label class="row textarea<?php echo isset($feedback['btc_signature']) ? ' invalid' : false ?>">
+								<textarea class="rounded" rows="5" name="btc_signature" placeholder="paste the signature here"></textarea>
+								<?php if ( isset($feedback['btc_signature']) ){ ?>
+								<p class="note"><?php echo $feedback['btc_signature'] ?></p>
+								<?php } ?>
+							</label>
+							<input class="row btn color wide" name="submit" type="submit" value="Submit">
+						</fieldset>
+					</div>
+				</div>
+				<?php } ?>
+			</div>
+			<div class="col-6 rows-5">
+				<label class="label">Bitcoin Addresses (one per line)</label>
+				<label class="row textarea<?php echo isset($feedback['bitcoin_addresses']) ? ' invalid' : false ?>">
+					<textarea rows="6" name="bitcoin_addresses" spellcheck="false"><?php echo isset($post['bitcoin_addresses']) ? $post['bitcoin_addresses'] : $this->preferences['bitcoin_addresses']; ?></textarea>
+					<?php if ( isset($feedback['bitcoin_addresses']) ){ ?>
+					<p class="note"><?php echo $feedback['bitcoin_addresses'] ?></p>
+					<?php } ?>
+				</label>
+				<label class="row checkbox label">
+					<input type="checkbox" name="reuse_addresses"<?php
+						echo
+							isset($post['reuse_addresses']) ||
+							(
+								!isset($post) &&
+								$this->preferences['reuseAddresses']
+							)
+								? ' checked'
+								: FALSE; 
+					?>><i></i>Reuse addresses
+					<a class="tooltip inline top">(NOT RECOMMENDED)</a>
+					<div>
+						<p>Reusing addresses may make it easier to trace your payments.</p>
+					</div>
+				</label>
+			</div>
+		</fieldset>
+	</div>
+	<?php } ?>
+	<input class="row btn color big blue" name="submit" type="submit" value="Save Changes">
+</form>

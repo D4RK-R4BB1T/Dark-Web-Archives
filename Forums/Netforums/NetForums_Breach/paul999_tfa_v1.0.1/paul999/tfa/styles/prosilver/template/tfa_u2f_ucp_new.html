@@ -1,0 +1,23 @@
+{% include 'ucp_header.html' %}
+
+{% INCLUDEJS '@paul999_tfa/js/u2f-api.js' %}
+{% INCLUDEJS '@paul999_tfa/js/bowser.js' %}
+
+<form id="ucp" method="post" action="{{ S_UCP_ACTION }}"{{ S_FORM_ENCTYPE }}>
+    <div class="panel">
+        <div class="inner">
+            <h2>{{ lang('TFA_ADD_NEW_U2F_KEY') }}</h2>
+
+            {% include '@paul999_tfa/tfa_browser_support.html' %}
+
+            <span style="display: none" id="tfa_insert_key">{{ lang('TFA_INSERT_KEY') }}</span>
+            {{ S_FORM_TOKEN }}
+            {{ S_HIDDEN_FIELDS }}
+            <input type="hidden" name="md" value="{{ lang('TFA_NEW') }}" />
+            <input type="button" name="md" id="add_key" value="{{ lang('TFA_ADD_KEY') }}" class="button1"  />
+            <input type="hidden" name="register" id="register" value="" />
+        </div>
+    </div>
+</form>
+
+{% include 'ucp_footer.html' %}

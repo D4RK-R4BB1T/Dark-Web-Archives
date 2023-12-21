@@ -1,0 +1,4010 @@
+@import "partials/colours";
+@import "partials/icons/variables";
+
+$vendorLogos-spacingHorizontal: 5px;
+$vendorLogos-spacingVertical: 15px;
+
+$vendorLogo-height: 40px;
+$vendorLogo-width: 180px;
+$vendorLogo-padding: 10px;
+$vendorLogo-borderThickness: 2px;
+$vendorLogo-transitionDuration: .3s;
+
+$vendorLogo_lineHeight: $vendorLogo-height - 2*($vendorLogo-padding + $vendorLogo-borderThickness) - 1; // subtract one
+
+ul.vendor-list {
+	//-moz-columns: 3 !important;
+	font-weight: normal;
+	
+	li {
+		height: $vendorLogo-height;
+		margin-left: 0;
+		background-color: $color_offwhite;
+		
+		&::before {
+			content: none !important;
+		}
+		
+		& + li {
+			margin-top: 20px;
+		}
+	}
+}
+
+.store-picker {
+	display: flex;
+	flex-flow: row wrap;
+	border: solid 1px #D7D7B7;
+	border-width: 0;
+	width: 934px;
+	max-height: 0;
+	overflow: hidden;
+	padding: 0 10px;
+	margin: 0 -6px 0 0;
+	transition: all .2s ease-out;
+	background: HSL(60, 27.3%, 98.7%); //#F7F7F1;
+	
+	& + div {
+		position: relative;
+		text-align: right;
+		opacity: 0;
+		transition: all .15s;
+		pointer-events: none;
+		margin: -40px 10px 10px;
+		
+		&::before {
+			content: $icon-cannabis;
+			font-family: CoopIcons;
+			position: absolute;
+			left: 5px;
+			top: 0;
+			bottom: 0;
+			line-height: 30px;
+			font-size: 20px;
+			color: #959565;
+			text-shadow:	30px 0 rgba(149,149,101,0.9),
+					60px 0 rgba(149,149,101,0.8),
+					90px 0 rgba(149,149,101,0.7),
+					120px 0 rgba(149,149,101,0.6),
+					150px 0 rgba(149,149,101,0.5),
+					180px 0 rgba(149,149,101,0.4),
+					210px 0 rgba(149,149,101,0.3),
+					240px 0 rgba(149,149,101,0.2),
+					270px 0 rgba(149,149,101,0.1);
+			pointer-events: none;
+		}
+		
+		.btn {
+			position: relative;
+			
+			&::before {
+				content: '';
+				position: absolute;
+				top: -1px;
+				bottom: -1px;
+				right: calc(100% + 1px);
+				width: 10px;
+				background: #fcfcfa;
+			}
+		}
+	}
+	
+	li {
+		height: $vendorLogo-height;
+		margin: 10px $vendorLogos-spacingHorizontal $vendorLogos-spacingVertical 0;
+		width: $vendorLogo-width;
+		background-color: inherit;
+	}
+}
+
+a[class^='vendorLogo-']{
+	position: relative;
+	color: inherit;
+	padding: $vendorLogo-padding $vendorLogo-padding $vendorLogo-padding 0;
+	height: $vendorLogo-height;
+	box-sizing: border-box;
+	font-size: 16px;
+	display: inline-block;
+	border: solid $vendorLogo-borderThickness transparent;
+	border-radius: 3px;
+	line-height: $vendorLogo_lineHeight;
+	transition: all $vendorLogo-transitionDuration;
+	max-width: $vendorLogo-width;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: "Open Sans","Helvetica Neue",Arial,sans-serif;
+	white-space: nowrap;
+	
+	&:hover {
+		color: $color_green;
+	}
+	
+	&::before {
+		@extend %vendorLogo-icons;
+		margin-right: 5px;
+	}
+	
+	span {
+		transition: all $vendorLogo-transitionDuration;
+		&:nth-child(2n), &:only-child {
+			font-weight: bold;
+		}
+		
+		&::before, &::after {
+			@extend %vendorLogo-icons;
+		}
+	}
+}
+
+%vendorLogo-icons {
+	font-family: $iconsFontFamily;
+	font-weight: normal;
+	vertical-align: top;
+	transition: all $vendorLogo-transitionDuration;
+}
+
+%vendorLogo-icon-whiteOutline {
+	$backgroundColor: $color_white;
+	
+	text-shadow: 
+		$backgroundColor 4px 0 0px,
+		$backgroundColor 3.88333px 0.983333px 0px,
+		$backgroundColor 3.51667px 1.91667px 0px,
+		$backgroundColor 2.93333px 2.73333px 0px,
+		$backgroundColor 2.16667px 3.36667px 0px,
+		$backgroundColor 1.26667px 3.8px 0px,
+		$backgroundColor 0.283333px 3.98333px 0px,
+		$backgroundColor -0.716667px 3.93333px 0px,
+		$backgroundColor -1.66667px 3.63333px 0px,
+		$backgroundColor -2.51667px 3.11667px 0px,
+		$backgroundColor -3.2px 2.4px 0px,
+		$backgroundColor -3.7px 1.53333px 0px,
+		$backgroundColor -3.96667px 0.566667px 0px,
+		$backgroundColor -3.98333px -0.433333px 0px,
+		$backgroundColor -3.75px -1.4px 0px,
+		$backgroundColor -3.28333px -2.28333px 0px,
+		$backgroundColor -2.61667px -3.03333px 0px,
+		$backgroundColor -1.78333px -3.58333px 0px,
+		$backgroundColor -0.85px -3.91667px 0px,
+		$backgroundColor 0.15px -4px 0px,
+		$backgroundColor 1.13333px -3.83333px 0px,
+		$backgroundColor 2.05px -3.43333px 0px,
+		$backgroundColor 2.83333px -2.81667px 0px,
+		$backgroundColor 3.45px -2.03333px 0px,
+		$backgroundColor 3.83333px -1.11667px 0px,
+		$backgroundColor 4px -0.133333px 0;
+}
+
+%vendorLogo_minimal {
+	
+}
+%vendorLogo_boxed {
+	padding-left: $vendorLogo-padding !important;
+	
+	&:hover {
+		color: inherit;
+	}
+}
+%vendorLogo_wordSpacing {
+	span {
+		& + span {
+			margin-left: 4px;
+		}
+	}
+}
+
+%vendorLogo_hover_hueRotate {
+	&:hover {
+		filter: hue-rotate(-100deg);
+	}
+}
+%vendorLogo_hover_invert {
+	&:hover {
+		filter: invert(1);
+	}
+}
+
+%vendorLogo_hover_rotateScale {
+	&:hover {
+		transform: rotate(3deg) scale(1.1);
+	}
+}
+%vendorLogo_hover_skipHues {
+	&:hover {
+		filter: hue-rotate(2880deg);
+		transition: filter 10s linear;
+	}
+}
+
+
+%vendorLogo-style-tripleUnderline {
+	@extend %vendorLogo_hover_hueRotate;
+	
+	padding-right: 0;
+	font-size: 21px;
+	border: none;
+	border-bottom: solid 3px HSL(347.3, 83%, 39.2%);
+	border-radius: 0;
+	padding-top: 4px;
+	height: 29px;
+	overflow: visible;
+	
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		right: 0;
+		bottom: -8px;
+		border-bottom: solid 3px HSL(347.3, 63%, 39.2%);
+		width: calc(100% - 4px);
+		left: 2px;
+	}
+	
+	&::after {
+		bottom: -13px;
+		width: calc(100% - 8px);
+		left: 4px;
+		border-color: HSL(347.3, 43%, 39.2%);
+	}
+	
+	span {
+		color: HSL(351.6, 97.6%, 33.1%);
+	}
+}
+
+$incognitoPrefix: 'i';
+
+// NEED TO PREPEND a TO FORCE PRECEDENCE
+a:not(:lang(#{$incognitoPrefix})) {
+	&.vendorLogo-AdventureTime {
+		$backgroundColor: rgb(247, 222, 67);
+		$primaryColor: rgb(224, 14, 139);
+		$secondaryColor: rgb(77, 100, 170);
+	
+		@extend %vendorLogo_boxed;
+		@extend %vendorLogo_hover_hueRotate;
+			
+		background-color: $backgroundColor;
+	
+		span {
+			&:first-child {
+				color: $primaryColor;
+			}
+			&:nth-child(2){
+				color: $secondaryColor;
+			}
+		}
+	}
+	
+	&.vendorLogo-ScoobysDoobies {
+		padding: 0;
+		line-height: 25px;
+		font-size: 22px;
+		overflow: visible;
+		border-bottom: dotted 6px #6bb58b;
+		
+		@extend %vendorLogo_hover_hueRotate;
+		
+		span {
+			&:first-child {
+				color: #be4937;
+			}
+			
+			&:last-child {
+				color: #5f3e29;
+			}
+		}
+	}
+	
+	&.vendorLogo-Bloomin_Buds {
+		$borderWidth: 4px;
+		
+		@extend %vendorLogo_boxed;
+		
+		color: #000;
+		font-size: 20px;
+		font-weight: bold;
+		
+		&:not(:hover) span:last-child::after,
+		&:hover span:last-child::before {
+			right: 0;
+			left: inherit;
+		}
+		
+		span {
+			color: inherit;
+			&:first-child {
+				&::before,
+				&::after {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					border-bottom: solid $borderWidth;
+				}
+				
+				&::after {
+					bottom: inherit;
+					top: 0;
+				}
+			}
+			&:last-child {
+				margin-left: 3px;
+				
+				&::before,
+				&::after {
+					content: '';
+					left: 0;
+					top: 0;
+					position: absolute;
+					height: 15px;
+					border-right: solid $borderWidth;
+				}
+				
+				&::after {
+					top: inherit;
+					bottom: 0;
+				}
+			}
+		}
+	}
+	
+	&.vendorLogo-interociter {
+		text-transform: uppercase;
+		font-size: 18px;
+		padding: 0;
+		line-height: 40px;
+		border: none;
+		overflow: visible;
+		
+		@extend %vendorLogo_hover_hueRotate;
+		
+		span {
+			color: #ec7326;
+			
+			&::before,
+			&::after {
+				content: '⚡';
+				font-size: 30px;
+			}
+		}
+	}
+	
+	&.vendorLogo-onyx64 {
+		font-size: 25px;
+		padding-top: 4px;
+		
+		@extend %vendorLogo_boxed;
+		@extend %vendorLogo_hover_skipHues;
+		
+		span {
+			&:first-child {
+				text-transform: uppercase;
+				font-weight: bold;
+				color: #1616cc;
+			}
+			
+			&:last-child {
+				vertical-align: super;
+				margin-left: 3px;
+				color: red;
+			}
+		}
+	}
+	
+	&.vendorLogo-Babykale {
+		$backgroundColor: #41be6d;
+		$primaryColor: #fff;
+		$secondaryColor: rgb(77, 100, 170);
+
+		@extend %vendorLogo_boxed;
+		@extend %vendorLogo_hover_skipHues;
+
+		background-color: $backgroundColor;
+		font-weight: bold;
+		letter-spacing: 3px;
+		font-size: 22px;
+		padding-left: 10px;
+
+		span {
+			&:first-child {
+				color: $primaryColor;
+			}
+			&:nth-child(2){
+				color: $primaryColor;
+			}
+		}
+	}
+
+	&.vendorLogo-MrMDMA {
+		font-weight: bold;
+		font-size: 20px;
+		
+		@extend %vendorLogo_hover_hueRotate;
+		
+		span {
+			&:first-child {
+				margin-right: 3px;
+				color: $color_black;
+				
+				& ~ span {
+					display: inline-block;
+					line-height: 25px;
+					width: 25px;
+					text-align: center;
+					background-color: #ce28cc;
+					margin-left: 2px;
+					color: #FFF;
+				}	
+			}
+			
+			&:nth-child(3) {
+				filter: hue-rotate(90deg);
+			}
+			
+			&:nth-child(4) {
+				filter: hue-rotate(180deg);
+			}
+			
+			&:nth-child(5) {
+				filter: hue-rotate(270deg);
+			}
+		}
+	}
+	
+	&.vendorLogo-cornerbakery {
+		font-weight: bold;
+		letter-spacing: 2px;
+		font-size: 17px;
+		padding-left: 10px;
+		border: solid 2px;
+		padding-right: 0;
+		
+		span {
+			margin-right: 7px;
+		}
+	}
+	
+	&.vendorLogo-CaliTerps {
+		font-size: 30px;
+		font-weight: bold;
+		overflow: visible;
+		color: #37e837;
+
+		@extend %vendorLogo_hover_skipHues;
+
+		span {
+			&:first-child {
+				color: #34bd31;
+			}
+		}
+	}
+
+	&.vendorLogo-JungleBoyzEU {
+		font-size: 23px;
+		font-weight: bold;
+		overflow: visible;
+		color: #37e837;
+
+		@extend %vendorLogo_hover_skipHues;
+
+		span {
+			&:first-child {
+				color: #34bd31;
+			}
+
+			&:last-child {
+				color: #00ee9d;
+			}
+		}
+	}
+
+	&.vendorLogo-josephstalincoba {
+		font-size: 19px;
+		overflow: visible;
+		color: #0075ff;
+
+		@extend %vendorLogo_hover_skipHues;
+
+		span {
+			&:first-child {
+				color: #ff009f;
+			}
+
+			&:last-child {
+				color: #ffaa00;
+			}
+		}
+	}
+
+        &.vendorLogo-cheshirecat82 {
+                padding: 8px 0 0 0;
+                border: 0;
+                font-weight: bold;
+                overflow: visible;
+                border-bottom: solid 5px #fce124;
+                font-size: 22px;
+                color: #a663ca;
+
+                @extend %vendorLogo_hover_skipHues;
+
+                span {
+                        &:first-child {
+                                color: #8b2065;
+                        }
+			&:last-child {
+				color: #cd70b2;
+			}
+                }
+        }
+
+	&.vendorLogo-buddy1950 {
+		font-size: 24px;
+		font-weight: bold;
+		overflow: visible;
+		color: #0075ff;
+		
+		@extend %vendorLogo_hover_skipHues;
+
+		span {
+			&:first-child {
+				color: #ff009f;
+			}
+
+		}
+	}
+
+ 	&.vendorLogo-CalSource {
+		padding: 6px 0 0;
+		border: none;
+		font-size: 2.0em;
+		font-weight: bold;
+		overflow: visible;
+
+		@extend %vendorLogo_hover_hueRotate;
+
+		span {
+			display: inline-block;
+			vertical-align: top;
+			margin-right: 3px;
+
+			&:first-child {
+				color: #B71234;
+			}
+
+			&:last-child {
+				color: #008542;
+				text-shadow: 1px 1px 0 #a78511,2px 2px 1px rgba(255, 226, 6, 0.2);
+			}
+		}
+	}
+
+
+	&.vendorLogo-mushroomgod {
+		padding: 6px 0 0;
+		border: none;
+		font-weight: bold;
+		overflow: visible;
+		
+		@extend %vendorLogo_hover_hueRotate;
+		
+		span {
+			display: inline-block;
+			vertical-align: top;
+			margin-right: 3px;
+			
+			&:first-child {
+				color: #695625;
+			}
+			
+			&:last-child {
+				font-size: 2.2em;
+				color: #d29822;
+				border-color: #ef9d15;
+				text-shadow: 1px 1px 0 #a78511,2px 2px 1px rgba(255, 226, 6, 0.2);
+			}
+		}
+	}
+	
+	&.vendorLogo-escapeservice {
+		font-weight: bold;
+		padding: 0;
+		text-align: center;
+		border: none;
+		overflow: visible;
+		color: #1d9c26;
+		font-size: 18px;
+		
+		@extend %vendorLogo_hover_hueRotate;
+		
+		&::before {
+			content: 'Es';
+			display: inline-block;
+			font-size: 24px;
+			font-weight: bold;
+			font-family: inherit;
+			vertical-align: top;
+			width: 40px;
+			height: 40px;
+			background: #1d9c26;
+			line-height: 40px;
+			color: #e4e4c9;
+		}
+		
+		span {
+			display: inline-block;
+			line-height: 40px;
+			margin-right: 2px;
+		}
+	}
+	
+	&.vendorLogo-TheHerbaliser {
+		padding-right: 0;
+		border: none;
+		overflow: visible;
+		
+		&:not(:hover) span:last-child,
+		&:hover span:first-child {
+			color: hsl(194.1, 71%, 43.5%);
+		}
+		
+		span {
+			color: #000;
+			
+			&:first-child {
+				text-transform: uppercase;
+				font-weight: bold;
+				font-size: .95em;
+			}
+			
+			&:last-child {
+				font-size: 1.8em;
+				font-weight: normal;
+			}
+		}
+	}
+	
+	&.vendorLogo-signature420 {
+		font-size: 23px;
+		padding: 8px 0 0 0;
+		border: 0;
+		font-weight: bold;
+		overflow: visible;
+		border-bottom: solid 5px #5ca1cd;
+		
+		&:hover span:first-child,
+		&:not(:hover) span:last-child {
+			filter: hue-rotate(110deg);
+		}
+		
+		span {
+			color: #cd5c5c;
+			
+			&:first-child {
+				font-variant: small-caps;
+				margin-right: 5px;
+			}
+			&:last-child {
+				font-size: 1.5em;
+			}
+		}
+	}
+	
+	&.vendorLogo-radarbreeder {
+		overflow: visible;
+		font-weight: bold;
+		text-transform: uppercase;
+		font-size: 20px;
+		
+		@extend %vendorLogo_hover_hueRotate;
+		
+		span {
+			transform: rotate(-15deg);
+			display: inline-block;
+			overflow: visible;
+			color: #a41e7c;
+			
+			&:last-child {
+				margin-left: -10px;
+				color: #4f9319;
+			}
+		}
+	}
+	
+	&.vendorLogo-valleyheat {
+		padding: 0;
+		border: 0;
+		line-height: 40px;
+		font-weight: bold;
+		font-size: 21px;
+		overflow: visible;
+		
+		&:hover span:first-child,
+		&:hover span:nth-child(2),
+		&:not(:hover) span:nth-child(3),
+		&:not(:hover) span:nth-child(4) {
+			filter: hue-rotate(280deg);
+		}
+		
+		span {
+			color: #11930e;
+			text-shadow: 0 0 4px #d6da31;
+			
+			&:first-child,
+			&:nth-child(3) {
+				font-size: 40px;
+			}
+			
+			&:nth-child(2) {
+				margin-right: 3px;
+				margin-left: -3px;
+			}
+		}
+	}
+
+	&.vendorLogo-ModernLove {
+		font-size: 22px;
+		font-weight: bold;
+		padding: 5px 0 0;
+		border: none;
+		
+		span {
+			color: HSL(194.7, 91.9%, 43.5%);
+			border-bottom: solid 6px HSL(104.7, 91.9%, 43.5%);
+			margin-right: 5px;
+		}
+		
+		&:hover span:first-child,
+		&:not(:hover) span:last-child {
+			filter: hue-rotate(160deg);
+		}
+	}
+	
+	&.vendorLogo-MaximumYields {
+		font-weight: bold;
+		text-transform: uppercase;
+		border: none;
+		font-size: 19px;
+		overflow: visible;
+		letter-spacing: .5px;
+		border-bottom: 11px double #dbb50f;
+		padding: 8px 0 0;
+		
+		&:hover {
+			filter: hue-rotate(180deg);
+		}
+		
+		span {
+			&:first-child {
+				margin-right: 3px;
+				color: #8f4260;
+			}
+			&:last-child {
+				color: #168c3d;
+			}
+		}
+	}
+	
+	&.vendorLogo-GreenRoad {
+		$primaryColor: #43962c;
+		$secondaryColor: #fad201;
+		padding-right: 0;
+		font-size: 30px;
+		color: $secondaryColor;
+		font-variant: petite-caps;
+		text-shadow:	1px 1px #000,
+				2px 2px $primaryColor;
+		border: none;
+		border-bottom: solid 3px $primaryColor;
+		border-radius: 0;
+		padding-top: 4px;
+		height: 29px;
+		overflow: visible;
+		padding-bottom: 26px;
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			right: 0;
+			bottom: -8px;
+			border-bottom: dashed 3px $secondaryColor;
+			width: calc(100% - 4px);
+			left: 2px;
+		}
+
+		&::after {
+			bottom: -13px;
+			width: calc(100% - 8px);
+			left: 4px;
+			border-bottom: solid 3px $primaryColor;
+		}
+
+		span {
+			@extend %vendorLogo_hover_skipHues;
+			&:nth-child(2){ 
+				color: $primaryColor;
+				margin: 0 3px;
+				font-weight: bold;
+			}
+		}
+	}
+	
+	&.vendorLogo-NWCC {
+		$primaryColor: #41d239;
+		$secondaryColor: #e3691c;
+
+		&:hover {
+			filter: hue-rotate(180deg);
+		}
+		span {
+			color: $primaryColor;
+			padding: 6px 6px;
+			font-size: 30px;
+			font-weight: bold !important;
+
+			&:first-child {
+				border-radius: 3px 0 0 3px;
+				border-color: $secondaryColor;
+				filter: hue-rotate(60deg);
+			}
+
+			&:nth-child(2) {
+				border-radius: 3px 0 0 3px;
+				filter: hue-rotate(120deg);
+			}
+			&:last-child {
+				border-radius: 0 3px 3px 0;
+				filter: hue-rotate(180deg);
+			}
+		}
+	}
+
+	&.vendorLogo-hanfhenk {
+		$primaryColor: #003399;
+		$secondaryColor: #FFCC00;
+
+		padding: 0;
+		border: 0;
+		font-weight: bold;
+		font-size: 22px;
+		text-transform: uppercase;
+		overflow: visible;
+
+		&:hover {
+			span {
+				&:first-child {
+					background-color: $primaryColor;
+					color: $secondaryColor;
+				}
+				&:last-child {
+					background-color: $secondaryColor;
+					color: $primaryColor;
+				}
+
+			}
+		}
+
+		span {
+			display: inline-block;
+			border: solid 3px $primaryColor;
+			line-height: 34px;
+
+			&:first-child {
+				background-color: $secondaryColor;
+				color: $primaryColor;
+				border-radius: 5px 0 0 5px;
+				padding: 0 5px;
+			}
+
+			&:last-child {
+				margin-left: 3px;
+				border-radius: 0 5px 5px 0;
+				background-color: $primaryColor;
+				color: $secondaryColor;
+				padding: 0 10px;
+			}
+		}
+	}
+
+	&.vendorLogo-CanadianFlavor {
+		$primaryColor: #D20001;
+		$secondaryColor: #FFF;
+		
+		padding: 0;
+		border: 0;
+		font-weight: bold;
+		font-size: 18px;
+		overflow: visible;
+		
+		&:hover {
+			span {
+				&:first-child {
+					background-color: $primaryColor;
+					color: $secondaryColor;
+				}
+				&:last-child {
+					background-color: $secondaryColor;
+					color: $primaryColor;
+				}
+				
+			}
+		}
+		
+		span {
+			display: inline-block;
+			border: solid 3px $primaryColor;
+			line-height: 34px;
+			
+			&:first-child {
+				background-color: $secondaryColor;
+				color: $primaryColor;
+				border-radius: 10px 0 0 10px;
+				padding: 0 5px;
+			}
+			
+			&:last-child {
+				margin-left: 3px;
+				border-radius: 0 10px 10px 0;
+				background-color: $primaryColor;
+				color: $secondaryColor;
+				padding: 0 10px;
+			}
+		}
+	}
+	
+	&.vendorLogo-ModernLove {
+	
+	}
+	
+	&.vendorLogo-heebijeebi {
+		$primaryColor: #FC5A52;
+		$secondaryColor: #312E2F;
+
+		@extend %vendorLogo_hover_skipHues;
+
+		font-weight: bold;
+		font-size: 24px;
+
+		span {
+			&:first-child {
+				color: $primaryColor;
+			}
+			&:last-child {
+				color: $secondaryColor;
+			}
+		}
+
+	}
+
+	&.vendorLogo-PowerFlower {
+		$primaryColor: #E3691C;
+		$secondaryColor: #961796;
+
+		@extend %vendorLogo_hover_skipHues;
+
+		font-weight: bold;
+		font-size: 24px;
+
+		span {
+			&:first-child {
+				color: $primaryColor;
+			}
+			&:last-child {
+				color: $secondaryColor;
+			}
+		}
+
+	}
+
+	&.vendorLogo-DabAllStarz {
+		$icon: $icon-star;
+		$primaryColor: #e3bd00;
+		$secondaryColor: #97c39f;
+
+		@extend %vendorLogo_hover_skipHues;
+
+		font-weight: bold;
+		font-size: 24px;
+		padding-right: 0;
+		overflow: visible;
+
+		text-shadow:	1px 1px #000,
+				2px 2px $secondaryColor;
+
+		span {
+			color: $primaryColor;
+
+			&:first-child {
+				font-size: 24px;
+				position: relative;
+				top: -1px;
+
+				&::before {
+					color: $secondaryColor;
+					content: $icon;
+					font-size: 24px;
+				}
+				&:nth-child(2) {
+					font-size: 24px;
+					margin: 0 2px 0 3px;
+					filter: hue-rotate(220deg);
+				}
+			}
+		}
+	}
+
+
+	&.vendorLogo-DrugsIncUK {
+		padding: 0 0 0 50px;
+		border: none;
+		font-size: 24px;
+		font-weight: bold;
+		line-height: 22px;
+		font-family: monospace;
+		letter-spacing: .3px;
+		overflow: visible;
+
+		&:hover::before {
+			background: none;
+			color: #529863;
+			border-color: #529863;
+		}
+
+		&::before {
+			content: $icon-cannabis;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			background-color: #529863;
+			width: 38px;
+			border-radius: 4px;
+			border: solid 1px rgba(0,0,0,.15);
+			line-height: 38px;
+			text-align: center;
+			font-size: 27px;
+			color: #FFF;
+			text-shadow: 0 0 2px rgba(0,0,0,.2);
+		}
+
+		span {
+			display: block;
+		}
+
+		span:first-child,
+		&:hover span:last-child {
+			text-shadow: 0 0 1px HSL(171.9, 38%, 58.2%);
+			color: #cc4200;
+		}
+
+		span:last-child,
+		&:hover span:first-child {
+			text-shadow: 0 0 1px HSL(38.3, 38.3%, 58.4%);
+			color: #529863;
+		}
+	}
+
+	&.vendorLogo-HerbinLegend {
+		padding: 0 0 0 50px;
+		border: none;
+		font-size: 24px;
+		text-transform: uppercase;
+		font-weight: bold;
+		line-height: 22px;
+		font-family: monospace;
+		letter-spacing: .2px;
+		overflow: visible;
+		
+		&:hover::before {
+			background: none;
+			color: #e3691c;
+			border-color: #e3691c;
+		}
+		
+		&::before {
+			content: $icon-cannabis;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			background-color: #e3691c;
+			width: 38px;
+			border-radius: 4px;
+			border: solid 1px rgba(0,0,0,.15);
+			line-height: 38px;
+			text-align: center;
+			font-size: 27px;
+			color: #FFF;
+			text-shadow: 0 0 2px rgba(0,0,0,.2);
+		}
+		
+		span {
+			display: block;
+		}
+		
+		span:first-child,
+		&:hover span:last-child {
+			text-shadow: 0 0 1px HSL(171.9, 38%, 58.2%);
+			color: HSL(104, 57.4%, 39.6%);
+		}
+		
+		span:last-child,
+		&:hover span:first-child {
+			text-shadow: 0 0 1px HSL(38.3, 38.3%, 58.4%);
+			color: #e3691c;
+		}
+	}
+	
+	&.vendorLogo-FRENCHCANNA {
+		padding: 6px 0;
+		font-size: 21px;
+		border: double #22945E;
+		border-width: 6px 0;
+		font-weight: bold;
+		overflow: visible;
+		
+		&:hover {
+			border-color: $color_black;
+			span {
+				color: #22945E;
+			}
+		}
+		
+		span:first-child {
+			margin-right: 3px;
+		}
+	}
+	
+	&.vendorLogo-somethingTERPS {
+		@extend %vendorLogo_hover_hueRotate;
+		
+		padding: 0;
+		border: none;
+		overflow: visible;
+		
+		span {
+			vertical-align: top;
+			display: inline-block;
+			font-size: 18px;
+			color: HSL(191.4, 66.9%, 20.8%);
+			
+			&:first-child {
+				border-bottom: solid 4px #1A6F83;
+				padding-bottom: 5px;
+				font-variant: all-small-caps;
+				margin-right: 4px;
+				margin-top: 6px;
+				box-shadow: 0 4px #7ad0f8;
+			}
+			
+			&:last-child {
+				font-size: 29px;
+				line-height: 40px;
+				color: #148cf2;
+			}
+		}
+	}
+	
+	&.vendorLogo-RxCalifornia {
+		$primaryColor: #c31d1d;
+		
+		border: none;
+		line-height: 37px;
+		padding: 0;
+		font-size: 30px;
+		letter-spacing: .6px;
+		overflow: visible;
+		
+		&:hover {
+			span {
+				color: $color_black;
+				&::before {
+					color: $primaryColor !important;
+				}
+			}
+		}
+		
+		span {
+			color: $primaryColor;
+			font-weight: 100 !important;
+			vertical-align: top;
+			
+			&:first-child {
+				font-size: 0;
+				margin-right: 3px;
+				
+				&::before {
+					content: $icon-rx;
+					font-size: 35px;
+					color: $color_black;
+					line-height: 40px;
+				}
+			}
+		}
+	}
+	
+	&.vendorLogo-LenasBioLaden {
+		@extend %vendorLogo_hover_hueRotate;
+		
+		border: none;
+		background-color: #EBD84D;
+		font-weight: bold;
+		font-size: 20px;
+		padding: 0 8px;
+		line-height: 30px;
+		border-radius: 0;
+		overflow: visible;
+		border-top: solid 5px indianred;
+		border-bottom: solid 5px #2A6231;
+		
+		&::after {
+			content: '';
+			position: absolute;
+			border: solid 1px #222;
+			top: -7px;
+			right: -2px;
+			bottom: -7px;
+			left: -2px;
+		}
+		
+		span {
+			color: indianred;
+			
+			&:first-child {
+				margin-right: 5px;
+			}
+		}
+	}
+	
+	&.vendorLogo-manny101 {
+		text-transform: uppercase;
+		font-size: 29px;
+		font-weight: bold;
+		padding-right: 0;
+		text-shadow:	1px 1px 0 rgb(217,31,38),
+				2px 2px 0 rgb(226,91,14),
+				3px 3px 0 rgb(245,221,8),
+				4px 4px 0 rgb(5,148,68),
+				5px 5px 0 rgb(2,135,206),
+				6px 6px 0 rgb(4,77,145),
+				7px 7px 0 rgb(42,21,113);
+		overflow: visible;
+		border: none;
+		
+		&:hover {
+			text-shadow:	7px 7px 0 rgb(217,31,38),
+					6px 6px 0 rgb(226,91,14),
+					5px 5px 0 rgb(245,221,8),
+					4px 4px 0 rgb(5,148,68),
+					3px 3px 0 rgb(2,135,206),
+					2px 2px 0 rgb(4,77,145),
+					1px 1px 0 rgb(42,21,113);
+		}
+		
+		span {
+			color: transparent;
+			
+			&:first-child {
+				margin-right: 4px;
+			}
+		}
+	}
+	
+	&.vendorLogo-vessel {
+		@extend %vendorLogo_hover_invert;
+		
+		font-size: 25px;
+		padding: 5px 15px 0 1px;
+		border: 0;
+		border-bottom: solid 6px;
+		border-radius: 0 0 18px 10px;
+		color: #b65416 !important;
+		
+		span {
+			filter: brightness(.8);
+			
+			&:first-child {
+				font-size: 1.6em;
+				font-weight: bold;
+				margin-right: -2px;
+			}
+		}
+	}
+	
+	&.vendorLogo-NextGeneration {
+		@extend %vendorLogo-style-tripleUnderline;
+		
+		filter: hue-rotate(-150deg) brightness(1.2);
+		
+		span:first-child {
+			margin-right: 3px;
+			font-weight: bold;
+		}
+	}
+	
+	&.vendorLogo-CaliCannabisClub {
+		@extend %vendorLogo-style-tripleUnderline;
+		
+		span {
+			&:nth-child(2){
+				margin: 0 3px;
+				font-weight: normal;
+			}
+		}
+	}
+	
+	&.vendorLogo-GreenSupreme {
+		$primaryColor: #42a33c;
+		$secondaryColor: #d93731;
+
+		padding: 0;
+		border: 0;
+		font-weight: bold;
+		font-size: 18px;
+		overflow: visible;
+
+		&:hover {
+			span {
+				&:first-child {
+					background-color: $secondaryColor;
+					font-style: italic;
+					color: #fff;
+					border: solid 3px $secondaryColor;
+				}
+				&:last-child {
+					background-color: $primaryColor;
+					color: #fff;
+					border: solid 3px $primaryColor;
+				}
+		 
+			}
+		}
+
+		span {
+			display: inline-block;
+			line-height: 34px;
+
+			&:first-child {
+				background-color: $primaryColor;
+				font-style: italic;
+				color: #fff;
+				border: solid 3px $primaryColor;
+				border-radius: 5px 0 0 5px;
+				padding: 0 3px;
+			}
+
+			&:last-child {
+				margin-left: 3px;
+				border: solid 3px $secondaryColor;
+				border-radius: 0 5px 5px 0;
+				background-color: $secondaryColor;
+				color: #fff;
+				padding: 0 3px;
+			}
+		}
+	}
+	
+	&.vendorLogo-Rotterdamus {
+		padding: 8px 0 0;
+		border: none;
+		font-size: 24px;
+		font-weight: bold;
+		font-style: italic;
+		transform: rotate(-5deg);
+		overflow: visible;
+		border-bottom: solid 4px #3842ff;
+
+		@extend %vendorLogo_hover_hueRotate;
+
+		span {
+			color: #41be6d;
+			text-shadow: 1px 1px 0 #3842ff;
+			&:first-child {
+				margin-right: 5px;
+			}
+		}
+	}
+
+	&.vendorLogo-Frost_Garden {
+		padding: 8px 0 0;
+		border: none;
+		font-size: 26px;
+		font-weight: bold;
+		overflow: visible;
+		border-bottom: solid 6px #98dcb0;
+		
+		@extend %vendorLogo_hover_hueRotate;
+
+		span {
+			color: #727f8d;
+			
+			&:first-child {
+				margin-right: 5px;
+			}
+		}
+	}
+
+ 	&.vendorLogo-silentghost {
+		font-size: 27px;
+		padding-right: 0;
+		
+		@extend %vendorLogo_hover_skipHues;
+		
+		span {
+			color: hsl(180, 80.3%, 30.9%);
+		}
+	}
+	
+	&.vendorLogo-farmafresh {
+		font-size: 27px;
+		padding-right: 0;
+
+		@extend %vendorLogo_hover_skipHues;
+
+		span {
+			color: #45ae58;
+		}
+	}
+
+	&.vendorLogo-Rotterdamnus {
+		$icon: $icon-cannabis;
+		$primaryColor: #419954;
+		$secondaryColor: #d93731;
+		text-transform: uppercase;
+		position: relative;
+		line-height: 34px;
+		border-bottom: solid 4px $primaryColor;
+
+		&::before {
+			content: $icon;
+			position: absolute;
+			text-align: center;
+			margin-top: -18px;
+			font-size: 26px;
+			height: 27px;
+			overflow: hidden;
+			color: $secondaryColor;
+		}
+	}
+
+	&.vendorLogo-rawsforlife {
+		$primaryColor: #5C391A;
+		$secondaryColor: #069444;
+		
+		@extend %vendorLogo_hover_hueRotate;
+		
+		font-weight: bold;
+		font-size: 22px;
+		padding-left: 40px;
+		padding-right: 0;
+		border: none;
+		overflow: visible;
+		padding-top: 15px;
+		
+		&::before {
+			content: $icon-cannabis;
+			font-size: 34px;
+			position: absolute;
+			left: 0;
+			line-height: 40px;
+			top: 0;
+			color: $secondaryColor;
+			text-shadow: 0 0 4px hsl(76.2, 83%, 65.5%);
+		}
+		
+		span {
+			color: $primaryColor;
+			
+			&:nth-child(2){
+				margin: 0 4px;
+			}
+			&:last-child {
+				color: $secondaryColor;
+			}
+		}
+	}
+	
+	&.vendorLogo-MagicLampCo {
+		$primaryColor: hsl(56.4, 83.6%, 33.8%);
+		
+		@extend %vendorLogo_hover_hueRotate;
+		
+		font-weight: bold;
+		overflow: visible;
+		font-size: 19px;
+		padding-right: 0;
+		padding-top: 19px;
+		padding-bottom: 0;
+		border: none;
+		border-left: solid 44px transparent;
+		
+		&::before {
+			content: $icon-lamp;
+			color: $primaryColor;
+			position: absolute;
+			left: -54px;
+			font-size: 28px;
+			margin-top: -9px;
+			transform: rotate(-10deg);
+			text-shadow: 0 0 5px rgb(240, 231, 94);
+		}
+		
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			border-top: solid 3px #e5e3c3;
+		}
+		
+		span {
+			color: #464206;
+			position: relative;
+			z-index: 1;
+			
+			&:nth-child(2) {
+				margin: 0 1px;
+			}
+		}
+	}
+	
+	&.vendorLogo-Vendy_McVendface {
+		$primaryColor: #E3BD00;
+		$secondaryColor: #1C9D41;
+
+		padding: 0;
+		border: 0;
+		font-weight: bold;
+		font-size: 1.8em;
+		text-align: center;
+		background-color: inherit;
+		overflow: visible;
+
+		&:hover {
+			span:last-child {
+				filter: hue-rotate(-80deg);
+			}
+		}
+		 
+		&::before {
+			content: '';
+			position: absolute;
+			top: 8px;
+			left: 0;
+			width: 100%;
+			border-top: dotted 2px $secondaryColor;
+		}
+		 
+		span {
+			background-color: inherit;
+			position: relative;
+			color: $primaryColor;
+			text-shadow:
+				1px 1px 0 hsl(271, 65.6%, 12.5%),
+				2px 2px 1px rgba(0,0,0,0.15);
+
+
+			&:first-child {
+				padding-left: 5px;
+				padding-right: 5px;
+				text-transform: uppercase;
+			}
+			&:nth-child(2) {
+				padding: 0 5px 0 3px;
+			}
+			&:last-child {
+				display: block;
+				font-size: 24px;
+				margin-top: 4px;
+				font-weight: bold;
+				text-shadow: none;
+				color: $secondaryColor;
+			}
+		}
+	}
+
+	&.vendorLogo-TripWithScience {
+		$primaryColor: #961796;
+		
+		padding: 0;
+		border: 0;
+		font-variant: all-small-caps;
+		font-weight: bold;
+		font-size: 19px;
+		text-align: center;
+		background-color: inherit;
+		overflow: visible;
+		
+		&:hover {
+			span:last-child {
+				filter: hue-rotate(-80deg);
+			}
+		}
+		
+		&::before {
+			content: '';
+			position: absolute;
+			top: 8px;
+			left: 0;
+			width: 100%;
+			border-top: dotted 2px $primaryColor;
+		}
+		
+		span {
+			background-color: inherit;
+			position: relative;
+			color: $primaryColor;
+			
+			&:first-child {
+				padding-left: 5px;
+			}
+			&:nth-child(2) {
+				padding: 0 5px 0 3px;
+			}
+			&:last-child {
+				display: block;
+				font-size: 1.8em;
+				text-transform: uppercase;
+				margin-top: 4px;
+				font-weight: bold;
+				color: hsl(271.1, 91.4%, 59%);
+				text-shadow:
+					1px 1px 0 hsl(271, 65.6%, 12.5%),
+					2px 2px 1px rgba(0,0,0,0.15);
+			}
+		}
+	}
+	
+	&.vendorLogo-TopShelfExtracts {
+		$shelfColor: #c37b1d;
+		
+		padding: 0 5px 0;
+		border: none;
+		font-size: 19px;
+		text-align: center;
+		white-space: nowrap;
+		overflow: visible;
+		
+		@extend %vendorLogo_hover_hueRotate;
+		
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			width: 100%;
+			top: 22px;
+			border-bottom: solid 5px $shelfColor;
+			box-shadow: 0 -1px 1px #ef9d15;
+		}
+		
+		span {
+			&:first-child,
+			&:nth-child(2){
+				font-variant: all-petite-caps;
+				color: #98553b;
+				font-weight: bold;
+			}
+			&:first-child {
+				&::before,
+				&::after {
+					border: solid $shelfColor;
+					border-width: 13px 0 0 13px;
+					border-left-color: transparent;
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 0;
+				}
+				&::after {
+					border-width: 13px 13px 0 0;
+					border-right-color: transparent;
+					left: inherit;
+					right: 0;
+				}
+			}
+			
+			&:last-child {
+				font-weight: bold;
+				font-size: 1.1em;
+				margin-left: 2px;
+				color: #ef9d15;
+			}
+		}
+	}
+	
+	&.vendorLogo-TheBudFather {
+		$icon: $icon-godfather;
+		
+		padding: 0;
+		border: 0;
+		font-size: 24px;
+		font-weight: bold;
+		overflow: visible;
+		
+		&:hover span,
+		&:hover::before,
+		span:nth-child(2) {
+			color: #009933;
+		}
+		
+		&::before {
+			content: $icon;
+			position: absolute;
+			top: 0;
+			right: -2px;
+			font-size: 1.4em;
+			transform: scaleY(.9);
+			opacity: 0.7;
+		}
+		
+		span {
+			&:first-child {
+				display: block;
+				margin-bottom: 5px;
+				font-size: .8em;
+			}
+		}
+	}
+	
+	&.vendorLogo-GrandpaJoe {
+		$primaryColor: #cb521b;
+		
+		@extend %vendorLogo_hover_invert;
+		
+		padding: 0;
+		border: none;
+		line-height: 37px;
+		white-space: nowrap;
+		overflow: visible;
+		
+		span {
+			color: $primaryColor;
+			
+			&:first-child {
+				font-size: 30px;
+				vertical-align: top;
+				font-weight: 100;
+			}
+			&:last-child {
+				font-size: 33px;
+				font-weight: normal;
+				margin-left: 1px;
+			}
+		}
+	}
+	
+	&.vendorLogo-UKCannaisseurs {
+		$primaryColor: #598527;
+		$secondaryColor: $color_black;
+		
+		padding: 0;
+		overflow: visible;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 16px;
+		border: 0;
+		
+		@extend %vendorLogo_hover_hueRotate;
+		
+		span {
+			color: $secondaryColor;
+			vertical-align: middle;
+			
+			&:first-child {
+				margin-right: 4px;
+				font-size: 24px;
+				display: inline-block;
+				line-height: 37px;
+			}
+			&:nth-child(2),
+			&:last-child {
+				background-color: $primaryColor;
+				color: $color_white;
+				padding: 1px 4px;	
+			}
+			&:last-child {
+				background-color: $secondaryColor;
+			}
+		}
+	}
+	
+	 &.vendorLogo-WackyWestWeed {
+		$primaryColor: rgb(28, 112, 0);;
+
+		@extend %vendorLogo-icon-whiteOutline;
+		@extend %vendorLogo_hover_hueRotate;
+
+		font-weight: bold;
+		font-size: 19px;
+		padding-right: 0;
+		white-space: nowrap;
+		overflow: visible;
+		transform: rotate(-3deg);
+
+		span {
+			color: $primaryColor;
+
+			&:first-child {
+				position: relative;
+				top: -.3em;
+				filter: hue-rotate(240deg);
+			}
+			&:nth-child(2){
+				padding: 0 4px 0 3px;
+				filter: hue-rotate(120deg);
+			}
+			&:last-child {
+				position: relative;
+				top: .3em;
+			}
+		}
+	}
+
+	&.vendorLogo-Spanishgarden {
+		$primaryColor: #C60b1e;
+		$secondaryColor: #ffc400;
+
+		padding: 0;
+		border: 0;
+		font-weight: bold;
+		font-size: 18px;
+		overflow: visible;
+
+		&:hover {
+			span {
+				&:first-child {
+					background-color: $primaryColor;
+					color: $secondaryColor;
+				}
+				&:last-child {
+					background-color: $secondaryColor;
+					color: $primaryColor;
+				}
+
+			}
+		}
+
+		span {
+			display: inline-block;
+			line-height: 34px;
+
+			&:first-child {
+				background-color: $secondaryColor;
+				color: $primaryColor;
+				padding: 0 5px;
+			}
+
+			&:last-child {
+				background-color: $primaryColor;
+				color: $secondaryColor;
+				padding: 0 10px;
+			}
+		}
+	}
+
+       &.vendorLogo-DrReefer {
+                $icon: $icon-cannabis;
+
+                $primaryColor: #136b2c;
+                $secondaryColor: #1c9d41;
+
+                @extend %vendorLogo_hover_hueRotate;
+
+                font-size: 24px;
+                border: none;
+                padding-left: 50px;
+                padding-top: 10px;
+
+                span {
+                        color: $primaryColor;
+
+                        &:first-child {
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+
+                                &::before {
+                                        content: $icon;
+                                        background-color: $secondaryColor;
+                                        color: #FFF;
+                                        border-radius: 50%;
+                                        position: absolute;
+                                        height: 40px;
+                                        width: 40px;
+                                        line-height: 38px;
+                                        text-align: center;
+                                }
+                                &::after {
+                                        content: '';
+                                        width: 32px;
+                                        height: 32px;
+                                        border: solid 2px $color_white;
+                                        position: absolute;
+                                        top: 2px;
+                                        border-radius: 50%;
+                                        left: 2px;
+                                }
+                        }
+
+                        &:nth-child(2){
+                                color: $secondaryColor
+                        }
+                }
+        }
+
+	&.vendorLogo-CannabisFreund {
+		$icon: $icon-cannabis;
+		
+		$primaryColor: #e4681a;
+		$secondaryColor: #408c2b;
+		
+		@extend %vendorLogo_hover_hueRotate;
+		
+		overflow: visible;
+		font-weight: bold;
+		font-size: 18px;
+		border: none;
+		padding-top: 5px;
+		
+		span {
+                      color: $primaryColor;
+
+                        &:nth-child(2){
+                                font-size: 18px;
+                                padding: 0 5px;
+
+                                &::before {
+                                        content: $icon;
+                                        color: $secondaryColor;
+                                        height: 20px;
+                                        width: 20px;
+                                        line-height: 20px;
+                                        text-align: center;
+                                }
+                        }
+                }
+
+	}
+	
+	&.vendorLogo-drgreenthumb4201 {
+		$icon: $icon-cannabis;
+		$primaryColor: #0f582d;
+		$secondaryColor: $color_white;
+		
+		text-transform: uppercase;
+		font-weight: bold;
+		color: $secondaryColor;
+		background-color: $primaryColor;
+		padding: 4px 5px;
+		box-shadow: 0 0 10px rgba(0,0,0,.3);
+		
+		&:hover {
+			transform: rotate(3deg);
+			filter: hue-rotate(180deg);
+		}
+		
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			border: solid 1px $secondaryColor;
+			margin-right: 0 !important;
+			border-radius: 2px;
+		}
+		
+		span {
+			color: $secondaryColor;
+			
+			&:first-child {
+				margin-right: 5px;
+				
+				&::before {
+					content: $icon;
+					position: absolute;
+					bottom: -1px;
+					left: 7px;
+					text-shadow:
+						27px 0,
+						54px 0,
+						83px 0;
+				}
+			}
+			
+			&:nth-child(2){
+				margin-right: 3px;
+			}
+			
+			&:last-child {
+				position: absolute;
+				right: 5px;
+				bottom: 3px;
+				font-size: .85em;
+			}
+		}
+	}
+	
+	&.vendorLogo-CannaMagic {
+		$icon: $icon-cannabis;
+		
+		overflow: visible;
+		border: none;
+		padding-left: 37px;
+		font-size: 24px;
+		padding-right: 0;
+		color: #0d7438;
+		white-space: nowrap;
+		padding-top: 15px;
+		
+		@extend %vendorLogo_hover_skipHues;
+		
+		span {
+			color: #0d7438;
+			
+			&:first-child {
+				border-top: solid #40C87A 10px;
+				display: inline-block;
+				width: 8px;
+				height: 24px;
+				background-color: #222;
+				position: absolute;
+				top: 0;
+				left: 0;
+				transform: rotate(30deg) translate(16px,-5px);
+				
+				&::before,
+				&::after {
+					content: $icon;
+					position: absolute;
+					color: #22a0db;
+					left: -13px;
+					font-size: 13px;
+					transform: rotate(-44deg);
+					top: -23px;
+				}
+				
+				&::after {
+					color: #c5531f;
+					left: 5px;
+					transform: rotate(2deg);
+					top: -27px;
+				}
+			}
+			
+			&:nth-child(2){
+				font-weight: normal;
+			}
+			&:nth-child(3){
+				font-weight: bold;
+			}
+		}
+	}
+	
+	&.vendorLogo-XtraDope {
+		$primaryColor: #000;
+		
+		text-transform: uppercase;
+		padding: 0;
+		border: none;
+		font-size: 25px;
+		line-height: 20px;
+		text-shadow:
+			-1px 0 $primaryColor,
+			-2px 0 $primaryColor;
+		overflow: visible;
+		
+		span {
+			color: $primaryColor;
+			
+			&:first-child {
+				font-weight: bold;
+				display: block;
+				margin-left: 15px;
+			}
+		}
+		
+		&:hover {
+			span {
+				&:first-child {
+					margin-left: 0
+				}
+				&:last-child {
+					margin-left: 15px;
+				}
+			}
+		}
+	}
+	
+	&.vendorLogo-HappyFunTime {
+		$primaryColor: #000;
+		$secondaryColor: #FFF;
+		$hoverColor: #E71923;
+		
+		padding: 0;
+		line-height: 20px;
+		border: none;
+		text-transform: uppercase;
+		transform: rotate(-5deg);
+		overflow: visible;
+		padding-left: 20px;
+		
+		&:hover {
+			span {
+				text-shadow:
+					-1px -1px 1px $hoverColor,
+					1px -1px 1px $hoverColor,
+					-1px 1px 1px $hoverColor,
+					1px 1px 1px $hoverColor,
+					0 0 5px $hoverColor;
+				
+				&:first-child {
+					transform: rotate(30deg);
+					background-color: $hoverColor;
+				}
+			}
+		}
+		
+		span {
+			font-weight: bold;
+			color: $secondaryColor;
+			font-size: 23px;
+			text-shadow:
+				-1px -1px 1px $primaryColor,
+				1px -1px 1px $primaryColor,
+				-1px 1px 1px $primaryColor,
+				1px 1px 1px $primaryColor,
+				0 0 5px $primaryColor;
+			
+			&:first-child {
+				width: 43px;
+				height: 43px;
+				margin: 0 9px;
+				background: black;
+				text-align: center;
+				position: relative;
+				position: absolute;
+				left: 0;
+				z-index: -1;
+				top: -1px;
+				
+				&::before,
+				&::after {
+					content: "";
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					background: inherit;
+					border-radius: inherit;
+					z-index: 5;
+				}
+				
+				&::before {
+					transform: rotate(30deg);
+				}
+				&::after {
+					transform: rotate(-30deg);
+				}
+			}
+			
+			&:nth-child(2){
+				display: block;
+			}
+		}
+	}
+	
+	&.vendorLogo-Carebears {
+		$icon: $icon-cannabis;
+		$primaryColor: #8c7514;
+		
+		overflow: visible;
+		border: 0;
+		font-size: 29px;
+		padding: 0;
+		line-height: 35px;
+		white-space: nowrap;
+		
+		&:hover {
+			span {
+				&:first-child,
+				&:nth-child(2){
+					transform: scale(1.2);
+				}
+				&:last-child {
+					margin-left: 4px;
+				}
+			}
+		}
+		
+		span {
+			color: #8c7514;
+			
+			&:first-child {
+				display: inline-block;
+				height: 20px;
+				width: 36px;
+				background-color: #F2CF34;
+				position: relative;
+				vertical-align: top;
+				margin: 10px 4px 0 0;
+				
+				&::before,
+				&::after {
+					content: '';
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					transform-origin: center;
+					transform: rotate(60deg);
+					background-color: inherit;
+				}
+				&::after {
+					transform: rotate(-60deg);
+				}
+			}
+			
+			&:nth-child(2){
+				width: 36px;
+				display: inline-block;
+				position: absolute;
+				left: 0;
+				text-align: center;
+				font-size: 23px;
+				line-height: 37px;
+				
+				&::before {
+					content: $icon;
+				}
+			}
+		}
+	}
+
+	&.vendorLogo-arctic {
+		$primaryColor: #bfd4ed;
+		$secondaryColor: #a6c1e4;
+
+		@extend %vendorLogo_hover_skipHues;
+
+		font-style: italic;
+		font-size: 30px;
+		padding-right: 0;
+		overflow: visible;
+		text-shadow:	1px 1px #fff,
+				2px 2px #000;
+
+		span {
+			color: $secondaryColor;
+		}
+	}
+	
+	&.vendorLogo-budsanddrugs {
+		$icon: $icon-bitcoin;
+		$primaryColor: #179F5C;
+		$secondaryColor: #17a842;
+		
+		@extend %vendorLogo_hover_invert;
+		
+		font-weight: bold;
+		font-size: 23px;
+		padding-right: 0;
+		overflow: visible;
+		text-transform: uppercase;
+		text-shadow:	1px 1px #FFF,
+				2px 2px $secondaryColor;
+		
+		span {
+			color: $primaryColor;
+			
+			&:first-child {
+				font-size: 0;
+				position: relative;
+				top: -1px;
+				
+				&::before {
+					content: $icon;
+					font-size: 28px;
+				}
+			}
+			&:nth-child(3){
+				font-size: 0;
+				margin: 0 2px 0 3px;
+				filter: hue-rotate(220deg);
+				
+				&::before {
+					content: "&";
+					font-size: 26px;
+					font-weight: bold;
+					font-family: inherit;
+				}
+			}
+			&:nth-child(4){
+				font-size: 1.3em;	
+			}
+		}
+	}
+	
+	&.vendorLogo-William_Shatner {
+		$icon: $icon-startrek;
+		$primaryColor: #ef9d15;
+		$secondaryColor: #5e4413;
+		
+		border: none;
+		padding: 0;
+		overflow: visible;
+		white-space: nowrap;
+		
+		&:hover {
+			span {
+				padding-top: 11px;
+				
+				&:nth-child(2){
+					top: -11px;
+				}
+			}
+		}
+		
+		span {
+			padding-bottom: 5px;
+			padding-top: 9px;
+			display: inline-block;
+			font-size: 20px;
+			border-bottom: solid 4px;
+			position: relative;
+			color: $secondaryColor;
+			border-color: $primaryColor;
+			text-shadow: 0 1px 1px $primaryColor;
+			
+			&:nth-child(2){
+				color: transparent;
+				width: 36px;
+				position: relative;
+				top: -4px;
+				border: none;
+				text-shadow: none;
+				
+				&::before {
+					content: $icon;
+					color: $primaryColor;
+					font-size: 33px;
+					margin-left: 7px;
+					text-shadow: 0 0 1px $primaryColor;
+				}
+			}
+			
+			&:first-child,
+			&:last-child {
+				&::after {
+					content: '';
+					position: absolute;
+					left: 100%;
+					width: 18px;
+					border-bottom: solid $primaryColor 4px;
+					bottom: -4px;
+					transform: skewY(30deg);
+					transform-origin: 0 0;
+				}
+			}
+			&:last-child {
+				&::after {
+					left: inherit;
+					right: 100%;
+					transform: skewY(-30deg);
+					transform-origin: 100% 100%;
+				}
+			}
+		}
+	}
+	
+	&.vendorLogo-BestCoastBud {
+		$primaryColor: #11426b;
+		$secondaryColor: #6cbef8;
+		$tertiaryColor: #1188A8;
+		
+		//@extend %vendorLogo_hover_hueRotate;
+		
+		padding-top: 0;
+		padding-right: 0;
+		font-size: 23px;
+		border: none;
+		filter: hue-rotate(-80deg);
+		font-weight: bold;
+		overflow: visible;
+		
+		&:hover {
+			&::after {
+				animation: 3.75s linear buzz-out;
+			}
+		}
+		
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			top: 23px;
+			background:
+				linear-gradient(45deg, $secondaryColor 12%, transparent 0, transparent 88%, $secondaryColor 0),
+				linear-gradient(135deg, transparent 37%, $tertiaryColor 0, $tertiaryColor 63%, transparent 0),
+				linear-gradient(45deg, transparent 37%, $secondaryColor 0, $secondaryColor 63%, transparent 0) $primaryColor;
+			background-size: 25px 25px;
+			border-radius: 3px;
+		}
+		
+		span {
+			color: $primaryColor;
+			
+			&:nth-child(2){
+				margin: 0 3px;
+			}
+		}
+	}
+	
+	&.vendorLogo-Mr_Taffy {
+		$primaryColor: #b60026;
+		
+		//@extend %vendorLogo_hover_hueRotate;
+		
+		padding-left: 10px;
+		border-radius: 15px;
+		background: repeating-linear-gradient(45deg, #ffebec, #ffebec 6px, #fff 6px, #fff 12px);
+		font-size: 22px;
+		text-shadow: 0 0 1px white;
+		border-color: $primaryColor;
+		overflow: visible;
+		margin-left: 17px;
+		
+		&:hover {
+			//animation: 3.75s 0s linear 1 buzz-out;
+			//transform: rotate(3deg) scale(1.1);
+			filter: hue-rotate(160deg);
+			background-position-y: 30px;
+		}
+		
+		&::before, &::after {
+			content: '';
+			position: absolute;
+			left: -18px;
+			top: calc(50% - 14px);
+			border-left: 16px solid $primaryColor;
+			border-top: 8px solid transparent;
+			border-bottom: 8px solid transparent;
+			width: 0;
+			height: 13px;
+			border-radius: 50%;
+		}
+		&::after {
+			left: inherit;
+			right: -18px;
+			border-left: none;
+			border-right: 16px solid $primaryColor;
+		}
+		
+		span {
+			color: $primaryColor;
+			&:first-child {
+				font-weight: bold;
+				margin-right: 5px;
+			}
+		}
+	}
+	
+	/*&.vendorLogo-CaliKindness {
+		@extend %vendorLogo_hover_hueRotate;
+		
+		text-transform: uppercase;
+		font-size: 22px;
+		text-shadow:
+			1px 1px 0px white,
+			2px 2px 0px red;
+			
+		span {
+			color: #1a3d00;
+			
+			&:first-child {
+				font-weight: bold;
+				margin-right: 6px;
+			}
+		}
+	}*/
+	
+	&.vendorLogo-fungee {
+		$icon: $icon-mushrooms;
+		$primaryColor: #14d0ca;
+		$secondaryColor: #d285ff;
+
+		@extend %vendorLogo_hover_invert;
+
+		padding-top: 0;
+		font-size: 30px;
+		line-height: 28px;
+		border-width: 0;
+		overflow: visible;
+		padding-left: 52px;
+		//-webkit-background-clip: text;
+		//background-image: linear-gradient(to bottom right, #ee0979, #ff6a00);
+
+		&::before {
+			content: $icon;
+			position: absolute;
+			left: 0;
+			top: 0;
+			font-size: 40px;
+			line-height: 40px;
+			//-webkit-background-clip: text;
+			//background-image: inherit;
+			color: $secondaryColor;
+		}
+
+		span {
+			color: $primaryColor;
+			font-weight: bold;
+		}
+	}
+
+        &.vendorLogo-MushieMushie {
+                $icon: $icon-mushrooms;
+                $primaryColor: #d6de23;
+                $secondaryColor: #09a3d5;
+
+                @extend %vendorLogo_hover_invert;
+
+                padding-top: 0;
+                font-size: 20px;
+                line-height: 19px;
+                border-width: 0;
+                overflow: visible;
+                padding-left: 52px;
+                //-webkit-background-clip: text;
+                //background-image: linear-gradient(to bottom right, #ee0979, #ff6a00);
+
+                &::before {
+                        content: $icon;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        font-size: 40px;
+                        line-height: 40px;
+                        //-webkit-background-clip: text;
+                        //background-image: inherit;
+                        color: $primaryColor;
+                }
+
+                span {
+                        color: $secondaryColor;
+			font-variant: small-caps;
+                        font-weight: bold;
+
+                        &:last-child {
+                                display: block;
+                                color: #ff5e68;
+				margin-top: 3px;
+                        }
+                }
+        }
+
+	&.vendorLogo-PsylocybeFanaticus {
+		$icon: $icon-mushrooms;
+		$primaryColor: #F84331;
+		$secondaryColor: #F01768;
+		
+		@extend %vendorLogo_hover_invert;
+		
+		padding-top: 0;
+		font-size: 20px;
+		line-height: 19px;
+		border-width: 0;
+		overflow: visible;
+		padding-left: 52px;
+		//-webkit-background-clip: text;
+		//background-image: linear-gradient(to bottom right, #ee0979, #ff6a00);
+		
+		&::before {
+			content: $icon;
+			position: absolute;
+			left: 0;
+			top: 0;
+			font-size: 40px;
+			line-height: 40px;
+			//-webkit-background-clip: text;
+			//background-image: inherit;
+			color: $primaryColor;
+		}
+		
+		span {
+			color: $primaryColor;
+			font-weight: bold;
+			
+			&:last-child {
+				display: block;
+				margin-top: 3px;
+			}
+		}
+	}
+	
+	&.vendorLogo-NaturesLab {
+		$icon: $icon-flask;
+		
+		font-size: 19px;
+		
+		&::before {
+			content: $icon;
+			font-size: 40px;
+		}
+		
+		span {
+			&:first-child {
+				font-weight: bold;
+				margin-right: 4px;
+			}
+		}
+	}
+	
+	&.vendorLogo-TreesNTreats {
+		font-size: 17px;
+		line-height: 18px;
+		border-width: 0;
+		padding-left: 60px;
+		padding-right: 0;
+		padding-top: 3px;
+		
+		&::before {
+			content: $icon-treats;
+			position: absolute;
+			left: 0;
+			font-size: 60px;
+			top: 0;
+			line-height: 40px;
+		}
+		
+		span {
+			&:first-child {
+				font-weight: bold;
+			}
+			&:nth-child(2){
+				font-size: 16px;
+				font-weight: normal;
+				margin-left: 2px;
+			}
+			&:nth-child(3){
+				display: block;
+				font-weight: bold
+			}
+		}
+		
+		&:hover {
+			&::before {
+				transform: scaleX(-1);
+			}
+		}
+	}
+	
+	&.vendorLogo-WeedNation {
+		$primaryColor: #FE0000;
+		$secondaryColor: #FFF;
+		
+		@extend %vendorLogo_hover_rotateScale;
+		
+		background-color: $primaryColor;
+		font-size: 22px;
+		border-radius: 0;
+		border-color: rgba(0,0,0,.2);
+		padding: 6px;
+		height: 34px;
+		margin-top: 3px;
+		box-shadow: 0 0 5px rgba(0,0,0,.3);
+		font-style: italic;
+		font-family: Verdana, Geneva, sans-serif;
+		
+		span {
+			font-weight: bold;
+			color: $secondaryColor;
+		}
+	}
+
+        &.vendorLogo-CannabisElite {
+		$backgroundColor: #cf1b0a;
+                @extend %vendorLogo_hover_hueRotate;
+
+                padding: 4px;
+                overflow: visible;
+                border: none;
+		background-color: $backgroundColor;
+
+                span {
+                        font-weight: bold;
+			font-style: italic;
+                        color: #fff;
+                        font-size: 24px;
+
+                        &:nth-child(2){
+                                display: block;
+				font-style: normal;
+				font-size: 20px;
+				text-transform: uppercase;
+				color: #000;
+                                text-align: right;
+                                margin-top: 2px;
+                        }
+                }
+        }
+	
+	&.vendorLogo-dirtydarkface {
+		$primaryColor: #841C1B;
+		
+		@extend %vendorLogo_hover_hueRotate;
+		
+		padding: 0;
+		text-transform: uppercase;
+		font-style: italic;
+		overflow: visible;
+		border: none;
+		
+		span {
+			font-weight: bold;
+			color: $primaryColor;
+			font-size: 24px;
+			text-shadow: 1px 1px 0 #591b1a, 2px 2px 0 black;
+			
+			&:nth-child(2){
+				display: block;
+				text-align: right;
+				margin-top: 2px;
+			}
+		}
+	}
+	
+	&.vendorLogo-TheResistance {
+		$primaryColor: crimson;
+		$secondaryColor: complement($primaryColor);
+		
+		&:hover {
+			color: $secondaryColor;
+		}
+		
+		&::before {
+			content: '';
+			position: absolute;
+			width: 100%;
+			border-bottom: dotted 1px;
+			top: 8px;
+		}
+		
+		padding-top: 0;
+		padding-right: 0;
+		background-color: inherit;
+		border-top: none;
+		color: $primaryColor;
+		
+		span {
+			color: inherit;
+			
+			&:first-child {
+				display: inline-block;
+				font-size: 13px;
+				text-align: center;
+				text-transform: uppercase;
+				margin-bottom: 2px;
+				background-color: inherit;
+				margin-top: -5px;
+				position: relative;
+				width: 34px;
+				margin-left: calc(50% - 34px / 2);
+			}
+			&:last-child {
+				text-transform: uppercase;
+				font-size: 21px;
+				display: block;
+				position: relative;
+			}
+		}
+	}
+	
+	&.vendorLogo-green_usa {
+		$icon: $icon-cannabis;
+		$primaryColor: #435616;
+		
+		@extend %vendorLogo_hover_hueRotate;
+		
+		font-size: 19px;
+		padding-top: 5px;
+		
+		span {
+			color: $primaryColor;
+			
+			&:nth-child(2){
+				border-bottom: dotted 2px;
+				font-size: 23px;
+				padding: 0 5px;
+				
+				&::before {
+					content: $icon;
+				}
+			}
+		}
+	}
+	
+	&.vendorLogo-gemini6969 {
+		$icon: $icon-gemini;
+		$primaryColor: #41d239;
+		$secondaryColor: #93e883;
+		
+		@extend %vendorLogo_hover_hueRotate;
+		
+		padding-right: 0;
+		overflow: visible;
+		padding-top: 4px;
+		padding-bottom: 4px;
+		
+		&:hover {
+			span {
+				&:first-child ~ span {
+					color: $color_white;
+				}
+				
+				&:nth-child(2){
+					transform: rotate(10deg);
+				}
+				&:last-child {
+					transform: rotate(-10deg);
+				}
+			}
+		}
+		
+		&::before {
+			content: $icon;
+			font-size: 48px;
+			color: $primaryColor;
+			margin-top: 5px;
+			display: inline-block;
+		}
+		
+		span {
+			font-weight: bold;
+			display: inline-block;
+			
+			&:first-child {
+				margin-left: -12px;
+				font-size: 23px;
+				margin-top: 7px;
+				letter-spacing: 2px;
+				color: $primaryColor;
+				margin-right: 5px;
+				
+				& ~ span {
+					width: 25px;
+					line-height: 25px;
+					text-align: center;
+					vertical-align: top;
+					font-size: 12px;
+				}
+			}
+			&:nth-child(2){
+				background-color: $secondaryColor;
+				transform: rotate(-10deg);
+			}
+			&:last-child {
+				background-color: $primaryColor;
+				transform: rotate(10deg);
+			}
+		}
+	}
+	
+	&.vendorLogo-OuterViscera {
+		$icon: $icon-viscera;
+		$primaryColor: #529863;
+		$secondaryColor: $color_black;
+		
+		overflow: visible;
+		padding-left: 41px;
+		padding-top: 1px;
+		
+		&:hover {
+			&::before {
+				color: $secondaryColor;
+			}
+			span {
+				color: $primaryColor;
+			}
+		}
+		
+		&::before {
+			content: $icon;
+			font-size: 47px;
+			width: 40px;
+			display: inline-block;
+			text-align: center;
+			color: $primaryColor;
+			line-height: 40px;
+			position: absolute;
+			top: -2px;
+			left: -2px;
+		}
+		
+		span {
+			display: block;
+			font-size: 17px;
+			
+			&:first-child {
+				margin-bottom: 3px;
+			}
+			&:last-child {
+				margin-left: 5px;
+				font-weight: normal;
+			}
+		}
+	}
+	
+	&.vendorLogo-stickykitty {
+		$icon: $icon-cat;
+		$primaryColor: $color_red;
+		$secondaryColor: $color_black;
+		
+		text-transform: uppercase;
+		letter-spacing: 7px;
+		padding: 0 0 0 55px;
+		line-height: 19px;
+		overflow: visible;
+		font-size: 20px;
+		border: none;
+		
+		&::before {
+			content: $icon-cat;
+			position: absolute;
+			left: 0;
+			top: 0;
+			font-size: 38px;
+			line-height: $vendorLogo-height;
+			color: $secondaryColor;
+		}
+		
+		&:hover {
+			&::before {
+				color: $primaryColor;
+			}
+			span {
+				color: $secondaryColor;
+			}
+		}
+		
+		span {
+			color: $primaryColor;
+			&:last-child {
+				display: block;
+				letter-spacing: 11.9px;
+				font-weight: normal;
+			}
+		}
+	}
+
+	&.vendorLogo-JackBlue {
+		$primaryColor: rgb(107, 134, 145);
+	
+		@extend %vendorLogo_boxed;
+		@extend %vendorLogo_wordSpacing;
+		
+		border-color: $primaryColor;
+		text-transform: uppercase;
+		font-weight: bold;
+		color: $primaryColor;
+		
+		&:hover {
+			background-color: $primaryColor;
+			color: $color_white;
+		}
+	}
+	
+	&.vendorLogo-Midwestmedical {
+		$primaryColor: #4e8823;
+	
+		@extend %vendorLogo_hover_hueRotate;	
+		
+		font-size: 30px;
+		font-weight: bold;
+		
+		span {
+			color: $color_black;
+			
+			&:nth-child(2){
+				color: $primaryColor;
+			}
+		}
+	}
+	
+	&.vendorLogo-LeftCoastLabs {
+		$primaryColor: rgb(0, 176, 134);
+		$secondaryColor: $color_white;
+		$icon: $icon-plus;
+		
+		@extend %vendorLogo_boxed;
+		@extend %vendorLogo_wordSpacing;
+		@extend %vendorLogo_hover_invert;
+		
+		font-weight: bold;
+		text-transform: uppercase;
+		font-size: 16px;
+		letter-spacing: 1px;
+		background-color: $primaryColor;
+		
+		&::before {
+			font-size: 22px;
+			content: $icon;
+			margin: -10px 5px -10px 0;
+			display: inline-block;
+			line-height: 37px;
+			border-right: solid 1px;
+			padding-right: 10px;
+			color: $secondaryColor;
+		}
+		
+		span {
+			color: $secondaryColor;
+		}
+	}
+	
+	&.vendorLogo-SFTreats {
+		$backgroundColor: rgb(17, 66, 107);
+		$primaryColor: rgb(245, 102, 37);
+		$shadowColor: rgb(141, 42, 19);
+		$icon: $icon-cannabis;
+		
+		@extend %vendorLogo_boxed;
+		@extend %vendorLogo_hover_hueRotate;
+		
+		background-color: $backgroundColor;
+		font-weight: bold;
+		font-size: 23px;
+		text-shadow:
+			1px 1px 0 $shadowColor,
+			2px 2px 1px rgba(0,0,0,.15);
+		padding-top: $vendorLogo-padding - 1px;
+		
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			border: solid 1px $primaryColor;
+			border-radius: 2px;
+		}
+		
+		span {
+			color: $primaryColor;
+			
+			&:first-child {
+				
+				&::after {
+					content: $icon;
+					margin: 0 5px;
+					font-size: 18px;
+				}
+			}
+		}
+		
+		&:hover {
+			span {
+				color: $color_white;
+			}
+		}
+	}
+	
+	&.vendorLogo-StrattonOakmontBud {
+		font-size: 14px;
+	}
+	
+	&.vendorLogo-BubbleHash {
+		$backgroundColor: rgb(108, 74, 43);
+		$primaryColor: $color_white;
+		
+		@extend %vendorLogo_boxed;
+		@extend %vendorLogo_hover_invert;
+		
+		padding-left: 10px;
+		color: $primaryColor;
+		background-color: $backgroundColor;
+	}
+	
+	/*&.vendorLogo-SweetGreenUK {
+		$primaryColor: #0075ff; 
+		$secondaryColor: #cf142b;
+
+		$backgroundColor: rgba(0,0,0,0.5);
+
+		@extend %vendorLogo_hover_invert;
+
+		padding: 5px;
+		height: 36px;
+		overflow: visible;
+		margin-top: 5px;
+		background-color: $backgroundColor;
+
+		span {
+			font-size: 22px;
+			color: $primaryColor;
+
+			&first-child {
+				color: $primaryColor;
+			}
+			&:nth-child(2){
+       				color: $secondaryColor;
+			}
+			&:last-child {
+				color: $color_white;
+			}
+		}
+	}*/
+	
+	&.vendorLogo-SweetGreenUK {
+		$primaryColor: #0075ff; 
+		$secondaryColor: #cf142b;
+
+		$backgroundColor: rgba(0,0,0,0.5);
+
+		@extend %vendorLogo_hover_hueRotate;
+
+		padding: 9px;
+		overflow: visible;
+		border: dashed 2px;
+
+		span {
+			font-size: 21px;
+			color: $primaryColor;
+
+			&first-child {
+				color: $primaryColor;
+			}
+			&:nth-child(2){
+       				color: $secondaryColor;
+			}
+			&:last-child {
+				color: #000;
+				font-weight:bold;
+			}
+		}
+	}
+	
+       &.vendorLogo-ricksimpson {
+                $icon: $icon-cannabis;
+                $backgroundColor: $color_black;
+                $textColor: $color_white;
+
+                @extend %vendorLogo_hover_invert;
+
+                padding: 5px;
+                height: 30px;
+                overflow: visible;
+                margin-top: 5px;
+                background-color: $backgroundColor;
+
+                span {
+                        color: $textColor;
+
+                        &:nth-child(2){
+                                margin: 0 4px;
+
+                                &::before {
+                                        content: $icon-cannabis;
+                                        font-size: 38px;
+
+                                        text-shadow:
+                                                $backgroundColor 4px 0 0px,
+                                                $backgroundColor 3.88333px 0.98333px 0px,
+                                                $backgroundColor 3.51667px 1.91667px 0px,
+                                                $backgroundColor 2.93333px 2.73333px 0px,
+                                                $backgroundColor 2.16667px 3.36667px 0px,
+                                                $backgroundColor 1.26667px 3.8px 0px,
+                                                $backgroundColor 0.28333px 3.98333px 0px,
+                                                $backgroundColor -0.71667px 3.93333px 0px,
+                                                $backgroundColor -1.66667px 3.63333px 0px,
+                                                $backgroundColor -2.51667px 3.11667px 0px,
+                                                $backgroundColor -3.2px 2.4px 0px,
+                                                $backgroundColor -3.7px 1.53333px 0px,
+                                                $backgroundColor -3.96667px 0.56667px 0px,
+                                                $backgroundColor -3.98333px -0.43333px 0px,
+                                                $backgroundColor -3.75px -1.4px 0px,
+                                                $backgroundColor -3.28333px -2.28333px 0px,
+                                                $backgroundColor -2.61667px -3.03333px 0px,
+                                                $backgroundColor -1.78333px -3.58333px 0px,
+                                                $backgroundColor -0.85px -3.91667px 0px,
+                                                $backgroundColor 0.15px -4px 0px,
+                                                $backgroundColor 1.13333px -3.83333px 0px,
+                                                $backgroundColor 2.05px -3.43333px 0px,
+                                                $backgroundColor 2.83333px -2.81667px 0px,
+                                                $backgroundColor 3.45px -2.03333px 0px,
+                                                $backgroundColor 3.83333px -1.11667px 0px,
+                                                $backgroundColor 4px -0.13333px 0;
+                                }
+                        }
+                }
+        }
+
+	&.vendorLogo-DoctorOctopus {
+		$icon: $icon-octopus;
+		$backgroundColor: $color_black;
+		$textColor: $color_white;
+		
+		@extend %vendorLogo_hover_invert;
+		
+		padding: 5px;
+		height: 30px;
+		overflow: visible;
+		margin-top: 5px;
+		background-color: $backgroundColor;
+		
+		span {
+			color: $textColor;
+			
+			&:nth-child(2){
+				margin: 0 4px;
+				
+				&::before {
+					content: $icon-octopus;
+					font-size: 38px;
+					
+					text-shadow:
+						$backgroundColor 4px 0 0px,
+						$backgroundColor 3.88333px 0.98333px 0px,
+						$backgroundColor 3.51667px 1.91667px 0px,
+						$backgroundColor 2.93333px 2.73333px 0px,
+						$backgroundColor 2.16667px 3.36667px 0px,
+						$backgroundColor 1.26667px 3.8px 0px,
+						$backgroundColor 0.28333px 3.98333px 0px,
+						$backgroundColor -0.71667px 3.93333px 0px,
+						$backgroundColor -1.66667px 3.63333px 0px,
+						$backgroundColor -2.51667px 3.11667px 0px,
+						$backgroundColor -3.2px 2.4px 0px,
+						$backgroundColor -3.7px 1.53333px 0px,
+						$backgroundColor -3.96667px 0.56667px 0px,
+						$backgroundColor -3.98333px -0.43333px 0px,
+						$backgroundColor -3.75px -1.4px 0px,
+						$backgroundColor -3.28333px -2.28333px 0px,
+						$backgroundColor -2.61667px -3.03333px 0px,
+						$backgroundColor -1.78333px -3.58333px 0px,
+						$backgroundColor -0.85px -3.91667px 0px,
+						$backgroundColor 0.15px -4px 0px,
+						$backgroundColor 1.13333px -3.83333px 0px,
+						$backgroundColor 2.05px -3.43333px 0px,
+						$backgroundColor 2.83333px -2.81667px 0px,
+						$backgroundColor 3.45px -2.03333px 0px,
+						$backgroundColor 3.83333px -1.11667px 0px,
+						$backgroundColor 4px -0.13333px 0;
+				}
+			}
+		}
+	}
+	
+	&.vendorLogo-DankNoidsUK {
+		text-transform: uppercase;
+		padding: 0;
+		font-size: 23px;
+		border: none;
+		line-height: 20px;
+		font-family: monospace;
+		font-weight: bold;
+		overflow: visible;
+		
+		@extend %vendorLogo_hover_hueRotate;
+		
+		&:hover {
+			span:first-child {
+				margin-left: 0
+			}
+		}
+		
+		span {
+			color: #95006e;
+			display: inline-block;
+			
+			&:first-child {
+				display: block;
+				margin-left: 1ch;
+			}
+			
+			&:nth-child(2) {
+				vertical-align: top;
+				filter: brightness(.8);
+			}
+			
+			&:last-child {
+				position: relative;
+				top: -20px;
+				line-height: 20px;
+				margin-left: 6px;
+				color: #009103;
+				
+				&::before {
+					content: '';
+					position: absolute;
+					top: calc(100% + 1px);
+					left: 0;
+					height: 3px;
+					right: 0;
+					background: #009103;
+					box-shadow:	0 5px #007102,
+							0 10px #005103;
+					border-radius: 30%;
+				}
+			}
+			
+		}
+	}
+
+        &.vendorLogo-maling47 {
+                font-size: 28px;
+                padding-left: 5px;
+		overflow: visible;
+
+                @extend %vendorLogo_hover_hueRotate;
+
+                span {
+                        &:first-child {
+                                font-weight: bold;
+                                color: #7ba7ff;
+                        }
+                        &:last-child {
+                                color: #e3691c;
+                                font-weight: bold;
+                                margin-right: 5px;
+				font-size: 35px;
+                                text-shadow:    #000 1px 0px 0px,
+                                                #000 0.533333px 0.833333px 0px,
+                                                #000 -0.416667px 0.916667px 0px,
+                                                #000 -0.983333px 0.133333px 0px,
+                                                #000 -0.65px -0.75px 0px,
+                                                #000 0.283333px -0.966667px 0px,
+                                                #000 0.966667px -0.283333px 0px;
+                        }
+
+                }
+        }
+
+	
+	&.vendorLogo-luxlife {
+		font-size: 35px;
+		padding-left: 5px;
+		
+		@extend %vendorLogo_hover_hueRotate;
+		
+		span {
+			&:first-child {
+				color: #D6DE23;
+				font-weight: bold;
+				margin-right: 5px;
+				text-shadow:	#000 1px 0px 0px,
+						#000 0.533333px 0.833333px 0px,
+						#000 -0.416667px 0.916667px 0px,
+						#000 -0.983333px 0.133333px 0px,
+						#000 -0.65px -0.75px 0px,
+						#000 0.283333px -0.966667px 0px,
+						#000 0.966667px -0.283333px 0px;
+			}
+			&:last-child {
+				font-weight: 100;
+				color: #000;
+				font-size: 30px;
+			}
+		}
+	}
+	
+	&.vendorLogo-BudExpress {
+		$primaryColor: rgb(25, 165, 120);
+		
+		font-size: 26px;
+		
+		&::before {
+			content: '';
+			width: 15px;
+			margin-right: -4px !important;
+			display: inline-block;
+			border-top: solid 2px;
+			margin-top: 2px;
+		}
+		
+		span {
+			&:first-child {
+				&::before, &::after {
+					content: '';
+					position: absolute;
+					left: 5px;
+					width: 10px;
+					border-top: solid 2px;
+					top: calc(50% - 1px);
+				}
+				&::after {
+					left: 10px;
+					width: 5px;
+					top: calc(50% + 4px);
+				}
+			}
+			&:last-child {
+				color: $primaryColor;
+			}
+		}
+		
+		&:hover {
+			color: $primaryColor !important;
+			
+			span:last-child {
+				color: $color_black;
+			}
+		}
+	}
+	
+	&.vendorLogo-GoombaShop {
+		$icon: $icon-goomba;
+		$primaryColor: rgb(45, 149, 76);
+		$secondaryColor: #964D2D;
+		$backgroundColor: $color_white;
+		
+		//@extend %vendorLogo_hover_hueRotate;
+		
+		background-color: $backgroundColor;
+		padding: 9px;
+		height: 38px;
+		overflow: visible;
+		margin-top: 1px;
+		
+		&::before {
+			content: '';
+			position: absolute;
+			top: 2px;
+			right: 2px;
+			bottom: 2px;
+			left: 2px;
+			margin-right: 0;
+			border-radius: 2px;
+			border: solid 2px $primaryColor;
+		}
+		
+		&:hover {
+			&::before{
+				border-color: $secondaryColor;
+			}
+			
+			span {
+				color: $secondaryColor;
+				
+				&::before {
+					color: $primaryColor !important;
+				}
+			}
+		}
+		
+		span {
+			color: $primaryColor;
+			
+			&:nth-child(2){
+				margin-right: -1px;
+				position: relative;
+				
+				&::before {
+					@extend %vendorLogo-icon-whiteOutline;
+					
+					content: $icon;
+					font-size: 35px;
+					margin: 0 3px;
+					color: $secondaryColor;
+				}
+			}
+		}
+	}
+	
+	&.vendorLogo-RCity {
+		$primaryColor: #bc65a8;
+		$secondaryColor: $color_black;
+		$icon: $icon-crown;
+		
+		padding-bottom: 0;
+		padding-top: 7px;
+		overflow: visible;
+		padding-left: 50px;
+		font-size: 37px;
+		border: none;
+		
+		&:hover {
+			padding-left: 55px;
+			
+			&::before {
+				transform: scale(1.2);
+			}
+			
+			&::after {
+				color: $primaryColor;
+			}
+			
+			span,
+			&::before {
+				color: $secondaryColor;
+			}
+		}
+		
+		&::before {
+			content: $icon;
+			color: $primaryColor;
+			font-size: 29px;
+			position: absolute;
+			top: 7px;
+			left: 0;
+			transform-origin: 0 100%;
+		}
+		
+		&::after {
+			content: 'aka Mr. Friendly';
+			font-size: 11px;
+			position: absolute;
+			bottom: -5px;
+			left: 8px;
+			font-family: 'Open Sans', sans-serif;
+			letter-spacing: .3px;
+			color: $secondaryColor;
+		}
+		
+		span {
+			color: $primaryColor;
+			font-weight: bold;
+		}
+	}
+	
+	&.vendorLogo-empireteam {
+		$primaryColor: #e4681a;
+		$secondaryColor: $color_black;
+		
+		padding-top: 2px;
+		
+		&:hover {
+			span {
+				&:first-child {
+					color: $secondaryColor;
+				}
+				&:last-child {
+					color: $primaryColor;
+				}
+			}
+		}
+		
+		span {
+			text-transform: uppercase;
+			
+			&:first-child {
+				font-weight: bold;
+				color: $primaryColor;
+				font-size: 24px;
+			}
+			&:last-child {
+				font-weight: normal;
+				display: block;
+				text-align: center;
+				font-size: 13px;
+				margin-top: 1px;
+			}
+		}
+	}
+	
+	&.vendorLogo-joeybagadonuts {
+		$primaryColor: #ea6917;
+		
+		font-style: italic;
+		font-size: 20px;
+		padding-right: 0;
+		padding-top: 0;
+		text-align: right;
+		overflow: visible;
+		
+		&:hover {
+			span {
+				color: $primaryColor;
+				
+				&:nth-child(2){
+					//border-color: $color_black;
+					color: $color_black;
+				}
+			}
+		}
+		
+		span {
+			&:first-child,
+			&:nth-child(3){
+				font-weight: bold;
+			}
+			&:last-child {
+				position: absolute;
+				font-size: 11px;
+				right: 0;
+				bottom: 0;
+				font-weight: normal;
+			}
+			&:nth-child(2){
+				/*
+				width: 5px;
+				display: inline-block;
+				height: 5px;
+				border: solid 5px $primaryColor;
+				border-radius: 50%;
+				vertical-align: bottom;
+				margin: 0 -1px -1px 2px; //0 -1px 0 2px;
+				position: relative;
+				
+				&::before {
+					content: '';
+					position: absolute;
+					left: -3px;
+					width: 9px;
+					height: 9px;
+					border: solid 1px #f8dfad;
+					border-radius: 50%;
+					top: -3px;
+				}
+				*/
+				
+				color: $primaryColor;
+			}
+		}
+	}
+	
+	&.vendorLogo-CaliKindness {
+		$icon: $icon-bear;
+		$primaryColor: #083f1c;
+		$secondaryColor: #BA2A0D;
+		$backgroundColor: $color_white;
+		
+		//@extend %vendorLogo_hover_hueRotate;
+		
+		background-color: $backgroundColor;
+		padding: 9px;
+		height: 38px;
+		overflow: visible;
+		margin-top: 1px;
+		font-size: 18px;
+		
+		&::before {
+			content: '';
+			position: absolute;
+			top: 2px;
+			right: 2px;
+			bottom: 2px;
+			left: 2px;
+			margin-right: 0;
+			border-radius: 2px;
+			border: solid 2px $secondaryColor;
+		}
+		
+		&:hover {
+			&::before{
+				border-color: $primaryColor;
+			}
+			
+			span {
+				color: $secondaryColor;
+				
+				&::before {
+					color: $secondaryColor !important;
+				}
+			}
+		}
+		
+		span {
+			color: $primaryColor;
+			font-weight: normal;
+			
+			&:nth-child(2){
+				margin-right: -1px;
+				position: relative;
+				
+				&::before {
+					@extend %vendorLogo-icon-whiteOutline;
+					
+					content: $icon;
+					font-size: 45px;
+					margin: 0 3px;
+					color: $primaryColor;
+				}
+			}
+		}
+	}
+	
+	&.vendorLogo-Fiiness {
+		$primaryColor: #5C391A;
+		$secondaryColor: #069444;
+
+		@extend %vendorLogo_hover_hueRotate;
+
+		font-weight: bold;
+		font-size: 28px;
+		text-transform: uppercase;
+		padding-left: 30px;
+		padding-right: 30px;
+		border: none;
+		overflow: visible;
+		padding-top: 10px;
+
+		&::before {
+			content: $icon-cannabis;
+			font-size: 28px;
+			position: absolute;
+			left: 0;
+			line-height: 32px;
+			top: 0;
+			color: $secondaryColor;
+			text-shadow: 0 0 4px hsl(76.2, 83%, 65.5%);
+		}
+
+		&::after {
+			font-family: CoopIcons;
+			font-size: 28px;
+			position: absolute;
+			left: 210;
+			line-height: 32px;
+			top: 0;
+			color: $secondaryColor;
+			text-shadow: 0 0 4px hsl(76.2, 83%, 65.5%);
+		 }
+	}
+	
+	&.vendorLogo-cabackdoormedical {
+		@extend %vendorLogo_hover_skipHues;
+		
+		font-weight: bold;
+		border: none;
+		padding-right: 0;
+		overflow: visible;
+		font-size: 18px;
+		color: #b020e6;
+		
+		span {
+			display: inline-block;
+			position: relative;
+			
+			&:first-child {
+				font-size: 1.3em;
+				bottom: -8px;
+			}
+			
+			&:nth-child(2) {
+				transform: rotate(-15deg);
+				margin-left: -1px;
+				filter: hue-rotate(-40deg);
+				top: -2px;
+			}
+			
+			&:last-child {
+				margin-left: -22px;
+				filter: hue-rotate(-260deg);
+				bottom: -10px;
+			}
+		}
+	}
+	
+	&.vendorLogo-honestherb {
+		$icon: $icon-cannabis;
+		$primaryColor: #419954;
+		
+		text-transform: uppercase;
+		position: relative;
+		line-height: 34px;
+		
+		&::before {
+			content: $icon;
+			position: absolute;
+			width: calc(100% - #{$vendorLogo-padding});
+			text-align: center;
+			margin-top: -18px;
+			font-size: 26px;
+			height: 27px;
+			overflow: hidden;
+			color: $primaryColor;
+		}
+		
+		&:hover {
+			span {
+				color: $primaryColor;
+			}
+			&::before {
+				color: $color_black;
+			}
+		}
+	}
+	
+	/*&.vendorLogo-wanswonderfulwax {
+		$icon: $icon-asian;
+		$primaryColor: #0293e1;
+		$padding: 1px;
+		
+		line-height: ($vendorLogo-height - 2*($vendorLogo-borderThickness + $padding))/2 - 1px;
+		padding: $padding 2px $padding #{$vendorLogo-height - 2*$vendorLogo-borderThickness + 10px};
+		font-size: 14px;
+		
+		&:hover {
+			color: $primaryColor;
+			
+			&::before {
+				color: $color_black;
+			}
+		}
+		
+		&::before {
+			content: $icon;
+			position: absolute;
+			left: 0;
+			top: 0;
+			font-size: $vendorLogo-height - 2*$vendorLogo-borderThickness;
+			line-height: $vendorLogo-height - 2*$vendorLogo-borderThickness;
+			color: $primaryColor;
+		}
+		
+		span {
+			&:first-child {
+				display: block;
+				font-weight: bold;
+				
+				& ~ span {
+					font-weight: normal;
+				}
+			}
+			
+			&:last-child {
+				margin-left: 3px;
+			}
+		}
+	}*/
+	
+	&.vendorLogo-GreenSails {
+		$primaryColor: rgb(0, 130, 0);
+		$secondaryColor: $color_white;
+		$shadow:
+			1px 1px 0 #0b350b,
+			2px 2px 1px rgba(0, 0, 0, 0.15);
+		
+		//@extend %vendorLogo_boxed;
+		@extend %vendorLogo_hover_hueRotate;
+		
+		text-shadow: $shadow;
+		font-weight: bold;
+		font-size: 23px;
+		box-shadow: $shadow;
+		border-color: $primaryColor;
+		border-width: 1px;
+		//padding-top: ;
+		background-color: $secondaryColor;
+		padding-left: 43px;
+		padding-top: $vendorLogo-padding + 1px;
+		padding-bottom: $vendorLogo-padding - 1px;
+		overflow: visible;
+		
+		&::before {
+			content: '';
+			background-image: url("/upload/0499082001494600628_thumbnail.png");
+			width: calc(125/75*36px);
+			height: 36px;
+			background-size: contain;
+			background-repeat: no-repeat;
+			vertical-align: top;
+			position: absolute;
+			left: -8px;
+			bottom: 0;
+			filter: contrast(0) saturate(600);
+		}
+		
+		span {
+			color: $primaryColor
+		}
+	}
+
+	&.vendorLogo-ChipChipperson {
+		$primaryColor: #1ddd8b;
+		$textColor: $color_white;
+
+		font-size: 18px;
+
+		&:hover {
+			filter: hue-rotate(180deg);
+		}
+
+		span {
+			background-color: $primaryColor;
+			color: $textColor;
+			overflow: visible;
+			padding: 3px 5px;
+			padding-top: 6px;
+			padding-bottom: 6px;
+			font-weight: bold !important;
+
+			&:first-child {
+				border-radius: 3px 0 0 3px;
+				filter: hue-rotate(90deg);
+			}
+
+			&:last-child {
+				border-radius: 0 3px 3px 0;
+				filter: hue-rotate(-150deg);
+			}
+
+			& ~ span {
+				margin-left: 2px;
+			}
+		}
+	}
+
+	&.vendorLogo-mkkh {
+		$primaryColor: #09a3d5;
+		$secondaryColor: #ff5e68;
+		$textColor: $color_white;
+		
+		overflow: visible;
+		padding: 0;
+		border: none;
+		
+		&:hover {
+			filter: hue-rotate(180deg);
+		}
+
+		span {
+			background-color: $primaryColor;
+			color: $textColor;
+			display: inline-block;
+			text-align: center; 
+			font-weight: bold !important;
+			line-height: 36px;
+			width: 36px;
+			font-size: 27px;
+			border-radius: 3px 3px 3px 3px;
+	 		border: solid 1px rgba(0,0,0,.15);
+	 		
+	 		&:not(:first-child) {
+	 			margin-left: 2px;
+	 		}
+
+			&:first-child {
+				filter: hue-rotate(70deg);
+			}
+
+			&:nth-child(2) {
+				background-color: #ff5e68;
+			}
+			&:last-child {
+				filter: hue-rotate(-160deg);
+			}
+		}
+	}
+
+	
+	&.vendorLogo-Bargainbudsuk {
+		$primaryColor: #1ddd8b;
+		$textColor: $color_white;
+		
+		font-size: 16px;
+		
+		&:hover {
+			filter: hue-rotate(180deg);
+		}
+		
+		span {
+			background-color: $primaryColor;
+			color: $textColor;
+			padding: 3px 5px;
+			font-weight: bold !important;
+			
+			&:first-child {
+				border-radius: 3px 0 0 3px;
+				filter: hue-rotate(90deg);
+			}
+			
+			&:last-child {
+				border-radius: 0 3px 3px 0;
+				filter: hue-rotate(-150deg);
+			}
+			
+			& ~ span {
+				margin-left: 2px;
+			}
+		}
+	}
+}

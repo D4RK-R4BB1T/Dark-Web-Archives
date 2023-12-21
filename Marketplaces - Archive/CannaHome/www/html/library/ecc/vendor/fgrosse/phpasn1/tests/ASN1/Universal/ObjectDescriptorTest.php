@@ -1,0 +1,86 @@
+<?php
+/*
+ * This file is part of the PHPASN1 library.
+ *
+ * Copyright © Friedrich Große <friedrich.grosse@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace FG\Test\ASN1\Universal;
+
+use FG\Test\ASN1TestCase;
+use FG\ASN1\Identifier;
+use FG\ASN1\Universal\ObjectDescriptor;
+
+class ObjectDescriptorTest extends ASN1TestCase
+{
+
+    public function testGetType()
+    {
+        $object = new ObjectDescriptor("NumericString character abstract syntax");
+        $this->assertEquals(Identifier::OBJECT_DESCRIPTOR, $object->getType());
+    }
+
+    public function testGetIdentifier()
+    {
+        $object = new ObjectDescriptor("NumericString character abstract syntax");
+        $this->assertEquals(chr(Identifier::OBJECT_DESCRIPTOR), $object->getIdentifier());
+    }
+
+    public function testContent()
+    {
+        $object = new ObjectDescriptor("PrintableString character abstract syntax");
+        $this->assertEquals("PrintableString character abstract syntax", $object->getContent());
+    }
+
+    public function testGetObjectLength()
+    {
+        $string = "Basic Encoding of a single ASN.1 type";
+        $object = new ObjectDescriptor($string);
+        $expectedSize = 2 + strlen($string);
+        $this->assertEquals($expectedSize, $object->getObjectLength());
+    }
+
+    public function testGetBinary()
+    {
+        $string = "Basic Encoding of a single ASN.1 type";
+        $expectedType = chr(Identifier::OBJECT_DESCRIPTOR);
+        $expectedLength = chr(strlen($string));
+
+        $object = new ObjectDescriptor($string);
+        $this->assertEquals($expectedType.$expectedLength.$string, $object->getBinary());
+    }
+
+    /**
+     * @depends testGetBinary
+     */
+    public function testFromBinary()
+    {
+        $originalobject = new ObjectDescriptor("PrintableString character abstract syntax");
+        $binaryData = $originalobject->getBinary();
+        $parsedObject = ObjectDescriptor::fromBinary($binaryData);
+        $this->assertEquals($originalobject, $parsedObject);
+    }
+
+    /**
+     * @depends testFromBinary
+     */
+    public function testFromBinaryWithOffset()
+    {
+        $originalobject1 = new ObjectDescriptor("NumericString character abstract syntax");
+        $originalobject2 = new ObjectDescriptor("Basic Encoding of a single ASN.1 type");
+
+        $binaryData  = $originalobject1->getBinary();
+        $binaryData .= $originalobject2->getBinary();
+
+        $offset = 0;
+        $parsedObject = ObjectDescriptor::fromBinary($binaryData, $offset);
+        $this->assertEquals($originalobject1, $parsedObject);
+        $this->assertEquals(41, $offset);
+        $parsedObject = ObjectDescriptor::fromBinary($binaryData, $offset);
+        $this->assertEquals($originalobject2, $parsedObject);
+        $this->assertEquals(80, $offset);
+    }
+}

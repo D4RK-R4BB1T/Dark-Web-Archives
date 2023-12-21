@@ -1,0 +1,47 @@
+$colorShadeLightnessIncrements: 5%;
+
+@function fix-color($color){
+	@return adjust-color($color, $hue: -15deg, $saturation: +10%);
+}
+
+$color1:    fix-color(#FBFBF8);
+$color2:    fix-color(#C3D1B8);
+$color3:    fix-color(#C7C7C7);
+$color4:    fix-color(#E1E1E1);//fix-color(#EFEFDF);
+$color5:    fix-color(#5C877F);
+$color6:    fix-color(#A2C9C0);
+$color7:    fix-color(#2A556A);
+$color8:    fix-color(#62748A);
+$color9:    fix-color(#FAF7E7);
+$color_red: #c82945; //fix-color(#A74444);
+$color_gold: fix-color(#D4C325);
+$color_purple: fix-color(#98526C); //fix-color(#A744A7); //fix-color(#444D84);
+$color_white: fix-color(#FFF);
+
+$color_green: fix-color(#52987E);
+$color_green_darker: fix-color(#407763);
+$color_green_new: fix-color(#397A62);
+
+$color_blue: fix-color(#529198); //fix-color(#5D7B89); //fix-color(#526C98); //fix-color(#528F98); //$color8;
+$color_blue_lighter: fix-color(#528F98);
+$color_blue_brighter: fix-color(#2364cd);
+
+$color_black: fix-color(#222);
+$color_offwhite: $color1;
+
+$color_orange: #ff792b; //fix-color(#f79800);
+$color_orange_darker: fix-color(#DB8700);
+
+$color_old_grey1: fix-color(#EBEBEB);
+$color_old_grey2: fix-color(#CBCBCB);
+$color_old_grey3: fix-color(#F7F7F7);
+
+
+
+$washedYellow_shade1:	#f9f6f0; //fix-color(#F2F2E8); // one shade darker than background
+$washedYellow_shade2:	#f0e7ce; //fix-color(#E9E9D8); // two shades darker than background
+$washedYellow_shade3:	fix-color(#D7D7B7); // four shades darker than background
+$washedYellow_shade4:	fix-color(#C5C596); // six shades darker
+$washedYellow_shade5:	fix-color(#9E9E57); // 10 shades darker
+
+$brightYellow: fix-color(#FFFFB3);

@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'mmfont';
+    src:  url('../fonts/mmfont.eot?t35qsd');
+    src:  url('../fonts/mmfont.eot?t35qsd#iefix') format('embedded-opentype'),
+    url('../fonts/mmfont.ttf?t35qsd') format('truetype'),
+    url('../fonts/mmfont.woff?t35qsd') format('woff'),
+    url('../fonts/mmfont.svg?t35qsd#mmfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="mmicon-"], [class*=" mmicon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'mmfont' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.mmicon-paid_services:before {
+    content: "\e904";
+}
+.mmicon-quests_add:before {
+    content: "\e900";
+}
+.mmicon-packages_add:before {
+    content: "\e901";
+}
+.mmicon-custom_places:before {
+    content: "\e902";
+}
+.mmicon-finances:before {
+    content: "\e903";
+}
+.mmicon-preorder:before {
+    content: "\e905";
+}
+.mmicon-qiwi:before {
+    content: "\e906";
+}
+.mmicon-quest_receive:before {
+    content: "\e907";
+}
+.mmicon-review:before {
+    content: "\e908";
+}
+.mmicon-settings_appearance:before {
+    content: "\e909";
+}
+.mmicon-packages:before {
+    content: "\e90a";
+}
+.mmicon-employees:before {
+    content: "\e90b";
+}
+.mmicon-goods_add:before {
+    content: "\e90c";
+}
+.mmicon-problem:before {
+    content: "\e90d";
+}
+.mmicon-qiwi-inversed:before {
+    content: "\1f424";
+}
+

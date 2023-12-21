@@ -1,0 +1,22 @@
+{
+    "name": "gregoryduckworth/encryptable",
+    "description": "A simple trait to make attributes encrypted in the database",
+    "keywords": ["laravel", "eloquent", "database", "encrypt"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Greg Duckworth",
+            "email": "gregoryduckworth@googlemail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "GregoryDuckworth\\Encryptable\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}

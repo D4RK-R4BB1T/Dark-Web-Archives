@@ -1,0 +1,268 @@
+<div class="rows-30">
+	<div class="row vendor-box rows-20">
+		<div class="row">
+			<?php if($this->vendor['image']) { ?>
+			<figure style="background-image: url(<?php echo $this->vendor['image']; ?>);"></figure>
+			<?php } ?>
+			<div class="main-infos">
+				<h2><?php echo $this->vendor['alias']; ?></h2>
+				<?php if($this->vendor['categories']){ ?>
+				<p><?php echo implode(', ', $this->vendor['categories']) . ' vendor'; ?></p>
+				<?php } ?>
+				<div class="rating stars <?php echo $this->vendor['rating'] > 1 ? 'color-yellow' : FALSE ?>">
+					<?php
+						if( $this->vendor['rating_count'] > 0 ){
+							$this->renderRating($this->vendor['rating']);
+							if($this->vendor['commentCount'] > 0)
+								$link = 'a href="' . ($profile_url . 'comments/') . '"';
+							else
+								$link = false;
+							echo '<' . ($link ? $link : 'strong') . '>(' . $this->vendor['rating_count'] . ' rating' . ($this->vendor['rating_count'] == 1 ? FALSE : 's') . ')</' . ($link ? 'a' : 'strong') . '>';
+						} else
+							echo '<strong>No Ratings</strong>';
+					 ?>
+				</div>
+			</div>
+			<ul class="zebra x-small big-list">
+				<?php if( $this->vendor['listing_count'] ) { ?>
+				<li>
+					<div class="aux">
+						<div><span class="color-blue"><?php echo $this->vendor['listing_count'] ?></span></div>
+					</div>
+					<div class="main">
+						<div><span>Listings</span></div>
+					</div>
+				</li>
+				<?php } if( $this->vendor['sell_count'] > 0 ) { ?>
+				<li>
+					<div class="aux">
+						<div><span class="color-blue"><?php echo $this->vendor['sell_count'] ?></span></div>
+					</div>
+					<div class="main">
+						<div><span>Sales</span></div>
+					</div>
+				</li>
+				<?php } if( $this->vendor['postCount'] > 0 ) { ?>
+				<li>
+					<div class="aux">
+						<div><span class="color-blue"><?php echo $this->vendor['postCount'] ?></span></div>
+					</div>
+					<div class="main">
+						<div><span>Forum Posts</span></div>
+					</div>
+				</li>
+				<?php } if( $this->vendor['followerCount'] > 0 ) { ?>
+				<li>
+					<div class="aux">
+						<div><span class="color-blue"><?php echo $this->vendor['followerCount'] ?></span></div>
+					</div>
+					<div class="main">
+						<div><span>Followers</span></div>
+					</div>
+				</li>
+				<?php } ?>
+			</ul>
+		</div>
+		<?php if( $this->vendor['update'] ) {
+			$target = $this->isForum
+				? FALSE
+				: 'target="_blank" ';
+			 ?>
+		<div class="row grey-box formatted">
+			<div class="right">
+				<a <?php echo $target ?>class="btn green wide" href="<?php echo $this->ForumURL . 'discussion/' . $this->vendor['update']['ID'] . '/#new-comment' ?>">
+					<i class="fa-comment"></i>Comment
+				</a>
+				<a <?php echo $target ?>class="btn blue wide arrow-right" href="<?php echo $this->ForumURL . 'discussion/' . $this->vendor['update']['ID'] . '/' ?>">View all updates</a>
+			</div>
+			<div class="formatted">
+				<?php echo $this->vendor['update']['content'] ?>
+			</div>
+		</div>
+		<?php } ?>
+	</div>
+	<div class="row special-tabs">
+		<?php if( !empty($this->vendor['sections']) ) { foreach($this->vendor['sections'] as $section) { ?>
+		<input id="<?php echo $section['anchor']; ?>" name="vendor-section" type="radio">
+		<?php } } ?>
+		<input hidden type="radio" id="send-pm" name="tab">
+		<div class="left rows-20">
+			<?php if( !empty($this->vendor['sections']) ) { ?>
+			<nav class="row">
+				<?php  foreach($this->vendor['sections'] as $section) { ?>
+				<a href="#<?php echo $section['anchor']; ?>"><?php echo $section['name']; ?></a>
+				<?php } ?>
+			</nav>
+			<?php } if( $this->vendor['alias'] !== $this->UserAlias ){ ?>
+			<div class="row cols-5">
+				<div class="col-6">
+					<?php $this->renderMemberButton(
+						'#send-pm',
+						'<i class="fa-envelope"></i>Send PM',
+						'btn wide blue'
+					); ?>
+				</div>
+				<div class="col-6">
+					<?php $this->renderMemberButton(
+						'?do[ToggleUserSubscription]=' . $this->vendor['alias'],
+						'<i class="fa-rss"></i>' . ($this->vendor['isFollowing'] ? 'un-follow' : 'follow'),
+						'btn wide ' . ($this->vendor['isFollowing'] ? 'minimal' : 'red')
+					); ?>
+				</div>
+			</div>
+			<?php } if( $this->vendor['pgp'] ) { ?>
+			<ul class="row list-expandable">
+				<li>
+					<input id="pgp-public-key" class="expand" type="checkbox">
+					<label for="pgp-public-key">PGP Public Key<i></i></label>
+					<div class="expandable">                            
+						<label class="textarea pgp">
+							<textarea rows="10" spellcheck="false"><?php echo $this->vendor['pgp']; ?></textarea>
+						</label><?php ?>
+					</div>
+				</li>
+			</ul>
+			<?php } ?>
+			<?php /*?><h3 class="row centered band"><span>Distinctions</span></h3>
+			<ul class="awards">
+				<li class="red"><i class="ion-university"></i><div class="tooltip"><span>Multisig Expert</span></div></li><li class="blue circle"><i class="ion-lightbulb"></i><div class="tooltip"><span>Stoner</span></div class="tooltip"></li><li class="green jagged"><i class="ion-happy"></i><div class="tooltip"><span>Candy flipper</span></div></li><li class="candy square"><i class="ion-code"></i><div class="tooltip"><span>Admin</span></div></li><li class="blue circle"><i class="ion-ios-color-wand"></i><div class="tooltip"><span>Stoner</span></div></li><li class="red"><i class="ion-social-bitcoin"></i><div class="tooltip"><span>Multisig Expert</span></div></li>
+			</ul><?php */?>
+		</div>
+		<div class="right">
+			<div class="contents">
+				<?php if( !empty($this->vendor['sections']) ) { foreach($this->vendor['sections'] as $section) { ?>
+				<div class="formatted"><?php echo $section['content']; ?></div>
+				<?php } }
+				
+				ob_start(); ?>
+				<form method="post" action="<?php echo URL; ?>account/send_message/">
+					<input type="hidden" name="recipient_alias" value="<?php echo $this->vendor['alias']; ?>">
+					<fieldset class="rows-10">
+						<label class="text pre-textarea">
+							<input type="text" placeholder="Subject (optional)" name="subject">
+						</label>
+						<label class="row textarea">
+							<textarea rows="9" name="content" required></textarea>
+						</label>
+						<div class="row cols-10">
+							<div class="col-6">
+								<label class="select">
+									<select name="auto_delete">
+										<option disabled>Auto-delete</option>
+										<option value="0">Never</option>
+										<option value="30">After 1 month</option>
+										<option value="7" selected>After 1 week</option>
+										<option value="3">After 3 days</option>
+										<option value="1">After 1 day</option>
+									</select>
+									<i></i>
+								</label>
+							</div>
+							<div class="col-6">
+								<input class="row btn wide" value="Send" type="submit">
+							</div>
+						</div>
+					</fieldset>
+				</form>
+				<?php $message_form = ob_get_contents(); ob_end_clean();
+				
+				if($this->vendor['pgp']) {?>
+				<div class="cols-10">
+					<div class="col-6">
+						<?php echo $message_form; ?>
+					</div>
+					<div class="col-6">
+						<label class="textarea pgp" spellcheck="false">
+							<textarea rows="20"><?php echo $this->vendor['pgp']; ?></textarea>
+						</label>
+					</div>
+					
+				</div>
+				<?php } else echo '<div>' . $message_form . '</div>'; ?>
+			</div>
+		</div>
+	</div>
+	<?php if($this->vendor['is_vendor'] && !$this->isForum) { ?>
+	<div class="row">
+		<div class="top-tabs">
+			<?php if( $this->vendor['related_listings'] ){ ?>
+			<input id="listings-tab" name="other-tabs" type="radio" checked>
+			<?php } ?>
+			<input id="comments-tab" name="other-tabs" type="radio">
+			<ul>
+				<?php if( $this->vendor['related_listings'] ){ ?>
+				<li><label for="listings-tab">Listings</label></li>
+				<?php } ?>
+				<li><label for="comments-tab">Reviews</label></li>
+			</ul>
+			<?php if( $this->vendor['related_listings'] ){ ?>
+			<div class="rows-20">
+				<ul class="row listings grid">
+					<?php foreach($this->vendor['related_listings'] as $related_listing) { ?>
+					<li>
+						<a class="listing" href="<?php echo $url . 'i/' . NXS::getB36($related_listing['id']) . '/' ?>">
+							<div class="image"<?php echo $related_listing['image'] ? ' style="background-image:url(\'' . $related_listing['image'] . '\')"' : FALSE; ?>></div>
+							<div class="info">
+								<div class="name"><div><span><?php echo $related_listing['name'] ?></span></div></div>
+								<div class="price">
+									<div>
+										<?php if($this->UserCurrency !== 'BTC') { ?>
+										<span class="big"><?php echo $related_listing['price']; ?></span> <span class="small"><?php echo $related_listing['price_btc']; ?></span>
+										<?php } else { ?>
+										<span class="big"><?php echo $related_listing['price_btc']; ?></span>
+										<?php } ?>
+									</div>
+								</div>
+							</div>
+						</a>
+						<?php if( $related_listing['rating_count'] > 0 ) { ?>
+						<div class="overlay">
+							<div class="rating stars alt">
+								<span>(<?php echo $related_listing['rating_count'] . ' rating' . ($related_listing['rating_count'] == 1 ? FALSE : 's'); ?>)</span>
+								<?php echo $this->renderRating($related_listing['rating']); ?>
+							</div>
+						</div>
+						<?php } ?>
+					</li>
+					<?php } ?>
+				</ul>
+				<?php if($this->vendor['listing_count'] > count($this->vendor['related_listings']) ) { ?>
+				<div class="row centered">
+					<a href="<?php echo $profile_url . 'listings/' ?>" class="btn green arrow-right">View All Listings</a>
+				</div>
+				<?php } ?>
+			</div>
+			<?php } ?>
+			<div class="rows-20">
+				<?php if( $this->vendor['featured_comments'] ){ ?>
+				<ul class="row list-ratings">
+					<?php foreach( $this->vendor['featured_comments'] as $featured_comment ) { ?>
+					<li>
+						<div class="left">
+							<div class="rating stars color-yellow">
+								<?php $this->renderRating($featured_comment['rating']); ?>
+							</div>
+							<date><?php echo $featured_comment['date']; ?></date>
+							<?php if( $featured_comment['listing'] ) { ?>
+							<small><?php echo $featured_comment['listing']; ?></small>
+							<?php } ?>
+						</div>
+						<div class="right formatted">
+							<?php echo $this->nl2p($featured_comment['comment']); ?>
+						</div>
+					</li>
+					<?php } ?>
+				</ul>
+				<?php if($this->vendor['commentCount'] > count($this->vendor['featured_comments']) ) { ?>
+				<div class="row centered">
+					<a href="<?php echo $profile_url . 'comments/' ?>" class="btn white arrow-right">View All Comments</a>
+				</div>
+				<?php }
+				} else { ?>
+				<strong>This <?php echo $this->vendor['is_vendor'] ? 'vendor' : 'user'; ?> has not yet received any reviews</strong>
+				<?php } ?>
+			</div>
+		</div>
+	</div>
+	<?php } ?>
+</div>

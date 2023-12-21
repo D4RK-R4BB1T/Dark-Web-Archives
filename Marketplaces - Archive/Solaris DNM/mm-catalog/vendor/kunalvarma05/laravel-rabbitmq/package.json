@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "lint-staged": {
+    "*.php": [
+      "composer run-script lint-fix",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.7"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "composer run-script test"
+    }
+  }
+}

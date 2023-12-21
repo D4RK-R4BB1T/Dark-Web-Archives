@@ -1,0 +1,42 @@
+ol.numeric {
+  list-style-type: none;
+  counter-reset: item;
+  margin: 0;
+  padding: 0;
+}
+
+ol.numeric > li {
+  display: table;
+  counter-increment: item;
+  margin-bottom: 0.6em;
+}
+
+ol.numeric > li:before {
+  content: counters(item, ".") ". ";
+  display: table-cell;
+  padding-right: 0.6em;
+}
+
+li ol.numeric > li {
+  margin: 0;
+}
+
+li ol.numeric > li:before {
+  content: counters(item, ".") " ";
+}
+
+.badge {
+  &-danger {
+    color: #fff;
+    border: 2px solid #9f3d3b;
+    background-color: #a94442;
+  }
+}
+
+.align {
+  &-inline {
+    &-right {
+      float: right;
+    }
+  }
+}

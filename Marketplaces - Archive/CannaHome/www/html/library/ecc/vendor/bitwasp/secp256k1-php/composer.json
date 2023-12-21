@@ -1,0 +1,27 @@
+{
+    "name": "bitwasp/secp256k1-php",
+    "description": "PHP Extension with bindings for bitcoin/secp256k1.",
+    "keywords": ["bitwasp", "bitcoin", "php", "secp256k1", "ecc", "ecdsa", "cryptocurrency", "extension"],
+    "authors": [
+        {
+            "name": "Ruben de Vries",
+            "email": "ruben@rubensayshi.com"
+        },
+        {
+            "name": "Thomas Kerin",
+            "email": "afk11@users.noreply.github.com"
+        }
+    ],
+    "autoload-dev": {
+      "psr-4": {
+        "BitWasp\\Secp256k1Tests\\": "tests/"
+      }
+    },
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "4.3.*",
+        "squizlabs/php_codesniffer": "2.*",
+        "symfony/yaml": "*"
+    },
+    "license": "Unlicence"
+}

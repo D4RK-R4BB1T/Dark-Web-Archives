@@ -1,0 +1,4 @@
+parameters:
+    paul999.2fa.tables.tfa_registration: %core.table_prefix%tfa_registration
+    paul999.2fa.tables.tfa_otp_registration: %core.table_prefix%tfa_otp_reg
+    paul999.2fa.tables.tfa_backup_registration: %core.table_prefix%tfa_back_reg

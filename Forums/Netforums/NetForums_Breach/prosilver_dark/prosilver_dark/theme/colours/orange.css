@@ -1,0 +1,33 @@
+a:link, a:active, a:visited, .icon.icon-blue, .arrow-left:hover, .arrow-right:hover { color: #f69600; }
+a:hover, a:hover .icon.icon-blue { color: #ffa212; }
+
+.pagination li.active span, .pagination li a:hover, .global_unread:before, .global_unread_mine:before, .global_unread_locked:before, .global_unread_locked_mine:before, .announce_unread:before, .announce_unread_mine:before, .announce_unread_locked:before, .announce_unread_locked_mine:before, .forum_unread:before, .forum_unread_locked:before, .forum_unread_subforum:before, .sticky_unread:before, .sticky_unread_mine:before, .sticky_unread_locked:before, .sticky_unread_locked_mine:before, .pm_unread:before, .topic_unread:before, .topic_unread_mine:before, .topic_unread_hot:before, .topic_unread_hot_mine:before, .topic_unread_locked:before, .topic_unread_locked_mine:before {
+	background-color: #f69600 !important;
+}
+
+/* Box shadow for unread pulse icons */
+@-webkit-keyframes UnreadPulse {
+	0% {
+	  -webkit-box-shadow: 0 0 0 0 rgba(246,150,0,0.4);
+	}
+	70% {
+		-webkit-box-shadow: 0 0 0 8px rgba(246,150,0,0);
+	}
+	100% {
+		-webkit-box-shadow: 0 0 0 0 rgba(246,150,0,0);
+	}
+}
+@keyframes UnreadPulse {
+	0% {
+	  -moz-box-shadow: 0 0 0 0 rgba(246,150,0,0.4);
+	  box-shadow: 0 0 0 0 rgba(246,150,0,0.4);
+	}
+	70% {
+		-moz-box-shadow: 0 0 0 8px rgba(246,150,0,0);
+		box-shadow: 0 0 0 8px rgba(246,150,0, 0);
+	}
+	100% {
+		-moz-box-shadow: 0 0 0 0 rgba(246,150,0,0);
+		box-shadow: 0 0 0 0 rgba(246,150,0,0);
+	}
+}

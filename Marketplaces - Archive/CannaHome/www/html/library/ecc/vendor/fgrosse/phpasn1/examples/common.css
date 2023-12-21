@@ -1,0 +1,38 @@
+table {
+	border-collapse: collapse;	
+}
+
+th {
+	text-align: left;	
+}
+
+td {
+	border-top: black 1px solid;
+	padding-right: 30px;	
+}
+
+td.ASNclass {
+	font-weight: bold;
+	width: 150px;	
+}
+
+td.openSSL {
+	border-left: black 1px solid;	
+}
+
+p.notice {
+	margin-bottom: 30px;
+	color: gray;
+}
+
+.red {
+	color: red;
+}
+
+.monospace {
+	font-family: monospace;
+}
+
+pre {
+	margin: 7px
+}

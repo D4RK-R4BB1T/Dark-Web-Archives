@@ -1,0 +1,83 @@
+imports:
+    - { resource: tables.yml }
+
+services:
+    paul999.tfa.session_helper:
+        class: paul999\tfa\helper\session_helper
+        arguments:
+            - '@dbal.conn'
+            - '@config'
+            - '@user'
+            - '@paul999.tfa.module_collection'
+            - '@template'
+            - '@controller.helper'
+            - '%paul999.2fa.tables.tfa_registration%'
+            - '%tables.users%'
+
+    paul999.tfa.module_collection:
+        class: phpbb\di\service_collection
+        arguments:
+            - '@service_container'
+        tags:
+            - { name: service_collection, tag: paul999.tfa.module }
+
+    paul999.tfa.controller:
+        class: paul999\tfa\controller\main_controller
+        arguments:
+            - '@dbal.conn'
+            - '@template'
+            - '@user'
+            - '@request'
+            - '@log'
+            - '@paul999.tfa.session_helper'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+
+    paul999.tfa.listener:
+        class: paul999\tfa\event\listener
+        arguments:
+            - '@paul999.tfa.session_helper'
+            - '@user'
+            - '@request'
+            - '@dbal.conn'
+            - '@template'
+            - '@config'
+            - '%core.php_ext%'
+            - '%core.root_path%'
+        tags:
+            - { name: event.listener }
+
+    paul999.tfa.modules.u2f:
+        class: paul999\tfa\modules\u2f
+        arguments:
+            - '@dbal.conn'
+            - '@user'
+            - '@request'
+            - '@template'
+            - '%paul999.2fa.tables.tfa_registration%'
+            - '%core.root_path%'
+        tags:
+            - { name: paul999.tfa.module }
+
+    paul999.tfa.modules.otp:
+        class: paul999\tfa\modules\otp
+        arguments:
+            - '@dbal.conn'
+            - '@user'
+            - '@request'
+            - '@template'
+            - '%paul999.2fa.tables.tfa_otp_registration%'
+        tags:
+            - { name: paul999.tfa.module }
+
+    paul999.tfa.modules.backup_key:
+        class: paul999\tfa\modules\backup_key
+        arguments:
+            - '@dbal.conn'
+            - '@user'
+            - '@request'
+            - '@template'
+            - '@passwords.manager'
+            - '%paul999.2fa.tables.tfa_backup_registration%'
+        tags:
+            - { name: paul999.tfa.module }

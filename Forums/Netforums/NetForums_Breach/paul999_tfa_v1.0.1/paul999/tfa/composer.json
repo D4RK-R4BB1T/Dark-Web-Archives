@@ -1,0 +1,43 @@
+{
+    "name": "paul999/tfa",
+    "type": "phpbb-extension",
+    "description": "This extension adds support for two factor authentication into your phpBB board. ",
+    "homepage": "https://www.phpbbextensions.io",
+    "version": "1.0.1",
+    "keywords": [],
+    "license": "GPL-2.0-only",
+    "authors": [
+        {
+            "name": "Paul Sohier",
+            "email": "paul@phpbb.com",
+            "homepage": "https://www.paulsohier.nl",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "ext-json": "*",
+        "ext-openssl": "*",
+        "composer/installers": "~1.0.0",
+        "marc1706/otp-authenticate": "~1.0",
+        "paul999/u2flib-server": "dev-master",
+        "paragonie/random_compat": "~1.4|~2.0",
+        "phpbb/phpbb": ">=3.2"
+    },
+    "require-dev": {
+        "phing/phing": "2.4.*",
+        "phpbb/epv": "dev-master"
+    },
+    "extra": {
+        "display-name": "phpBB Two Factor Authentication",
+        "soft-require": {
+            "phpbb/phpbb": ">=3.2"
+        },
+        "version-check": {
+            "host": "www.phpbb.com",
+            "directory": "/customise/db/extension/phpbb_two_factor_authentication",
+            "filename": "version_check",
+            "ssl": true
+        }
+    }
+}

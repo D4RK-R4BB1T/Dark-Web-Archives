@@ -1,0 +1,230 @@
+/* high-contrast text */
+h2, .panel-container h2, .forumbg .header a, .forabg .header a, th a, .tabs .activetab > a, .tabs .activetab > a:hover, .tabs .tab a:hover, .navigation .active-subsection a, .navigation .active-subsection a:hover, .navigation a:hover, .panel-container .panel li.header dd, .panel-container .panel li.header dt, label:hover, fieldset dl:hover dt label, dl.faq dt, h3, .content h2, .panel h2, fieldset.polls dl.voted, .button .icon, .inputbox, textarea, .message-box textarea, .panel-container table.table1 thead th, li.header dt, li.header dd, a.button1, input.button1, input.button3, a.button2, input.button2, a.button1:hover, input.button1:hover, a.button2:hover, input.button2:hover, input.button3:hover, .postbody .content, .pagination li a, select, .button .icon, .button-secondary, .global_read_mine:after, .global_read_locked_mine:after, .global_unread_mine:after, .global_unread_locked_mine:after, .announce_read_mine:after, .announce_read_locked_mine:after, .announce_unread_mine:after, .announce_unread_locked_mine:after, .sticky_read_mine:after, .sticky_read_locked_mine:after, .sticky_unread_mine:after, .sticky_unread_locked_mine:after, .topic_read_mine:after, .topic_read_hot_mine:after, .topic_unread_mine:after, .topic_unread_hot_mine:after, .topic_read_locked_mine:after, .topic_unread_locked_mine:after, .dropdown-extended .header, .dropdown-extended .footer, .pagination li.ellipsis span, .icon.icon-black, a:hover .icon.icon-black, .minitabs a:hover, .minitabs .activetab > a, .minitabs .activetab > a:hover {
+	color: #CCCCCC !important;
+}
+
+
+/* subtle text */
+html, body, .headerbar p, .copyright, ul.topiclist li, .panel, label, dd label, .signature, .postprofile, .postprofile strong, dl.details dd, dl.details dt, .content, .postbody, fieldset.polls dl, dl.file dd, table.table1 td, .dropdown-extended ul li:hover, .button {
+	color: #838b98;
+}
+
+
+
+
+
+/* Light bg colours */
+.headerbar, .navbar, .forabg, .forumbg, li.row, .bg1, .bg2, .bg3, .tabs .activetab > a, .tabs a:hover, ul.cplist, .panel, blockquote blockquote, .panel blockquote, .panel blockquote blockquote blockquote, .panel .codebox, .dropdown .dropdown-contents, .jumpbox-cat-link, .jumpbox-sub-link, .jumpbox-forum-link, .cp-main .message-box textarea, fieldset.quick-login input.inputbox {
+	background: #242a36 !important;
+}
+
+/* Dark bg colours */
+html, body, .wrap, .panel-container .panel, .navigation .active-subsection a, .navigation a:hover, .cp-mini, .codebox, blockquote, blockquote blockquote blockquote, .panel blockquote blockquote, .attachbox, .message-box textarea, .phpbb_alert, select, .minitabs a:hover, .minitabs .activetab > a, .minitabs .activetab > a:hover, .cp-main .pm, .bg3 .topicreview .bg2, .bg3 .topicreview .bg1 {
+	background-color: #171b24 !important;
+}
+
+/* Middle grey (dark bg) */
+.tabs .tab > a {
+	background: rgba(255,255,255,0.04);
+}
+
+/* Middle grey (light bg) */
+.navigation a, .minitabs .tab > a {
+	background: rgba(0,0,0,0.15);
+}
+
+
+
+
+
+/* Really light elements (buttons / forms etc) */
+.inputbox, .button, a.button1, input.button1, input.button3, a.button2, input.button2, .pagination li a {
+	background: rgba(255,255,255,0.1);
+}
+
+/* button hover */
+.button:hover, a.button1:hover, input.button1:hover, a.button2:hover, input.button2:hover, input.button3:hover,  .search-results li:hover, .search-results li.active {
+	background: rgba(255,255,255,0.2);
+}
+
+
+
+
+
+/* Super subtle borders */
+.forumbg, .forabg, .navbar, .headerbar, .post, .bg3, .panel blockquote, .panel blockquote, .panel .codebox  {
+	border: 1px solid rgba(255,255,255,0.04);
+}
+
+li.row, ul.linklist li, h3, ul.linklist, ul.topiclist dd, .postprofile, .signature, .tabs .activetab > a, .tabs .activetab > a:hover, .panel-container h3, .panel-container .panel li.row, .panel-container hr, .cp-menu hr, table.table1 tbody tr, table.table1 tbody td, hr, .panel h2, .content h2, .codebox, .codebox p, fieldset.polls dl, .attach-image img, .attachbox, .attachbox dd, .inputbox, .phpbb_alert, a.button1, input.button1, input.button3, a.button2, input.button2, a.button1:hover, input.button1:hover, a.button2:hover, input.button2:hover, input.button3:hover, .dropdown li.separator, select, .dropdown li, .dropdown li li, .jumpbox .dropdown li, .dropdown-extended .header, .dropdown-extended .footer, input.button1:focus, input.button2:focus, input.button3:focus, .caret, .pm .postprofile {
+	border-color: rgba(255,255,255,0.04);
+}
+
+
+/*A less subtle border for overlapping elements (dropdowns) */
+.dropdown .dropdown-contents {
+	border-color: rgba(255,255,255,0.15);
+}
+
+
+
+
+/* Super subtle hover effects */
+li.row:hover, .dropdown-extended ul li:hover, table.table1 tbody tr:hover, table.table1 tbody tr.hover {
+	background: rgba(0,0,0,0.05) !important;
+}
+
+
+/* Hacky overrides here, because..reasons */
+li.row.reported, p.post-notice {
+	background-color: rgba(211,17,65,0.2) !important;
+	color: #BC2A4D;
+}
+
+.dropdown .pointer-inner, .jumpbox .dropdown .pointer-inner {
+	border-color: #242a36 transparent;
+}
+
+.online {
+	background-image: url("./en/icon_user_online.gif") !important;
+	background-position: 100% 0 !important;
+	background-repeat: no-repeat !important;
+}
+
+
+input#keywords::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #CCCCCC;
+}
+input#keywords::-moz-placeholder { /* Firefox 19+ */
+  color: #CCCCCC;
+}
+input#keywords:-ms-input-placeholder { /* IE 10+ */
+  color: #CCCCCC;
+}
+input#keywords:-moz-placeholder { /* Firefox 18- */
+  color: #CCCCCC;
+}
+
+input#search_keywords::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #CCCCCC;
+}
+input#search_keywords::-moz-placeholder { /* Firefox 19+ */
+  color: #CCCCCC;
+}
+input#search_keywords:-ms-input-placeholder { /* IE 10+ */
+  color: #CCCCCC;
+}
+input#search_keywords:-moz-placeholder { /* Firefox 18- */
+  color: #CCCCCC;
+}
+
+
+
+
+/* ------- Forum & Topic Icons (Pulsing) ------- */
+dl.row-item {
+	background-image: none;
+}
+
+.forums .row-item:before, .topics .row-item:before, .pmlist .row-item:before, .cplist .row-item:before {
+	font-family: FontAwesome;
+	text-align: center;
+	position: absolute;
+	left: 5px;
+	width: 32px;
+	height: 32px;
+	line-height: 32px;
+	border-radius: 50%;
+	background: rgba(255,255,255,0.1);
+	font-size: 14px;
+}
+
+/* Spotted topics */
+.global_read_mine:after, .global_read_locked_mine:after, .global_unread_mine:after, .global_unread_locked_mine:after, .announce_read_mine:after, .announce_read_locked_mine:after, .announce_unread_mine:after, .announce_unread_locked_mine:after, .sticky_read_mine:after, .sticky_read_locked_mine:after, .sticky_unread_mine:after, .sticky_unread_locked_mine:after, .topic_read_mine:after, .topic_read_hot_mine:after, .topic_unread_mine:after, .topic_unread_hot_mine:after, .topic_read_locked_mine:after, .topic_unread_locked_mine:after {
+	position: absolute;
+	top: 6px;
+	left: 30px;
+	font-family: FontAwesome;
+	content: "\f005";
+	font-size: 7px;
+	width: 6px;
+	height: 6px;
+	border-radius: 6px;
+}
+
+/* Adjustments for weirdly sized icons */
+/* Nudge the speech bubble up a few pixels */
+.topic_read:before, .topic_read_mine:before, .topic_read_hot:before, .topic_read_hot_mine:before, .topic_unread:before, .topic_unread_mine:before, .topic_unread_hot:before, .topic_unread_hot_mine:before {
+	line-height: 28px !important;
+}
+
+/* External link left and down */
+.forum_link:before {
+	line-height: 0 !important;
+	width: 30px !important;
+	height: 15px !important;
+	padding: 16px 0 1px 2px;
+}
+
+/* Set the icons */							/* Megaphone */
+.global_read:before							{content: "\f0a1";}
+.global_read_mine:before					{content: "\f0a1";}
+.global_read_locked:before					{content: "\f0a1";}
+.global_read_locked_mine:before				{content: "\f0a1";}
+.global_unread:before						{content: "\f0a1";}
+.global_unread_mine:before					{content: "\f0a1";}
+.global_unread_locked:before				{content: "\f0a1";}
+.global_unread_locked_mine:before			{content: "\f0a1";}
+											/* Megaphone */
+.announce_read:before						{content: "\f0a1";}
+.announce_read_mine:before					{content: "\f0a1";}
+.announce_read_locked:before				{content: "\f0a1";}
+.announce_read_locked_mine:before			{content: "\f0a1";}
+.announce_unread:before						{content: "\f0a1";}
+.announce_unread_mine:before				{content: "\f0a1";}
+.announce_unread_locked:before				{content: "\f0a1";}
+.announce_unread_locked_mine:before			{content: "\f0a1";}
+											/* External link */
+.forum_link:before							{content: "\f08e";}
+											/* Speech Bubble */
+.forum_read:before							{content: "\f03a";}
+.forum_read_subforum:before					{content: "\f03a";}
+.forum_unread:before						{content: "\f03a";}
+.forum_unread_subforum:before				{content: "\f03a";}
+											/* Pin */
+.sticky_read:before							{content: "\f08d";}
+.sticky_read_mine:before					{content: "\f08d";}
+.sticky_read_locked:before					{content: "\f08d";}
+.sticky_read_locked_mine:before				{content: "\f08d";}
+.sticky_unread:before						{content: "\f08d";}
+.sticky_unread_mine:before					{content: "\f08d";}
+.sticky_unread_locked:before				{content: "\f08d";}
+.sticky_unread_locked_mine:before			{content: "\f08d";}
+											/* Right arrow */
+.topic_moved:before							{content: "\f061";}
+											/* Envelope */
+.pm_read:before 							{content: "\f0e0";}
+.pm_unread:before 							{content: "\f0e0";}
+											/* Speech Bubble */
+.topic_read:before							{content: "\f075";}
+.topic_read_mine:before						{content: "\f075";}
+.topic_read_hot:before						{content: "\f075";}
+.topic_read_hot_mine:before					{content: "\f075";}
+.topic_unread:before						{content: "\f075";}
+.topic_unread_mine:before					{content: "\f075";}
+.topic_unread_hot:before					{content: "\f075";}
+.topic_unread_hot_mine:before				{content: "\f075";}
+											/* Padlock */
+.forum_read_locked:before					{content: "\f023";}
+.forum_unread_locked:before					{content: "\f023";}
+.topic_read_locked:before					{content: "\f023";}
+.topic_read_locked_mine:before				{content: "\f023";}
+.topic_unread_locked:before					{content: "\f023";}
+.topic_unread_locked_mine:before			{content: "\f023";}
+
+
+/* Unread States */
+.global_unread:before, .global_unread_mine:before, .global_unread_locked:before, .global_unread_locked_mine:before, .announce_unread:before, .announce_unread_mine:before, .announce_unread_locked:before, .announce_unread_locked_mine:before, .forum_unread:before, .forum_unread_locked:before, .forum_unread_subforum:before, .sticky_unread:before, .sticky_unread_mine:before, .sticky_unread_locked:before, .sticky_unread_locked_mine:before, .pm_unread:before, .topic_unread:before, .topic_unread_mine:before, .topic_unread_hot:before, .topic_unread_hot_mine:before, .topic_unread_locked:before, .topic_unread_locked_mine:before {
+	animation: UnreadPulse 1.4s infinite;
+	color: #FFF;
+}

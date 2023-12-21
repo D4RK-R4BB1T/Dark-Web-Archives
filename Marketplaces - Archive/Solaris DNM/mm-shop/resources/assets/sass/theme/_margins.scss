@@ -1,0 +1,33 @@
+.margin {
+  &-top {
+    &-2 {
+      margin-top: 2px;
+    }
+
+    &-6 {
+      margin-top: 6px;
+    }
+
+    &-8 {
+      margin-top: 8px;
+    }
+  }
+
+  &-bottom {
+    &-1 {
+      margin-bottom: 4px;
+    }
+  }
+
+  &-left {
+    &-20 {
+      margin-left: 20px;
+    }
+  }
+}
+
+.help-block-no-margin {
+    display:block;
+    font-size:.9em;
+    color:#b3b3b3;
+}

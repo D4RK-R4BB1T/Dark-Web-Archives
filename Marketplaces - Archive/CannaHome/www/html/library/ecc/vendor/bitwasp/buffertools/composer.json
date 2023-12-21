@@ -1,0 +1,34 @@
+{
+  "name": "bitwasp/buffertools",
+  "description": "Toolbox for working with binary and hex data. Similar to NodeJS Buffer.",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Thomas Kerin",
+      "homepage": "https://thomaskerin.io"
+    },
+    {
+      "name": "Ruben de Vries",
+      "email": "ruben@rubensayshi.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "BitWasp\\Buffertools\\": "src/Buffertools/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "BitWasp\\Buffertools\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": ">=5.4.0",
+    "mdanter/ecc": "0.3.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.3.1",
+    "squizlabs/php_codesniffer": "~2.0",
+    "satooshi/php-coveralls": "~0.6.1"
+  }
+}

@@ -1,0 +1,15 @@
+#navbar-toggle-cbox:checked ~ .collapse {
+  display:block;
+}
+
+#navbar-toggle-cbox {
+   display: none;
+ }
+
+nav.navbar li.nav-item > a.nav-link{
+  color: rgba($color: #fff, $alpha: 0.5);  
+}
+
+nav.navbar li.nav-item.active > a.nav-link{
+  color: rgba($color: #fff, $alpha: 1);  
+}

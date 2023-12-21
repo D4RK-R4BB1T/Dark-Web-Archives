@@ -1,0 +1,25 @@
+{
+    "name": "latrell/captcha",
+    "description": "Captcha Package for Laravel 5",
+    "keywords": ["L5", "Laravel 5", "Laravel", "Captcha", "security", "captcha image"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Latrell Chan",
+            "email": "i@latrell.me"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "5.*",
+        "gregwar/captcha": "1.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/controllers"
+        ],
+        "psr-0": {
+            "Latrell\\Captcha\\": "src/"
+        }
+    }
+}

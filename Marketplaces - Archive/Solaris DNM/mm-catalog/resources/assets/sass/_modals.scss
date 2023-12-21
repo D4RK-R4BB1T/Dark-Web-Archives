@@ -1,0 +1,21 @@
+.modal {
+  &-scrollable {
+    overflow-x: hidden;
+    overflow-y: auto;
+    .modal {
+      &-dialog {
+        top: 0 !important;
+      }
+    }
+  }
+}
+
+/* modal at top scrollable */
+.modal-body {
+    max-height: calc(100vh - 212px);
+    overflow-y: auto;
+}
+
+.mm-modal-toggle:checked ~ .modal .modal-dialog {
+  top: 0 !important;
+}

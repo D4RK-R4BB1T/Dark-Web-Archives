@@ -1,0 +1,72 @@
+{% if U2F_REQ %}
+<script>
+    {# U2F_REQ is a JSON string, so can't be escaped. #}
+    var req = {{ U2F_REQ }};
+    console.log("Loading with ", req);
+    $(document).ready(function() {
+        console.log("Loading U2F signing");
+
+        if(!(bowser.chrome && bowser.version >= 41)) {
+            $("#browser_supported").show();
+        }
+        else {
+            $("#start_auth").show();
+            $("#start_auth").click(function() {
+                u2f.sign(req, function (data) {
+                    console.log("Received sign response");
+                    $("#authenticate").val(JSON.stringify(data));
+                    $("#submit_auth").submit();
+                });
+
+                setTimeout(function () {
+                    $("#no_response").show();
+                }, 10000);
+            });
+        }
+    });
+</script>
+{% endif %}
+{% if U2F_REG %}
+<script>
+    {# U2F_SIGN_REQUEST and U2F_SIGN are a JSON string, so can't be escaped. #}
+    var req = {{ U2F_SIGN_REQUEST }};
+    var sigs = {{ U2F_SIGN }};
+
+    if(!(bowser.chrome && bowser.version >= 41)) {
+        $("#browser_supported").show();
+        $("#add_key").hide();
+    }
+
+    $("#add_key").click(function() {
+        console.log("Starting registration");
+        $("#tfa_insert_key").show();
+        $("#add_key").hide();
+
+        var tm = setTimeout(function(){
+            $("#no_response").show();
+        }, 10000);
+
+        u2f.register([req], sigs, function(data) {
+
+            console.log("Register callback", data);
+            if(data.errorCode) {
+                var message = "{{ lang('TFA_REG_FAILED')|e('js') }}" + data.errorCode + "," + data.errorMessage;
+                if (data.errorCode === 4) {
+                    // ErrorCode for is when the device is already added.
+                    message = "{{ lang('TFA_REG_EXISTS')|e('js') }}";
+                }
+
+                phpbb.alert("{{ lang('TFA_ERROR')|e('js') }}", message);
+                $("#tfa_insert_key").hide();
+                $("#add_key").show();
+                clearTimeout(tm);
+                $("#no_response").hide();
+                return;
+            }
+            $("#register").val(JSON.stringify(data));
+            $("#md").val("register");
+            $("#ucp").submit();
+        });
+    });
+</script>
+{% endif %}

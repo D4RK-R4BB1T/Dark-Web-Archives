@@ -1,0 +1,41 @@
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// FontAwesome import
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+// navbar mobile resize support without js
+@import "navbar";
+
+// slider import
+@import "slider";
+
+// vendor profile backgrounds import
+@import "profile_backgrounds";
+
+// vendor profile
+@import "profile";
+
+// tooltip
+
+@import "tooltip";
+
+
+.category-breadcrumb .breadcrumb{
+  padding: 0.5rem;
+  font-size: 0.8rem;
+}
+.category-breadcrumb .breadcrumb .breadcrumb-item + .breadcrumb-item::before{
+  content: ">";
+}
+.list-group-item.active{
+  background-color: theme-color("secondary");
+  border-color: gray("700");
+}
+table.product td{
+  padding: 0.4rem !important;
+}

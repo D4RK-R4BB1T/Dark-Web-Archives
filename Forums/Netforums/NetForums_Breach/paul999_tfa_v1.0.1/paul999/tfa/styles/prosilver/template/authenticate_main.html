@@ -1,0 +1,39 @@
+{% include 'overall_header.html' %}
+
+{% INCLUDEJS '@paul999_tfa/js/login.js' %}
+
+{% if S_ERROR %}
+    <p class="error">{{ S_ERROR }}</p>
+{% endif %}
+
+<div class="tfa_center">
+    <div class="forabg tfa_login">
+
+        <div class="inner">
+            <h1 class="tfa_login_type">{{ lang('TFA_SELECT_KEY') }}</h1>
+            <ul class="topiclist forums">
+            {% for tfa_option in tfa_options %}
+                <li class="row">
+                    <dl>
+                        <dt><a href="javascript:openAuth('#auth_{{ tfa_option.ID|e('js') }}');">{{ tfa_option.NAME }}</a></dt>
+                    </dl>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% for tfa_option in tfa_options if tfa_option.S_TFA_INCLUDE_HTML %}
+    <div id="auth_{{ tfa_option.ID }}"{% if not tfa_option.S_FIRST_ROW %} style="display: none;"{% endif %}>
+        <form id="submit_auth" method="post" action="{{ tfa_option.U_SUBMIT_AUTH }}">
+            {{ S_FORM_TOKEN }}
+            {{ tfa_option.S_HIDDEN_FIELDS }}
+            <input type="hidden" name="random" value="{{ RANDOM }}">
+            <input type="hidden" name="redirect" value="{{ REDIRECT }}">
+            {% include tfa_option.S_TFA_INCLUDE_HTML %}
+        </form>
+    </div>
+{% endfor %}
+
+{% include 'overall_footer.html' %}

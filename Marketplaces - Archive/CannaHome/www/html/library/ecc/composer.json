@@ -1,0 +1,6 @@
+{
+    "require": {
+        "bitwasp/bitcoin-lib": "^1.2",
+        "bitwasp/bitcoin": "dev-master"
+    }
+}

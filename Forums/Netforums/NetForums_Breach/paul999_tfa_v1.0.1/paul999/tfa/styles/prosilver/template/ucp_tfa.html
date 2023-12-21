@@ -1,0 +1,59 @@
+{% include 'ucp_header.html' %}
+
+{# Based on ucp_profile_autologin_keys #}
+<form id="ucp" method="post" action="{{ S_UCP_ACTION }}"{{ S_FORM_ENCTYPE }}>
+
+    <h2>{{ L_TITLE }}</h2>
+
+    <div class="panel">
+        <div class="inner">
+            <p>{{ lang('TFA_KEYS') }}</p>
+            {% if ERROR %}<p class="error">{{ ERROR }}</p>{% endif %}
+
+            <table class="table1">
+                <thead>
+                <tr>
+                    <th class="name">{{ lang('ID') }}</th>
+                    <th class="center">{{ lang('TFA_REGISTERED') }}</th>
+                    <th class="center">{{ lang('TFA_LAST_USED') }}</th>
+                    <th class="center">{{ lang('TFA_KEYTYPE') }}</th>
+                    <th class="center mark">{{ lang('DELETE') }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for key in keys %}
+                    <tr class="bg{{ loop.index is even ? 1 : 2 }}">
+                        <td>{{ key.ID }}</td>
+                        <td class="center">{{ key.REGISTERED }}</td>
+                        <td class="center">{{ key.LAST_USED ?: lang('TFA_KEY_NOT_USED') }}</td>
+                        <td class="center">{{ key.TYPE }}</td>
+                        <td class="center mark"><input type="checkbox" name="keys[]" value="{{ key.CLASS ~ '-' ~ key.ID }}" id="{{ key.ID }}"></td>
+                    </tr>
+                {% else %}
+                    <tr><td colspan="5" class="bg1" style="text-align: center;">{{ lang('TFA_NO_KEYS') }}</td></tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <fieldset class="display-actions">
+        {{ S_HIDDEN_FIELDS }}
+        <select name="class">
+            <option>{{ lang('TFA_SELECT_NEW') }}</option>
+            {% for new_key in new_keys %}
+                <option value="{{ new_key.CLASS }}">{{ new_key.NAME }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" name="md" value="{{ lang('TFA_NEW') }}" class="button1" />
+        <input type="submit" name="md" value="{{ lang('DELETE_MARKED') }}" class="button2" />
+        <div>
+            <a href="#" onclick="$('#ucp input:checkbox').prop('checked', true); return false;">{{ lang('MARK_ALL') }}</a>
+            &bull;
+            <a href="#" onclick="$('#ucp input:checkbox').prop('checked', false); return false;">{{ lang('UNMARK_ALL') }}</a>
+        </div>
+        {{ S_FORM_TOKEN }}
+    </fieldset>
+</form>
+
+{% include 'ucp_footer.html' %}

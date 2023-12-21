@@ -1,0 +1,24 @@
+{
+    "name": "pleonasm/merkle-tree",
+    "description": "An implementation of a Merkle Tree in PHP",
+    "license": "BSD-2-Clause",
+    "authors": [
+        {
+            "name": "Matt Nagi",
+            "email": "matthew.nagi@base-2.net"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "ext-xdebug": ">=2.2.0",
+        "phpunit/phpunit": "3.7.19",
+        "phpunit/php-invoker": ">=1.0.0,<1.2.0",
+        "squizlabs/php_codesniffer": "*",
+        "satooshi/php-coveralls": "*@dev"
+    },
+    "autoload": {
+        "psr-0": { "Pleo": "src/" }
+    }
+}
