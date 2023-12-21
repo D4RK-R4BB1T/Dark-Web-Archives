@@ -7,7 +7,7 @@ If a key contains a secret / private key it'll have 2 sections per readme.md or 
 Which will look like this:
 
 # Public Key
-[INSERT PUBLIC PGP KEY HERE
+[INSERT PUBLIC PGP KEY HERE]
 
 # Private Key
 [Insert Private PGP Key Here]
