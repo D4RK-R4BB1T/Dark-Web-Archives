@@ -1,7 +1,7 @@
-### Seige Sec Pwned by [REDACTED] & Evil Rabbit Security Inc.
+### Seige Sec Pwned by RANSOMEDVC & Evil Rabbit Security Inc.
 
-Twas five days before Christmas and Rabbit was hopping along when someone tapped him on the shoulder and gave him a golden oppertunity. Together we downed seige sec after their claims of beastality and pedophila. Although the other half gave a shitty explination, there is always more to be discussed but merry christmas you sexy mother fuckers.
-
+Seasons Greetings You Sexy mother fucking nerds, We're back to biz with everything here's that leak.
+Backstory: Group states they like to fuck Animals and Children, Site gets defaced with a varitiy of different methods and we are, bringing you the keys to the kingdom. The Five Families, Disrupted and damage is still being carried out as of 2023-21-12 (YYYY-DD-MM). Anyway Have a happy holidays you sexy fucking nerds, we'll be doing this for a bit longer as we observe the season of giving (We ain't religious so don't bitch).
 
 ![](https://i.ibb.co/8rDCN64/rabbit.gif)
 
