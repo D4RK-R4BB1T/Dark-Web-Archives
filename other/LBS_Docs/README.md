@@ -5,7 +5,7 @@ I've uploaded them here to be more stable.
 Follow me on Twitter: [http://twitter.com/D4RKR4BB1T47](http://twitter.com/D4RKR4BB1T47)
 Send me a message:  https://t.me/EVILRABBIT47
 Watch me: BTFO of Pedophiles:  https://t.me/PedophileTortureChamber
-Anything else? Nope.
+Anything else? Nope
 
 Evil Rabbit Security Staff:
 Pavel M. Kravchenko
